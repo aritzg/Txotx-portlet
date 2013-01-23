@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="net.sareweb.txotx.model.Gertaera" />
+	<import class="net.sareweb.txotx.model.Sagardotegi" />
+	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
+		<id name="gertaeraId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="sagardotegiId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="screenName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gertaeraMota" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="testua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="balorazioa" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.txotx.model.impl.SagardotegiImpl" table="Txotx_Sagardotegi">
+		<id name="sagardotegiId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="izena" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="herria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="helbidea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="telefonoa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="emaila" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="weborria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="lng" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="edukiera" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="balorazioKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="balorazioenBB" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="net.sareweb.txotx">
+	<author>A.Galdos</author>
+	<namespace>Txotx</namespace>
+
+	<entity name="Sagardotegi" local-service="true" remote-service="true" cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="sagardotegiId" type="long" primary="true" />
+		
+		<column name="izena" type="String" />
+		<column name="herria" type="String" />
+		<column name="helbidea" type="String" />
+		<column name="telefonoa" type="String" />
+		<column name="emaila" type="String" />
+		<column name="weborria" type="String" />
+
+		<column name="lat" type="double" />
+		<column name="lng" type="double" />
+		
+		<column name="edukiera" type="long"/>
+		
+		<column name="irudiKarpetaId" type="long"/>
+		<column name="irudia" type="String"/>
+		
+		<column name="balorazioKopurua" type="long"/>
+		<column name="balorazioenBB" type="double"/>
+		
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+
+	</entity>
+	
+	<entity name="Gertaera" local-service="true" remote-service="true" cache-enabled="false">
+	    
+	    <!-- PK fields -->
+		<column name="gertaeraId" type="long" primary="true" />
+		
+		<!-- FK fields -->
+		<column name="sagardotegiId" type="long"/>
+		<column name="userId" type="long"/>
+		<column name="screenName" type="String"/>
+		
+		<column name="gertaeraMota" type="String"/>
+		<column name="testua" type="String"/>
+		<column name="irudiKarpetaId" type="long"/>
+		<column name="irudia" type="String"/>
+		<column name="balorazioa" type="long"/>
+		
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+		
+	</entity>
+	
+</service-builder>

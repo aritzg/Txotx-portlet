@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="net.sareweb.txotx.service.GertaeraLocalService" class="net.sareweb.txotx.service.impl.GertaeraLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.GertaeraService" class="net.sareweb.txotx.service.impl.GertaeraServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.GertaeraPersistence" class="net.sareweb.txotx.service.persistence.GertaeraPersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.txotx.service.SagardotegiLocalService" class="net.sareweb.txotx.service.impl.SagardotegiLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.SagardotegiService" class="net.sareweb.txotx.service.impl.SagardotegiServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.SagardotegiPersistence" class="net.sareweb.txotx.service.persistence.SagardotegiPersistenceImpl" parent="basePersistence" />
+</beans>
