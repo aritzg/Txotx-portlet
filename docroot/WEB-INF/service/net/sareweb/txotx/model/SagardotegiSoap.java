@@ -43,6 +43,8 @@ public class SagardotegiSoap implements Serializable {
 		soapModel.setEdukiera(model.getEdukiera());
 		soapModel.setIrudiKarpetaId(model.getIrudiKarpetaId());
 		soapModel.setIrudia(model.getIrudia());
+		soapModel.setIrudiKopurua(model.getIrudiKopurua());
+		soapModel.setIruzkinKopurua(model.getIruzkinKopurua());
 		soapModel.setBalorazioKopurua(model.getBalorazioKopurua());
 		soapModel.setBalorazioenBB(model.getBalorazioenBB());
 		soapModel.setCreateDate(model.getCreateDate());
@@ -195,6 +197,22 @@ public class SagardotegiSoap implements Serializable {
 		_irudia = irudia;
 	}
 
+	public long getIrudiKopurua() {
+		return _irudiKopurua;
+	}
+
+	public void setIrudiKopurua(long irudiKopurua) {
+		_irudiKopurua = irudiKopurua;
+	}
+
+	public long getIruzkinKopurua() {
+		return _iruzkinKopurua;
+	}
+
+	public void setIruzkinKopurua(long iruzkinKopurua) {
+		_iruzkinKopurua = iruzkinKopurua;
+	}
+
 	public long getBalorazioKopurua() {
 		return _balorazioKopurua;
 	}
@@ -239,6 +257,8 @@ public class SagardotegiSoap implements Serializable {
 	private long _edukiera;
 	private long _irudiKarpetaId;
 	private String _irudia;
+	private long _irudiKopurua;
+	private long _iruzkinKopurua;
 	private long _balorazioKopurua;
 	private double _balorazioenBB;
 	private Date _createDate;

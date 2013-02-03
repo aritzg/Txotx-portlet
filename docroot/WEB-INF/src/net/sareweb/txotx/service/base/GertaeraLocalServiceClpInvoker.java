@@ -107,6 +107,10 @@ public class GertaeraLocalServiceClpInvoker {
 		_methodName45 = "setBeanIdentifier";
 
 		_methodParameterTypes45 = new String[] { "java.lang.String" };
+
+		_methodName50 = "getSagardotegiarenBalorazioBB";
+
+		_methodParameterTypes50 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -208,6 +212,11 @@ public class GertaeraLocalServiceClpInvoker {
 			GertaeraLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
+		if (_methodName50.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes50, parameterTypes)) {
+			return GertaeraLocalServiceUtil.getSagardotegiarenBalorazioBB(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -247,4 +256,6 @@ public class GertaeraLocalServiceClpInvoker {
 	private String[] _methodParameterTypes44;
 	private String _methodName45;
 	private String[] _methodParameterTypes45;
+	private String _methodName50;
+	private String[] _methodParameterTypes50;
 }

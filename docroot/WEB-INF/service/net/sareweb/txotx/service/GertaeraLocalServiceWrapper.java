@@ -264,6 +264,11 @@ public class GertaeraLocalServiceWrapper implements GertaeraLocalService,
 			arguments);
 	}
 
+	public double getSagardotegiarenBalorazioBB(long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _gertaeraLocalService.getSagardotegiarenBalorazioBB(sagardotegiId);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

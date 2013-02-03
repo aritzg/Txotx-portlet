@@ -44,6 +44,8 @@
 			<basic name="edukiera" />
 			<basic name="irudiKarpetaId" />
 			<basic name="irudia" />
+			<basic name="irudiKopurua" />
+			<basic name="iruzkinKopurua" />
 			<basic name="balorazioKopurua" />
 			<basic name="balorazioenBB" />
 			<basic name="createDate">

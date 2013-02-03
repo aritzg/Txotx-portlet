@@ -77,12 +77,14 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			{ "edukiera", Types.BIGINT },
 			{ "irudiKarpetaId", Types.BIGINT },
 			{ "irudia", Types.VARCHAR },
+			{ "irudiKopurua", Types.BIGINT },
+			{ "iruzkinKopurua", Types.BIGINT },
 			{ "balorazioKopurua", Types.BIGINT },
 			{ "balorazioenBB", Types.DOUBLE },
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,weborria VARCHAR(75) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,weborria VARCHAR(75) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Sagardotegi";
 	public static final String ORDER_BY_JPQL = " ORDER BY sagardotegi.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Sagardotegi.createDate DESC";
@@ -122,6 +124,8 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		model.setEdukiera(soapModel.getEdukiera());
 		model.setIrudiKarpetaId(soapModel.getIrudiKarpetaId());
 		model.setIrudia(soapModel.getIrudia());
+		model.setIrudiKopurua(soapModel.getIrudiKopurua());
+		model.setIruzkinKopurua(soapModel.getIruzkinKopurua());
 		model.setBalorazioKopurua(soapModel.getBalorazioKopurua());
 		model.setBalorazioenBB(soapModel.getBalorazioenBB());
 		model.setCreateDate(soapModel.getCreateDate());
@@ -196,6 +200,8 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		attributes.put("edukiera", getEdukiera());
 		attributes.put("irudiKarpetaId", getIrudiKarpetaId());
 		attributes.put("irudia", getIrudia());
+		attributes.put("irudiKopurua", getIrudiKopurua());
+		attributes.put("iruzkinKopurua", getIruzkinKopurua());
 		attributes.put("balorazioKopurua", getBalorazioKopurua());
 		attributes.put("balorazioenBB", getBalorazioenBB());
 		attributes.put("createDate", getCreateDate());
@@ -276,6 +282,18 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 
 		if (irudia != null) {
 			setIrudia(irudia);
+		}
+
+		Long irudiKopurua = (Long)attributes.get("irudiKopurua");
+
+		if (irudiKopurua != null) {
+			setIrudiKopurua(irudiKopurua);
+		}
+
+		Long iruzkinKopurua = (Long)attributes.get("iruzkinKopurua");
+
+		if (iruzkinKopurua != null) {
+			setIruzkinKopurua(iruzkinKopurua);
 		}
 
 		Long balorazioKopurua = (Long)attributes.get("balorazioKopurua");
@@ -447,6 +465,24 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	}
 
 	@JSON
+	public long getIrudiKopurua() {
+		return _irudiKopurua;
+	}
+
+	public void setIrudiKopurua(long irudiKopurua) {
+		_irudiKopurua = irudiKopurua;
+	}
+
+	@JSON
+	public long getIruzkinKopurua() {
+		return _iruzkinKopurua;
+	}
+
+	public void setIruzkinKopurua(long iruzkinKopurua) {
+		_iruzkinKopurua = iruzkinKopurua;
+	}
+
+	@JSON
 	public long getBalorazioKopurua() {
 		return _balorazioKopurua;
 	}
@@ -522,6 +558,8 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sagardotegiImpl.setEdukiera(getEdukiera());
 		sagardotegiImpl.setIrudiKarpetaId(getIrudiKarpetaId());
 		sagardotegiImpl.setIrudia(getIrudia());
+		sagardotegiImpl.setIrudiKopurua(getIrudiKopurua());
+		sagardotegiImpl.setIruzkinKopurua(getIruzkinKopurua());
 		sagardotegiImpl.setBalorazioKopurua(getBalorazioKopurua());
 		sagardotegiImpl.setBalorazioenBB(getBalorazioenBB());
 		sagardotegiImpl.setCreateDate(getCreateDate());
@@ -650,6 +688,10 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			sagardotegiCacheModel.irudia = null;
 		}
 
+		sagardotegiCacheModel.irudiKopurua = getIrudiKopurua();
+
+		sagardotegiCacheModel.iruzkinKopurua = getIruzkinKopurua();
+
 		sagardotegiCacheModel.balorazioKopurua = getBalorazioKopurua();
 
 		sagardotegiCacheModel.balorazioenBB = getBalorazioenBB();
@@ -677,7 +719,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(37);
 
 		sb.append("{sagardotegiId=");
 		sb.append(getSagardotegiId());
@@ -703,6 +745,10 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sb.append(getIrudiKarpetaId());
 		sb.append(", irudia=");
 		sb.append(getIrudia());
+		sb.append(", irudiKopurua=");
+		sb.append(getIrudiKopurua());
+		sb.append(", iruzkinKopurua=");
+		sb.append(getIruzkinKopurua());
 		sb.append(", balorazioKopurua=");
 		sb.append(getBalorazioKopurua());
 		sb.append(", balorazioenBB=");
@@ -717,7 +763,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(52);
+		StringBundler sb = new StringBundler(58);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Sagardotegi");
@@ -772,6 +818,14 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sb.append(getIrudia());
 		sb.append("]]></column-value></column>");
 		sb.append(
+			"<column><column-name>irudiKopurua</column-name><column-value><![CDATA[");
+		sb.append(getIrudiKopurua());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>iruzkinKopurua</column-name><column-value><![CDATA[");
+		sb.append(getIruzkinKopurua());
+		sb.append("]]></column-value></column>");
+		sb.append(
 			"<column><column-name>balorazioKopurua</column-name><column-value><![CDATA[");
 		sb.append(getBalorazioKopurua());
 		sb.append("]]></column-value></column>");
@@ -809,6 +863,8 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	private long _edukiera;
 	private long _irudiKarpetaId;
 	private String _irudia;
+	private long _irudiKopurua;
+	private long _iruzkinKopurua;
 	private long _balorazioKopurua;
 	private double _balorazioenBB;
 	private Date _createDate;

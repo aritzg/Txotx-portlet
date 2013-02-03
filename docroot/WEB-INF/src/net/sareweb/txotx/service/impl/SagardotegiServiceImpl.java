@@ -20,6 +20,7 @@ import com.liferay.portal.kernel.exception.SystemException;
 
 import net.sareweb.txotx.model.Sagardotegi;
 import net.sareweb.txotx.service.base.SagardotegiServiceBaseImpl;
+import net.sareweb.txotx.util.comparator.SagardotegiBBComparator;
 
 /**
  * The implementation of the sagardotegi remote service.
@@ -47,6 +48,6 @@ public class SagardotegiServiceImpl extends SagardotegiServiceBaseImpl {
 	}
 	
 	public List<Sagardotegi> getSagardotegiak() throws SystemException{
-		return sagardotegiPersistence.findAll(-1, -1);
+		return sagardotegiPersistence.findAll(-1, -1, new SagardotegiBBComparator());
 	}
 }

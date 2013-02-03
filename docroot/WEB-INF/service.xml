@@ -24,6 +24,9 @@
 		<column name="irudiKarpetaId" type="long"/>
 		<column name="irudia" type="String"/>
 		
+		<column name="irudiKopurua" type="long"/>
+		<column name="iruzkinKopurua" type="long"/>
+		
 		<column name="balorazioKopurua" type="long"/>
 		<column name="balorazioenBB" type="double"/>
 		

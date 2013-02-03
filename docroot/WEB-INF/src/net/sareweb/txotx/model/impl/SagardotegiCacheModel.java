@@ -35,7 +35,7 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 	Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(37);
 
 		sb.append("{sagardotegiId=");
 		sb.append(sagardotegiId);
@@ -61,6 +61,10 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 		sb.append(irudiKarpetaId);
 		sb.append(", irudia=");
 		sb.append(irudia);
+		sb.append(", irudiKopurua=");
+		sb.append(irudiKopurua);
+		sb.append(", iruzkinKopurua=");
+		sb.append(iruzkinKopurua);
 		sb.append(", balorazioKopurua=");
 		sb.append(balorazioKopurua);
 		sb.append(", balorazioenBB=");
@@ -133,6 +137,8 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 			sagardotegiImpl.setIrudia(irudia);
 		}
 
+		sagardotegiImpl.setIrudiKopurua(irudiKopurua);
+		sagardotegiImpl.setIruzkinKopurua(iruzkinKopurua);
 		sagardotegiImpl.setBalorazioKopurua(balorazioKopurua);
 		sagardotegiImpl.setBalorazioenBB(balorazioenBB);
 
@@ -167,6 +173,8 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 	public long edukiera;
 	public long irudiKarpetaId;
 	public String irudia;
+	public long irudiKopurua;
+	public long iruzkinKopurua;
 	public long balorazioKopurua;
 	public double balorazioenBB;
 	public long createDate;

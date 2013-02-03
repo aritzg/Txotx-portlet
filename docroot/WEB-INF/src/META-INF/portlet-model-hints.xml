@@ -7,7 +7,9 @@
 		<field name="userId" type="long" />
 		<field name="screenName" type="String" />
 		<field name="gertaeraMota" type="String" />
-		<field name="testua" type="String" />
+		<field name="testua" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
 		<field name="irudiKarpetaId" type="long" />
 		<field name="irudia" type="String" />
 		<field name="balorazioa" type="long" />
@@ -27,6 +29,8 @@
 		<field name="edukiera" type="long" />
 		<field name="irudiKarpetaId" type="long" />
 		<field name="irudia" type="String" />
+		<field name="irudiKopurua" type="long" />
+		<field name="iruzkinKopurua" type="long" />
 		<field name="balorazioKopurua" type="long" />
 		<field name="balorazioenBB" type="double" />
 		<field name="createDate" type="Date" />

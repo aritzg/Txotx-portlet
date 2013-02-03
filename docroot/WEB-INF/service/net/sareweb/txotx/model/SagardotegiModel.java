@@ -235,6 +235,34 @@ public interface SagardotegiModel extends BaseModel<Sagardotegi> {
 	public void setIrudia(String irudia);
 
 	/**
+	 * Returns the irudi kopurua of this sagardotegi.
+	 *
+	 * @return the irudi kopurua of this sagardotegi
+	 */
+	public long getIrudiKopurua();
+
+	/**
+	 * Sets the irudi kopurua of this sagardotegi.
+	 *
+	 * @param irudiKopurua the irudi kopurua of this sagardotegi
+	 */
+	public void setIrudiKopurua(long irudiKopurua);
+
+	/**
+	 * Returns the iruzkin kopurua of this sagardotegi.
+	 *
+	 * @return the iruzkin kopurua of this sagardotegi
+	 */
+	public long getIruzkinKopurua();
+
+	/**
+	 * Sets the iruzkin kopurua of this sagardotegi.
+	 *
+	 * @param iruzkinKopurua the iruzkin kopurua of this sagardotegi
+	 */
+	public void setIruzkinKopurua(long iruzkinKopurua);
+
+	/**
 	 * Returns the balorazio kopurua of this sagardotegi.
 	 *
 	 * @return the balorazio kopurua of this sagardotegi

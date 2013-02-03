@@ -313,6 +313,8 @@ public class SagardotegiPersistenceImpl extends BasePersistenceImpl<Sagardotegi>
 		sagardotegiImpl.setEdukiera(sagardotegi.getEdukiera());
 		sagardotegiImpl.setIrudiKarpetaId(sagardotegi.getIrudiKarpetaId());
 		sagardotegiImpl.setIrudia(sagardotegi.getIrudia());
+		sagardotegiImpl.setIrudiKopurua(sagardotegi.getIrudiKopurua());
+		sagardotegiImpl.setIruzkinKopurua(sagardotegi.getIruzkinKopurua());
 		sagardotegiImpl.setBalorazioKopurua(sagardotegi.getBalorazioKopurua());
 		sagardotegiImpl.setBalorazioenBB(sagardotegi.getBalorazioenBB());
 		sagardotegiImpl.setCreateDate(sagardotegi.getCreateDate());

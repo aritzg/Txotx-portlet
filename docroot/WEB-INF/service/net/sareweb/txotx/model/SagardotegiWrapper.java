@@ -58,6 +58,8 @@ public class SagardotegiWrapper implements Sagardotegi,
 		attributes.put("edukiera", getEdukiera());
 		attributes.put("irudiKarpetaId", getIrudiKarpetaId());
 		attributes.put("irudia", getIrudia());
+		attributes.put("irudiKopurua", getIrudiKopurua());
+		attributes.put("iruzkinKopurua", getIruzkinKopurua());
 		attributes.put("balorazioKopurua", getBalorazioKopurua());
 		attributes.put("balorazioenBB", getBalorazioenBB());
 		attributes.put("createDate", getCreateDate());
@@ -137,6 +139,18 @@ public class SagardotegiWrapper implements Sagardotegi,
 
 		if (irudia != null) {
 			setIrudia(irudia);
+		}
+
+		Long irudiKopurua = (Long)attributes.get("irudiKopurua");
+
+		if (irudiKopurua != null) {
+			setIrudiKopurua(irudiKopurua);
+		}
+
+		Long iruzkinKopurua = (Long)attributes.get("iruzkinKopurua");
+
+		if (iruzkinKopurua != null) {
+			setIruzkinKopurua(iruzkinKopurua);
 		}
 
 		Long balorazioKopurua = (Long)attributes.get("balorazioKopurua");
@@ -396,6 +410,42 @@ public class SagardotegiWrapper implements Sagardotegi,
 	*/
 	public void setIrudia(java.lang.String irudia) {
 		_sagardotegi.setIrudia(irudia);
+	}
+
+	/**
+	* Returns the irudi kopurua of this sagardotegi.
+	*
+	* @return the irudi kopurua of this sagardotegi
+	*/
+	public long getIrudiKopurua() {
+		return _sagardotegi.getIrudiKopurua();
+	}
+
+	/**
+	* Sets the irudi kopurua of this sagardotegi.
+	*
+	* @param irudiKopurua the irudi kopurua of this sagardotegi
+	*/
+	public void setIrudiKopurua(long irudiKopurua) {
+		_sagardotegi.setIrudiKopurua(irudiKopurua);
+	}
+
+	/**
+	* Returns the iruzkin kopurua of this sagardotegi.
+	*
+	* @return the iruzkin kopurua of this sagardotegi
+	*/
+	public long getIruzkinKopurua() {
+		return _sagardotegi.getIruzkinKopurua();
+	}
+
+	/**
+	* Sets the iruzkin kopurua of this sagardotegi.
+	*
+	* @param iruzkinKopurua the iruzkin kopurua of this sagardotegi
+	*/
+	public void setIruzkinKopurua(long iruzkinKopurua) {
+		_sagardotegi.setIruzkinKopurua(iruzkinKopurua);
 	}
 
 	/**

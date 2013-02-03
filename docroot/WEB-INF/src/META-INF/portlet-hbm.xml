@@ -34,6 +34,8 @@
 		<property name="edukiera" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="irudiKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="iruzkinKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="balorazioKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="balorazioenBB" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />

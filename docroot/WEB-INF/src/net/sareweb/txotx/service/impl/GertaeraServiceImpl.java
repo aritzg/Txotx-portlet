@@ -14,6 +14,7 @@
 
 package net.sareweb.txotx.service.impl;
 
+import java.net.URLDecoder;
 import java.util.Date;
 import java.util.List;
 
@@ -21,13 +22,18 @@ import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.dao.orm.Criterion;
 import com.liferay.portal.kernel.dao.orm.DynamicQuery;
 import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.OrderFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 import com.liferay.portal.security.auth.PrincipalException;
 import com.liferay.portal.service.UserLocalServiceUtil;
 
 import net.sareweb.txotx.model.Gertaera;
+import net.sareweb.txotx.model.Sagardotegi;
 import net.sareweb.txotx.service.GertaeraLocalServiceUtil;
+import net.sareweb.txotx.service.SagardotegiLocalServiceUtil;
+import net.sareweb.txotx.service.SagardotegiServiceUtil;
 import net.sareweb.txotx.service.base.GertaeraServiceBaseImpl;
 import net.sareweb.txotx.util.Constants;
 
@@ -60,8 +66,19 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		gertaera.setSagardotegiId(sagardotegiId);
 		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_TESTUA);
 		gertaera.setCreateDate(new Date());
-		gertaera.setTestua(testua);
-		return GertaeraLocalServiceUtil.addGertaera(gertaera);
+		gertaera.setTestua(decode(testua));
+		gertaera = GertaeraLocalServiceUtil.addGertaera(gertaera);
+		
+		try {
+			Sagardotegi sagardotegi = SagardotegiServiceUtil.getSagardotegia(sagardotegiId);
+			sagardotegi.setIruzkinKopurua(sagardotegi.getIruzkinKopurua()+1);
+			SagardotegiLocalServiceUtil.updateSagardotegi(sagardotegi);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return gertaera;
 	}
 	
 	public Gertaera gehituArgazkiGertaera(long sagardotegiId, String testua, long irudiKarpetaId, String irudia) throws SystemException, PrincipalException{
@@ -77,10 +94,19 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		gertaera.setSagardotegiId(sagardotegiId);
 		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_ARGAZKIA);
 		gertaera.setCreateDate(new Date());
-		gertaera.setTestua(testua);
+		gertaera.setTestua(decode(testua));
 		gertaera.setIrudiKarpetaId(irudiKarpetaId);
 		gertaera.setIrudia(irudia);
-		return GertaeraLocalServiceUtil.addGertaera(gertaera);
+		gertaera = GertaeraLocalServiceUtil.addGertaera(gertaera);
+		try {
+			Sagardotegi sagardotegi = SagardotegiServiceUtil.getSagardotegia(sagardotegiId);
+			sagardotegi.setIrudiKopurua(sagardotegi.getIrudiKopurua()+1);
+			SagardotegiLocalServiceUtil.updateSagardotegi(sagardotegi);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return gertaera;
 	}
 	
 	public Gertaera gehituBalorazioGertaera(long sagardotegiId, String testua, long balorazioa) throws SystemException, PrincipalException{
@@ -94,11 +120,25 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		}
 		
 		gertaera.setSagardotegiId(sagardotegiId);
-		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_TESTUA);
+		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_BALORAZIOA);
 		gertaera.setCreateDate(new Date());
-		gertaera.setTestua(testua);
+		gertaera.setTestua(decode(testua));
 		gertaera.setBalorazioa(balorazioa);
-		return GertaeraLocalServiceUtil.addGertaera(gertaera);
+		gertaera = GertaeraLocalServiceUtil.addGertaera(gertaera);
+		
+		try {
+			Sagardotegi sagardotegi = SagardotegiServiceUtil.getSagardotegia(sagardotegiId);
+			double bbb = GertaeraLocalServiceUtil.getSagardotegiarenBalorazioBB(sagardotegiId);
+			sagardotegi.setBalorazioKopurua(sagardotegi.getBalorazioKopurua()+1);
+			sagardotegi.setBalorazioenBB(bbb);
+			SagardotegiLocalServiceUtil.updateSagardotegi(sagardotegi);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return gertaera;
+				
 	}
 	
 	public List<Gertaera> getGertaerakOlderThanDate(long sagardotegiId, long date, int blockSize) throws SystemException{
@@ -107,14 +147,14 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			Criterion sagardotegiCr = PropertyFactoryUtil.forName("sagardotegiId").eq(sagardotegiId);
 			dq.add(sagardotegiCr);
 		}
-		if(sagardotegiId==0){
-			Date now = new Date();
-			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(now.getTime());
+		if(date==0){
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(new Date());
 			dq.add(dateCr);
 		}else{
-			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(date);
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(new Date(date));
 			dq.add(dateCr);
 		}
+		dq.addOrder(OrderFactoryUtil.desc("createDate"));
 		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
 	}
 	
@@ -124,14 +164,22 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			Criterion sagardotegiCr = PropertyFactoryUtil.forName("sagardotegiId").eq(sagardotegiId);
 			dq.add(sagardotegiCr);
 		}
-		if(sagardotegiId==0){
-			Date now = new Date();
-			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(now.getTime());
+		if(date==0){
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(new Date());
 			dq.add(dateCr);
 		}else{
-			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(date);
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(new Date(date + 1000));
 			dq.add(dateCr);
 		}
+		dq.addOrder(OrderFactoryUtil.desc("createDate"));
 		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
+	}
+	
+	private String decode(String codedString){
+		try {
+			return URLDecoder.decode(codedString, "UTF-8");
+		} catch (Exception e) {
+			return "ERROR";
+		}
 	}
 }

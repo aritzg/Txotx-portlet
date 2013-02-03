@@ -272,6 +272,11 @@ public class GertaeraLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static double getSagardotegiarenBalorazioBB(long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getSagardotegiarenBalorazioBB(sagardotegiId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

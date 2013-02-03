@@ -79,7 +79,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Gertaera (gertaeraId LONG not null primary key,sagardotegiId LONG,userId LONG,screenName VARCHAR(75) null,gertaeraMota VARCHAR(75) null,testua VARCHAR(75) null,irudiKarpetaId LONG,irudia VARCHAR(75) null,balorazioa LONG,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Gertaera (gertaeraId LONG not null primary key,sagardotegiId LONG,userId LONG,screenName VARCHAR(75) null,gertaeraMota VARCHAR(75) null,testua VARCHAR(1000) null,irudiKarpetaId LONG,irudia VARCHAR(75) null,balorazioa LONG,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Gertaera";
 	public static final String ORDER_BY_JPQL = " ORDER BY gertaera.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Gertaera.createDate DESC";
