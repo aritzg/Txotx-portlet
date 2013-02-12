@@ -176,6 +176,7 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 	}
 	
 	private String decode(String codedString){
+		if(codedString==null || codedString.equals("")) return "";
 		try {
 			return URLDecoder.decode(codedString, "UTF-8");
 		} catch (Exception e) {
