@@ -611,6 +611,8 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
+	@BeanReference(type = SailkapenaPersistence.class)
+	protected SailkapenaPersistence sailkapenaPersistence;
 	@BeanReference(type = ResourcePersistence.class)
 	protected ResourcePersistence resourcePersistence;
 	@BeanReference(type = UserPersistence.class)

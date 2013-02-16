@@ -23,6 +23,7 @@
 		<field name="helbidea" type="String" />
 		<field name="telefonoa" type="String" />
 		<field name="emaila" type="String" />
+		<field name="twitter" type="String" />
 		<field name="weborria" type="String" />
 		<field name="lat" type="double" />
 		<field name="lng" type="double" />
@@ -35,5 +36,14 @@
 		<field name="balorazioenBB" type="double" />
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="net.sareweb.txotx.model.Sailkapena">
+		<field name="sailkapenaId" type="long" />
+		<field name="userId" type="long" />
+		<field name="screenName" type="String" />
+		<field name="iruzkinKopurua" type="long" />
+		<field name="balorazioKopurua" type="long" />
+		<field name="argazkiKopurua" type="long" />
+		<field name="gertaeraKopurua" type="long" />
 	</model>
 </model-hints>

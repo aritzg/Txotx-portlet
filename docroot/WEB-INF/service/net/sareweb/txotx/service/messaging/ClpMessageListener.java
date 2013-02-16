@@ -22,6 +22,8 @@ import net.sareweb.txotx.service.GertaeraLocalServiceUtil;
 import net.sareweb.txotx.service.GertaeraServiceUtil;
 import net.sareweb.txotx.service.SagardotegiLocalServiceUtil;
 import net.sareweb.txotx.service.SagardotegiServiceUtil;
+import net.sareweb.txotx.service.SailkapenaLocalServiceUtil;
+import net.sareweb.txotx.service.SailkapenaServiceUtil;
 
 /**
  * @author Brian Wing Shun Chan
@@ -44,6 +46,9 @@ public class ClpMessageListener extends BaseMessageListener {
 			SagardotegiLocalServiceUtil.clearService();
 
 			SagardotegiServiceUtil.clearService();
+			SailkapenaLocalServiceUtil.clearService();
+
+			SailkapenaServiceUtil.clearService();
 		}
 	}
 }

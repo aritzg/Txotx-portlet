@@ -4,6 +4,7 @@
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="net.sareweb.txotx.model.Gertaera" />
 	<import class="net.sareweb.txotx.model.Sagardotegi" />
+	<import class="net.sareweb.txotx.model.Sailkapena" />
 	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
 		<id name="gertaeraId" type="long">
 			<generator class="assigned" />
@@ -28,6 +29,7 @@
 		<property name="helbidea" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="telefonoa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="emaila" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitter" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="weborria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="lat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
 		<property name="lng" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
@@ -40,5 +42,16 @@
 		<property name="balorazioenBB" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.txotx.model.impl.SailkapenaImpl" table="Txotx_Sailkapena">
+		<id name="sailkapenaId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="screenName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="iruzkinKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="balorazioKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="argazkiKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="gertaeraKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 </hibernate-mapping>

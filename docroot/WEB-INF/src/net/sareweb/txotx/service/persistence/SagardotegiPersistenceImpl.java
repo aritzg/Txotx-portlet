@@ -307,6 +307,7 @@ public class SagardotegiPersistenceImpl extends BasePersistenceImpl<Sagardotegi>
 		sagardotegiImpl.setHelbidea(sagardotegi.getHelbidea());
 		sagardotegiImpl.setTelefonoa(sagardotegi.getTelefonoa());
 		sagardotegiImpl.setEmaila(sagardotegi.getEmaila());
+		sagardotegiImpl.setTwitter(sagardotegi.getTwitter());
 		sagardotegiImpl.setWeborria(sagardotegi.getWeborria());
 		sagardotegiImpl.setLat(sagardotegi.getLat());
 		sagardotegiImpl.setLng(sagardotegi.getLng());
@@ -621,6 +622,8 @@ public class SagardotegiPersistenceImpl extends BasePersistenceImpl<Sagardotegi>
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
+	@BeanReference(type = SailkapenaPersistence.class)
+	protected SailkapenaPersistence sailkapenaPersistence;
 	@BeanReference(type = ResourcePersistence.class)
 	protected ResourcePersistence resourcePersistence;
 	@BeanReference(type = UserPersistence.class)

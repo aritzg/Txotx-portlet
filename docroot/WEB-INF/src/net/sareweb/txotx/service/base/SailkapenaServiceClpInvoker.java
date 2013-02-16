@@ -14,15 +14,15 @@
 
 package net.sareweb.txotx.service.base;
 
-import net.sareweb.txotx.service.SagardotegiServiceUtil;
+import net.sareweb.txotx.service.SailkapenaServiceUtil;
 
 import java.util.Arrays;
 
 /**
  * @author Brian Wing Shun Chan
  */
-public class SagardotegiServiceClpInvoker {
-	public SagardotegiServiceClpInvoker() {
+public class SailkapenaServiceClpInvoker {
+	public SailkapenaServiceClpInvoker() {
 		_methodName34 = "getBeanIdentifier";
 
 		_methodParameterTypes34 = new String[] {  };
@@ -31,35 +31,26 @@ public class SagardotegiServiceClpInvoker {
 
 		_methodParameterTypes35 = new String[] { "java.lang.String" };
 
-		_methodName40 = "getSagardotegia";
+		_methodName40 = "getSailkapenak";
 
-		_methodParameterTypes40 = new String[] { "long" };
-
-		_methodName41 = "getSagardotegiak";
-
-		_methodParameterTypes41 = new String[] {  };
+		_methodParameterTypes40 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
 		if (_methodName34.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
-			return SagardotegiServiceUtil.getBeanIdentifier();
+			return SailkapenaServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName35.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
-			SagardotegiServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			SailkapenaServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName40.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
-			return SagardotegiServiceUtil.getSagardotegia(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName41.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
-			return SagardotegiServiceUtil.getSagardotegiak();
+			return SailkapenaServiceUtil.getSailkapenak();
 		}
 
 		throw new UnsupportedOperationException();
@@ -71,6 +62,4 @@ public class SagardotegiServiceClpInvoker {
 	private String[] _methodParameterTypes35;
 	private String _methodName40;
 	private String[] _methodParameterTypes40;
-	private String _methodName41;
-	private String[] _methodParameterTypes41;
 }

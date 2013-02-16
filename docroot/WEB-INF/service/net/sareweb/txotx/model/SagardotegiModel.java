@@ -149,6 +149,21 @@ public interface SagardotegiModel extends BaseModel<Sagardotegi> {
 	public void setEmaila(String emaila);
 
 	/**
+	 * Returns the twitter of this sagardotegi.
+	 *
+	 * @return the twitter of this sagardotegi
+	 */
+	@AutoEscape
+	public String getTwitter();
+
+	/**
+	 * Sets the twitter of this sagardotegi.
+	 *
+	 * @param twitter the twitter of this sagardotegi
+	 */
+	public void setTwitter(String twitter);
+
+	/**
 	 * Returns the weborria of this sagardotegi.
 	 *
 	 * @return the weborria of this sagardotegi

@@ -37,6 +37,7 @@ public class SagardotegiSoap implements Serializable {
 		soapModel.setHelbidea(model.getHelbidea());
 		soapModel.setTelefonoa(model.getTelefonoa());
 		soapModel.setEmaila(model.getEmaila());
+		soapModel.setTwitter(model.getTwitter());
 		soapModel.setWeborria(model.getWeborria());
 		soapModel.setLat(model.getLat());
 		soapModel.setLng(model.getLng());
@@ -149,6 +150,14 @@ public class SagardotegiSoap implements Serializable {
 		_emaila = emaila;
 	}
 
+	public String getTwitter() {
+		return _twitter;
+	}
+
+	public void setTwitter(String twitter) {
+		_twitter = twitter;
+	}
+
 	public String getWeborria() {
 		return _weborria;
 	}
@@ -251,6 +260,7 @@ public class SagardotegiSoap implements Serializable {
 	private String _helbidea;
 	private String _telefonoa;
 	private String _emaila;
+	private String _twitter;
 	private String _weborria;
 	private double _lat;
 	private double _lng;

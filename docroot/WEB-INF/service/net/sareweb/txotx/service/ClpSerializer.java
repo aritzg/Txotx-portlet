@@ -27,6 +27,7 @@ import com.liferay.portal.model.BaseModel;
 
 import net.sareweb.txotx.model.GertaeraClp;
 import net.sareweb.txotx.model.SagardotegiClp;
+import net.sareweb.txotx.model.SailkapenaClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -111,6 +112,10 @@ public class ClpSerializer {
 			return translateInputSagardotegi(oldModel);
 		}
 
+		if (oldModelClassName.equals(SailkapenaClp.class.getName())) {
+			return translateInputSailkapena(oldModel);
+		}
+
 		return oldModel;
 	}
 
@@ -146,6 +151,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputSailkapena(BaseModel<?> oldModel) {
+		SailkapenaClp oldClpModel = (SailkapenaClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getSailkapenaRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInput(Object obj) {
 		if (obj instanceof BaseModel<?>) {
 			return translateInput((BaseModel<?>)obj);
@@ -171,6 +186,11 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"net.sareweb.txotx.model.impl.SagardotegiImpl")) {
 			return translateOutputSagardotegi(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"net.sareweb.txotx.model.impl.SailkapenaImpl")) {
+			return translateOutputSailkapena(oldModel);
 		}
 
 		return oldModel;
@@ -261,6 +281,10 @@ public class ClpSerializer {
 			return new net.sareweb.txotx.NoSuchSagardotegiException();
 		}
 
+		if (className.equals("net.sareweb.txotx.NoSuchSailkapenaException")) {
+			return new net.sareweb.txotx.NoSuchSailkapenaException();
+		}
+
 		return throwable;
 	}
 
@@ -280,6 +304,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setSagardotegiRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputSailkapena(BaseModel<?> oldModel) {
+		SailkapenaClp newModel = new SailkapenaClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setSailkapenaRemoteModel(oldModel);
 
 		return newModel;
 	}

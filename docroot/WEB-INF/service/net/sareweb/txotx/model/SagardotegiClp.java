@@ -73,6 +73,7 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 		attributes.put("helbidea", getHelbidea());
 		attributes.put("telefonoa", getTelefonoa());
 		attributes.put("emaila", getEmaila());
+		attributes.put("twitter", getTwitter());
 		attributes.put("weborria", getWeborria());
 		attributes.put("lat", getLat());
 		attributes.put("lng", getLng());
@@ -125,6 +126,12 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 
 		if (emaila != null) {
 			setEmaila(emaila);
+		}
+
+		String twitter = (String)attributes.get("twitter");
+
+		if (twitter != null) {
+			setTwitter(twitter);
 		}
 
 		String weborria = (String)attributes.get("weborria");
@@ -246,6 +253,14 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 
 	public void setEmaila(String emaila) {
 		_emaila = emaila;
+	}
+
+	public String getTwitter() {
+		return _twitter;
+	}
+
+	public void setTwitter(String twitter) {
+		_twitter = twitter;
 	}
 
 	public String getWeborria() {
@@ -377,6 +392,7 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 		clone.setHelbidea(getHelbidea());
 		clone.setTelefonoa(getTelefonoa());
 		clone.setEmaila(getEmaila());
+		clone.setTwitter(getTwitter());
 		clone.setWeborria(getWeborria());
 		clone.setLat(getLat());
 		clone.setLng(getLng());
@@ -439,7 +455,7 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{sagardotegiId=");
 		sb.append(getSagardotegiId());
@@ -453,6 +469,8 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 		sb.append(getTelefonoa());
 		sb.append(", emaila=");
 		sb.append(getEmaila());
+		sb.append(", twitter=");
+		sb.append(getTwitter());
 		sb.append(", weborria=");
 		sb.append(getWeborria());
 		sb.append(", lat=");
@@ -483,7 +501,7 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(58);
+		StringBundler sb = new StringBundler(61);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Sagardotegi");
@@ -512,6 +530,10 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 		sb.append(
 			"<column><column-name>emaila</column-name><column-value><![CDATA[");
 		sb.append(getEmaila());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>twitter</column-name><column-value><![CDATA[");
+		sb.append(getTwitter());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>weborria</column-name><column-value><![CDATA[");
@@ -573,6 +595,7 @@ public class SagardotegiClp extends BaseModelImpl<Sagardotegi>
 	private String _helbidea;
 	private String _telefonoa;
 	private String _emaila;
+	private String _twitter;
 	private String _weborria;
 	private double _lat;
 	private double _lng;

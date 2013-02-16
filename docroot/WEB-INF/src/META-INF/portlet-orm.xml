@@ -38,6 +38,7 @@
 			<basic name="helbidea" />
 			<basic name="telefonoa" />
 			<basic name="emaila" />
+			<basic name="twitter" />
 			<basic name="weborria" />
 			<basic name="lat" />
 			<basic name="lng" />
@@ -59,12 +60,31 @@
 			<transient name="primaryKeyObj" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="net.sareweb.txotx.model.impl.SailkapenaModelImpl">
+		<attributes>
+			<id name="sailkapenaId" />
+			<basic name="userId" />
+			<basic name="screenName" />
+			<basic name="iruzkinKopurua" />
+			<basic name="balorazioKopurua" />
+			<basic name="argazkiKopurua" />
+			<basic name="gertaeraKopurua" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="net.sareweb.txotx.model.impl.GertaeraImpl" name="Gertaera">
 		<table name="Txotx_Gertaera" />
 		<attributes />
 	</entity>
 	<entity class="net.sareweb.txotx.model.impl.SagardotegiImpl" name="Sagardotegi">
 		<table name="Txotx_Sagardotegi" />
+		<attributes />
+	</entity>
+	<entity class="net.sareweb.txotx.model.impl.SailkapenaImpl" name="Sailkapena">
+		<table name="Txotx_Sailkapena" />
 		<attributes />
 	</entity>
 </entity-mappings>

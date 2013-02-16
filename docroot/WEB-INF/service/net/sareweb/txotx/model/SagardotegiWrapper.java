@@ -52,6 +52,7 @@ public class SagardotegiWrapper implements Sagardotegi,
 		attributes.put("helbidea", getHelbidea());
 		attributes.put("telefonoa", getTelefonoa());
 		attributes.put("emaila", getEmaila());
+		attributes.put("twitter", getTwitter());
 		attributes.put("weborria", getWeborria());
 		attributes.put("lat", getLat());
 		attributes.put("lng", getLng());
@@ -103,6 +104,12 @@ public class SagardotegiWrapper implements Sagardotegi,
 
 		if (emaila != null) {
 			setEmaila(emaila);
+		}
+
+		String twitter = (String)attributes.get("twitter");
+
+		if (twitter != null) {
+			setTwitter(twitter);
 		}
 
 		String weborria = (String)attributes.get("weborria");
@@ -302,6 +309,24 @@ public class SagardotegiWrapper implements Sagardotegi,
 	*/
 	public void setEmaila(java.lang.String emaila) {
 		_sagardotegi.setEmaila(emaila);
+	}
+
+	/**
+	* Returns the twitter of this sagardotegi.
+	*
+	* @return the twitter of this sagardotegi
+	*/
+	public java.lang.String getTwitter() {
+		return _sagardotegi.getTwitter();
+	}
+
+	/**
+	* Sets the twitter of this sagardotegi.
+	*
+	* @param twitter the twitter of this sagardotegi
+	*/
+	public void setTwitter(java.lang.String twitter) {
+		_sagardotegi.setTwitter(twitter);
 	}
 
 	/**

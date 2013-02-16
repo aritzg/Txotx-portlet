@@ -34,6 +34,7 @@ import net.sareweb.txotx.model.Sagardotegi;
 import net.sareweb.txotx.service.GertaeraLocalServiceUtil;
 import net.sareweb.txotx.service.SagardotegiLocalServiceUtil;
 import net.sareweb.txotx.service.SagardotegiServiceUtil;
+import net.sareweb.txotx.service.SailkapenaLocalServiceUtil;
 import net.sareweb.txotx.service.base.GertaeraServiceBaseImpl;
 import net.sareweb.txotx.util.Constants;
 
@@ -78,6 +79,8 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			e.printStackTrace();
 		}
 		
+		SailkapenaLocalServiceUtil.incGertaera(gertaera.getUserId(), Constants.GERTAERA_MOTA_TESTUA);
+		
 		return gertaera;
 	}
 	
@@ -106,6 +109,9 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		SailkapenaLocalServiceUtil.incGertaera(gertaera.getUserId(), Constants.GERTAERA_MOTA_ARGAZKIA);
+		
 		return gertaera;
 	}
 	
@@ -136,6 +142,8 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		SailkapenaLocalServiceUtil.incGertaera(gertaera.getUserId(), Constants.GERTAERA_MOTA_BALORAZIOA);
 		
 		return gertaera;
 				

@@ -42,8 +42,11 @@ import net.sareweb.txotx.service.GertaeraLocalService;
 import net.sareweb.txotx.service.GertaeraService;
 import net.sareweb.txotx.service.SagardotegiLocalService;
 import net.sareweb.txotx.service.SagardotegiService;
+import net.sareweb.txotx.service.SailkapenaLocalService;
+import net.sareweb.txotx.service.SailkapenaService;
 import net.sareweb.txotx.service.persistence.GertaeraPersistence;
 import net.sareweb.txotx.service.persistence.SagardotegiPersistence;
+import net.sareweb.txotx.service.persistence.SailkapenaPersistence;
 
 import java.io.Serializable;
 
@@ -382,6 +385,62 @@ public abstract class GertaeraLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the sailkapena local service.
+	 *
+	 * @return the sailkapena local service
+	 */
+	public SailkapenaLocalService getSailkapenaLocalService() {
+		return sailkapenaLocalService;
+	}
+
+	/**
+	 * Sets the sailkapena local service.
+	 *
+	 * @param sailkapenaLocalService the sailkapena local service
+	 */
+	public void setSailkapenaLocalService(
+		SailkapenaLocalService sailkapenaLocalService) {
+		this.sailkapenaLocalService = sailkapenaLocalService;
+	}
+
+	/**
+	 * Returns the sailkapena remote service.
+	 *
+	 * @return the sailkapena remote service
+	 */
+	public SailkapenaService getSailkapenaService() {
+		return sailkapenaService;
+	}
+
+	/**
+	 * Sets the sailkapena remote service.
+	 *
+	 * @param sailkapenaService the sailkapena remote service
+	 */
+	public void setSailkapenaService(SailkapenaService sailkapenaService) {
+		this.sailkapenaService = sailkapenaService;
+	}
+
+	/**
+	 * Returns the sailkapena persistence.
+	 *
+	 * @return the sailkapena persistence
+	 */
+	public SailkapenaPersistence getSailkapenaPersistence() {
+		return sailkapenaPersistence;
+	}
+
+	/**
+	 * Sets the sailkapena persistence.
+	 *
+	 * @param sailkapenaPersistence the sailkapena persistence
+	 */
+	public void setSailkapenaPersistence(
+		SailkapenaPersistence sailkapenaPersistence) {
+		this.sailkapenaPersistence = sailkapenaPersistence;
+	}
+
+	/**
 	 * Returns the counter local service.
 	 *
 	 * @return the counter local service
@@ -580,6 +639,12 @@ public abstract class GertaeraLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected SagardotegiService sagardotegiService;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
+	@BeanReference(type = SailkapenaLocalService.class)
+	protected SailkapenaLocalService sailkapenaLocalService;
+	@BeanReference(type = SailkapenaService.class)
+	protected SailkapenaService sailkapenaService;
+	@BeanReference(type = SailkapenaPersistence.class)
+	protected SailkapenaPersistence sailkapenaPersistence;
 	@BeanReference(type = CounterLocalService.class)
 	protected CounterLocalService counterLocalService;
 	@BeanReference(type = ResourceLocalService.class)

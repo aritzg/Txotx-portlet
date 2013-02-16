@@ -52,6 +52,10 @@ public class GertaeraLocalServiceImpl extends GertaeraLocalServiceBaseImpl {
 		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
 		Criterion sagardotegiCr = PropertyFactoryUtil.forName("sagardotegiId").eq(sagardotegiId);
 		dq.add(sagardotegiCr);
+		
+		Criterion gertaeraMotaCr = PropertyFactoryUtil.forName("gertaeraMota").eq("GERTAERA_MOTA_BALORAZIOA");
+		dq.add(gertaeraMotaCr);
+		
 		dq.setProjection(ProjectionFactoryUtil.avg("balorazioa"));
 		List<Double> results = GertaeraLocalServiceUtil.dynamicQuery(dq);
 		if(results!=null){

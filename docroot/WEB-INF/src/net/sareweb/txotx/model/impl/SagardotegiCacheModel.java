@@ -35,7 +35,7 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 	Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{sagardotegiId=");
 		sb.append(sagardotegiId);
@@ -49,6 +49,8 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 		sb.append(telefonoa);
 		sb.append(", emaila=");
 		sb.append(emaila);
+		sb.append(", twitter=");
+		sb.append(twitter);
 		sb.append(", weborria=");
 		sb.append(weborria);
 		sb.append(", lat=");
@@ -118,6 +120,13 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 			sagardotegiImpl.setEmaila(emaila);
 		}
 
+		if (twitter == null) {
+			sagardotegiImpl.setTwitter(StringPool.BLANK);
+		}
+		else {
+			sagardotegiImpl.setTwitter(twitter);
+		}
+
 		if (weborria == null) {
 			sagardotegiImpl.setWeborria(StringPool.BLANK);
 		}
@@ -167,6 +176,7 @@ public class SagardotegiCacheModel implements CacheModel<Sagardotegi>,
 	public String helbidea;
 	public String telefonoa;
 	public String emaila;
+	public String twitter;
 	public String weborria;
 	public double lat;
 	public double lng;

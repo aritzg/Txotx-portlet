@@ -71,6 +71,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			{ "helbidea", Types.VARCHAR },
 			{ "telefonoa", Types.VARCHAR },
 			{ "emaila", Types.VARCHAR },
+			{ "twitter", Types.VARCHAR },
 			{ "weborria", Types.VARCHAR },
 			{ "lat", Types.DOUBLE },
 			{ "lng", Types.DOUBLE },
@@ -84,7 +85,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,weborria VARCHAR(75) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,twitter VARCHAR(75) null,weborria VARCHAR(75) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Sagardotegi";
 	public static final String ORDER_BY_JPQL = " ORDER BY sagardotegi.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Sagardotegi.createDate DESC";
@@ -118,6 +119,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		model.setHelbidea(soapModel.getHelbidea());
 		model.setTelefonoa(soapModel.getTelefonoa());
 		model.setEmaila(soapModel.getEmaila());
+		model.setTwitter(soapModel.getTwitter());
 		model.setWeborria(soapModel.getWeborria());
 		model.setLat(soapModel.getLat());
 		model.setLng(soapModel.getLng());
@@ -194,6 +196,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		attributes.put("helbidea", getHelbidea());
 		attributes.put("telefonoa", getTelefonoa());
 		attributes.put("emaila", getEmaila());
+		attributes.put("twitter", getTwitter());
 		attributes.put("weborria", getWeborria());
 		attributes.put("lat", getLat());
 		attributes.put("lng", getLng());
@@ -246,6 +249,12 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 
 		if (emaila != null) {
 			setEmaila(emaila);
+		}
+
+		String twitter = (String)attributes.get("twitter");
+
+		if (twitter != null) {
+			setTwitter(twitter);
 		}
 
 		String weborria = (String)attributes.get("weborria");
@@ -401,6 +410,20 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	}
 
 	@JSON
+	public String getTwitter() {
+		if (_twitter == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _twitter;
+		}
+	}
+
+	public void setTwitter(String twitter) {
+		_twitter = twitter;
+	}
+
+	@JSON
 	public String getWeborria() {
 		if (_weborria == null) {
 			return StringPool.BLANK;
@@ -552,6 +575,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sagardotegiImpl.setHelbidea(getHelbidea());
 		sagardotegiImpl.setTelefonoa(getTelefonoa());
 		sagardotegiImpl.setEmaila(getEmaila());
+		sagardotegiImpl.setTwitter(getTwitter());
 		sagardotegiImpl.setWeborria(getWeborria());
 		sagardotegiImpl.setLat(getLat());
 		sagardotegiImpl.setLng(getLng());
@@ -664,6 +688,14 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			sagardotegiCacheModel.emaila = null;
 		}
 
+		sagardotegiCacheModel.twitter = getTwitter();
+
+		String twitter = sagardotegiCacheModel.twitter;
+
+		if ((twitter != null) && (twitter.length() == 0)) {
+			sagardotegiCacheModel.twitter = null;
+		}
+
 		sagardotegiCacheModel.weborria = getWeborria();
 
 		String weborria = sagardotegiCacheModel.weborria;
@@ -719,7 +751,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{sagardotegiId=");
 		sb.append(getSagardotegiId());
@@ -733,6 +765,8 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sb.append(getTelefonoa());
 		sb.append(", emaila=");
 		sb.append(getEmaila());
+		sb.append(", twitter=");
+		sb.append(getTwitter());
 		sb.append(", weborria=");
 		sb.append(getWeborria());
 		sb.append(", lat=");
@@ -763,7 +797,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(58);
+		StringBundler sb = new StringBundler(61);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Sagardotegi");
@@ -792,6 +826,10 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 		sb.append(
 			"<column><column-name>emaila</column-name><column-value><![CDATA[");
 		sb.append(getEmaila());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>twitter</column-name><column-value><![CDATA[");
+		sb.append(getTwitter());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>weborria</column-name><column-value><![CDATA[");
@@ -857,6 +895,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 	private String _helbidea;
 	private String _telefonoa;
 	private String _emaila;
+	private String _twitter;
 	private String _weborria;
 	private double _lat;
 	private double _lng;

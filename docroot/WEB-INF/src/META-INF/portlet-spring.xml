@@ -7,4 +7,7 @@
 	<bean id="net.sareweb.txotx.service.SagardotegiLocalService" class="net.sareweb.txotx.service.impl.SagardotegiLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.SagardotegiService" class="net.sareweb.txotx.service.impl.SagardotegiServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.SagardotegiPersistence" class="net.sareweb.txotx.service.persistence.SagardotegiPersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.txotx.service.SailkapenaLocalService" class="net.sareweb.txotx.service.impl.SailkapenaLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.SailkapenaService" class="net.sareweb.txotx.service.impl.SailkapenaServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.SailkapenaPersistence" class="net.sareweb.txotx.service.persistence.SailkapenaPersistenceImpl" parent="basePersistence" />
 </beans>
