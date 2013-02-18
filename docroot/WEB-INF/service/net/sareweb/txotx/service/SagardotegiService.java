@@ -72,4 +72,8 @@ public interface SagardotegiService extends BaseService, InvokableService {
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<net.sareweb.txotx.model.Sagardotegi> getSagardotegiak()
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public void resetPassword(java.lang.String emailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

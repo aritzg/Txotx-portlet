@@ -1,0 +1,1 @@
+create index IX_7ADD0F7F on Txotx_Sailkapena (userId);

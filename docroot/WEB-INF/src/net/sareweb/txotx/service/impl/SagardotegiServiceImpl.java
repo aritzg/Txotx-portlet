@@ -16,7 +16,15 @@ package net.sareweb.txotx.service.impl;
 
 import java.util.List;
 
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.model.Company;
+import com.liferay.portal.model.CompanyConstants;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.CompanyLocalServiceUtil;
+import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.service.persistence.CompanyUtil;
+import com.liferay.util.PwdGenerator;
 
 import net.sareweb.txotx.model.Sagardotegi;
 import net.sareweb.txotx.service.base.SagardotegiServiceBaseImpl;
@@ -49,5 +57,13 @@ public class SagardotegiServiceImpl extends SagardotegiServiceBaseImpl {
 	
 	public List<Sagardotegi> getSagardotegiak() throws SystemException{
 		return sagardotegiPersistence.findAll(-1, -1, new SagardotegiBBComparator());
+	}
+	
+	public void resetPassword(String emailAddress) throws SystemException, PortalException{
+		List<Company> companies = CompanyLocalServiceUtil.getCompanies();
+		User u = UserLocalServiceUtil.getUserByEmailAddress(companies.get(0).getCompanyId(), emailAddress);
+		String pass = PwdGenerator.getPassword(6);
+		System.out.println("New pass " + pass);
+		UserLocalServiceUtil.updatePassword(u.getUserId(),pass , pass, false, false);
 	}
 }

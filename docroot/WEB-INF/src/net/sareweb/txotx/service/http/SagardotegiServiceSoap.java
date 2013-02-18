@@ -93,5 +93,17 @@ public class SagardotegiServiceSoap {
 		}
 	}
 
+	public static void resetPassword(java.lang.String emailAddress)
+		throws RemoteException {
+		try {
+			SagardotegiServiceUtil.resetPassword(emailAddress);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(SagardotegiServiceSoap.class);
 }

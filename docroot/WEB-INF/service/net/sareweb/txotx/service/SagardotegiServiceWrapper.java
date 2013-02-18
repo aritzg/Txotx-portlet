@@ -66,6 +66,12 @@ public class SagardotegiServiceWrapper implements SagardotegiService,
 		return _sagardotegiService.getSagardotegiak();
 	}
 
+	public void resetPassword(java.lang.String emailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_sagardotegiService.resetPassword(emailAddress);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

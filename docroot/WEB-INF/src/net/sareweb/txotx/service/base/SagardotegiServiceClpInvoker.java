@@ -38,6 +38,10 @@ public class SagardotegiServiceClpInvoker {
 		_methodName41 = "getSagardotegiak";
 
 		_methodParameterTypes41 = new String[] {  };
+
+		_methodName42 = "resetPassword";
+
+		_methodParameterTypes42 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -62,6 +66,11 @@ public class SagardotegiServiceClpInvoker {
 			return SagardotegiServiceUtil.getSagardotegiak();
 		}
 
+		if (_methodName42.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes42, parameterTypes)) {
+			SagardotegiServiceUtil.resetPassword((java.lang.String)arguments[0]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -73,4 +82,6 @@ public class SagardotegiServiceClpInvoker {
 	private String[] _methodParameterTypes40;
 	private String _methodName41;
 	private String[] _methodParameterTypes41;
+	private String _methodName42;
+	private String[] _methodParameterTypes42;
 }

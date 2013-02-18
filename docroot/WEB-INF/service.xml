@@ -70,4 +70,29 @@
 		
 	</entity>
 	
+	<entity name="Sailkapena" local-service="true" remote-service="true" cache-enabled="false">
+	    
+	    <!-- PK fields -->
+		<column name="sailkapenaId" type="long" primary="true" />
+		
+		<!-- FK fields -->
+		<column name="userId" type="long"/>
+		<column name="screenName" type="String"/>
+		
+		<column name="iruzkinKopurua" type="long"/>
+		<column name="balorazioKopurua" type="long"/>
+		<column name="argazkiKopurua" type="long"/>
+		<column name="gertaeraKopurua" type="long"/>
+		
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="gertaeraKopurua" />
+		</order>
+		
+		<finder return-type="Sailkapena" name="UserId">
+		    <finder-column name="userId"></finder-column>
+		</finder>
+		
+	</entity>
+	
 </service-builder>

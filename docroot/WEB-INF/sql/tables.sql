@@ -19,6 +19,7 @@ create table Txotx_Sagardotegi (
 	helbidea VARCHAR(75) null,
 	telefonoa VARCHAR(75) null,
 	emaila VARCHAR(75) null,
+	twitter VARCHAR(75) null,
 	weborria VARCHAR(75) null,
 	lat DOUBLE,
 	lng DOUBLE,
@@ -31,4 +32,14 @@ create table Txotx_Sagardotegi (
 	balorazioenBB DOUBLE,
 	createDate DATE null,
 	modifiedDate DATE null
+);
+
+create table Txotx_Sailkapena (
+	sailkapenaId LONG not null primary key,
+	userId LONG,
+	screenName VARCHAR(75) null,
+	iruzkinKopurua LONG,
+	balorazioKopurua LONG,
+	argazkiKopurua LONG,
+	gertaeraKopurua LONG
 );

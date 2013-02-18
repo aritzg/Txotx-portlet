@@ -73,6 +73,12 @@ public class SagardotegiServiceUtil {
 		return getService().getSagardotegiak();
 	}
 
+	public static void resetPassword(java.lang.String emailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService().resetPassword(emailAddress);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

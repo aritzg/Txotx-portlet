@@ -15,6 +15,14 @@ Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Sagardotegi",
 	{
 		getSagardotegia: true,
-		getSagardotegiak: true
+		getSagardotegiak: true,
+		resetPassword: true
+	}
+);
+
+Liferay.Service.registerClass(
+	Liferay.Service.Txotx, "Sailkapena",
+	{
+		getSailkapenak: true
 	}
 );
