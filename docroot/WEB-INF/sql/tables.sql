@@ -12,6 +12,15 @@ create table Txotx_Gertaera (
 	modifiedDate DATE null
 );
 
+create table Txotx_GoogleDevice (
+	googleDeviceId LONG not null primary key,
+	userId LONG,
+	emailAddress VARCHAR(75) null,
+	registrationId VARCHAR(500) null,
+	createDate DATE null,
+	modifiedDate DATE null
+);
+
 create table Txotx_Sagardotegi (
 	sagardotegiId LONG not null primary key,
 	izena VARCHAR(75) null,

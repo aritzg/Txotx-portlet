@@ -620,6 +620,8 @@ public class SagardotegiPersistenceImpl extends BasePersistenceImpl<Sagardotegi>
 
 	@BeanReference(type = GertaeraPersistence.class)
 	protected GertaeraPersistence gertaeraPersistence;
+	@BeanReference(type = GoogleDevicePersistence.class)
+	protected GoogleDevicePersistence googleDevicePersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
 	@BeanReference(type = SailkapenaPersistence.class)

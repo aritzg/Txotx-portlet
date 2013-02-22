@@ -3,6 +3,7 @@
 
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="net.sareweb.txotx.model.Gertaera" />
+	<import class="net.sareweb.txotx.model.GoogleDevice" />
 	<import class="net.sareweb.txotx.model.Sagardotegi" />
 	<import class="net.sareweb.txotx.model.Sailkapena" />
 	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
@@ -17,6 +18,16 @@
 		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="balorazioa" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.txotx.model.impl.GoogleDeviceImpl" table="Txotx_GoogleDevice">
+		<id name="googleDeviceId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="emailAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="registrationId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>

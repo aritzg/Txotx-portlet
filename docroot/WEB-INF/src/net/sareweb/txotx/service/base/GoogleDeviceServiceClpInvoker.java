@@ -14,15 +14,15 @@
 
 package net.sareweb.txotx.service.base;
 
-import net.sareweb.txotx.service.SagardotegiServiceUtil;
+import net.sareweb.txotx.service.GoogleDeviceServiceUtil;
 
 import java.util.Arrays;
 
 /**
  * @author Brian Wing Shun Chan
  */
-public class SagardotegiServiceClpInvoker {
-	public SagardotegiServiceClpInvoker() {
+public class GoogleDeviceServiceClpInvoker {
+	public GoogleDeviceServiceClpInvoker() {
 		_methodName40 = "getBeanIdentifier";
 
 		_methodParameterTypes40 = new String[] {  };
@@ -31,44 +31,38 @@ public class SagardotegiServiceClpInvoker {
 
 		_methodParameterTypes41 = new String[] { "java.lang.String" };
 
-		_methodName46 = "getSagardotegia";
+		_methodName46 = "addGoogeDevice";
 
-		_methodParameterTypes46 = new String[] { "long" };
+		_methodParameterTypes46 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
 
-		_methodName47 = "getSagardotegiak";
+		_methodName47 = "getGoogleDevicesByUserId";
 
-		_methodParameterTypes47 = new String[] {  };
-
-		_methodName48 = "resetPassword";
-
-		_methodParameterTypes48 = new String[] { "java.lang.String" };
+		_methodParameterTypes47 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
 		if (_methodName40.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
-			return SagardotegiServiceUtil.getBeanIdentifier();
+			return GoogleDeviceServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName41.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
-			SagardotegiServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			GoogleDeviceServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName46.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
-			return SagardotegiServiceUtil.getSagardotegia(((Long)arguments[0]).longValue());
+			GoogleDeviceServiceUtil.addGoogeDevice((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1]);
 		}
 
 		if (_methodName47.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
-			return SagardotegiServiceUtil.getSagardotegiak();
-		}
-
-		if (_methodName48.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
-			SagardotegiServiceUtil.resetPassword((java.lang.String)arguments[0]);
+			return GoogleDeviceServiceUtil.getGoogleDevicesByUserId(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
@@ -82,6 +76,4 @@ public class SagardotegiServiceClpInvoker {
 	private String[] _methodParameterTypes46;
 	private String _methodName47;
 	private String[] _methodParameterTypes47;
-	private String _methodName48;
-	private String[] _methodParameterTypes48;
 }

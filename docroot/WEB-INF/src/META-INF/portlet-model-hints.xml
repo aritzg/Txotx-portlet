@@ -16,6 +16,16 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 	</model>
+	<model name="net.sareweb.txotx.model.GoogleDevice">
+		<field name="googleDeviceId" type="long" />
+		<field name="userId" type="long" />
+		<field name="emailAddress" type="String" />
+		<field name="registrationId" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
 	<model name="net.sareweb.txotx.model.Sagardotegi">
 		<field name="sagardotegiId" type="long" />
 		<field name="izena" type="String" />

@@ -4,11 +4,12 @@
 	<author>A.Galdos</author>
 	<namespace>Txotx</namespace>
 
-	<entity name="Sagardotegi" local-service="true" remote-service="true" cache-enabled="false">
+	<entity name="Sagardotegi" local-service="true" remote-service="true"
+		cache-enabled="false">
 
 		<!-- PK fields -->
 		<column name="sagardotegiId" type="long" primary="true" />
-		
+
 		<column name="izena" type="String" />
 		<column name="herria" type="String" />
 		<column name="helbidea" type="String" />
@@ -19,80 +20,113 @@
 
 		<column name="lat" type="double" />
 		<column name="lng" type="double" />
-		
-		<column name="edukiera" type="long"/>
-		
-		<column name="irudiKarpetaId" type="long"/>
-		<column name="irudia" type="String"/>
-		
-		<column name="irudiKopurua" type="long"/>
-		<column name="iruzkinKopurua" type="long"/>
-		
-		<column name="balorazioKopurua" type="long"/>
-		<column name="balorazioenBB" type="double"/>
-		
+
+		<column name="edukiera" type="long" />
+
+		<column name="irudiKarpetaId" type="long" />
+		<column name="irudia" type="String" />
+
+		<column name="irudiKopurua" type="long" />
+		<column name="iruzkinKopurua" type="long" />
+
+		<column name="balorazioKopurua" type="long" />
+		<column name="balorazioenBB" type="double" />
+
 		<!-- Audit fields -->
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-		
+
 		<!-- Order -->
 		<order by="desc">
 			<order-column name="createDate" />
 		</order>
-		
+
 
 	</entity>
-	
-	<entity name="Gertaera" local-service="true" remote-service="true" cache-enabled="false">
-	    
-	    <!-- PK fields -->
+
+	<entity name="Gertaera" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
 		<column name="gertaeraId" type="long" primary="true" />
-		
+
 		<!-- FK fields -->
-		<column name="sagardotegiId" type="long"/>
-		<column name="userId" type="long"/>
-		<column name="screenName" type="String"/>
-		
-		<column name="gertaeraMota" type="String"/>
-		<column name="testua" type="String"/>
-		<column name="irudiKarpetaId" type="long"/>
-		<column name="irudia" type="String"/>
-		<column name="balorazioa" type="long"/>
-		
+		<column name="sagardotegiId" type="long" />
+		<column name="userId" type="long" />
+		<column name="screenName" type="String" />
+
+		<column name="gertaeraMota" type="String" />
+		<column name="testua" type="String" />
+		<column name="irudiKarpetaId" type="long" />
+		<column name="irudia" type="String" />
+		<column name="balorazioa" type="long" />
+
 		<!-- Audit fields -->
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-		
+
 		<!-- Order -->
 		<order by="desc">
 			<order-column name="createDate" />
 		</order>
-		
+
 	</entity>
-	
-	<entity name="Sailkapena" local-service="true" remote-service="true" cache-enabled="false">
-	    
-	    <!-- PK fields -->
+
+	<entity name="Sailkapena" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
 		<column name="sailkapenaId" type="long" primary="true" />
-		
+
 		<!-- FK fields -->
-		<column name="userId" type="long"/>
-		<column name="screenName" type="String"/>
-		
-		<column name="iruzkinKopurua" type="long"/>
-		<column name="balorazioKopurua" type="long"/>
-		<column name="argazkiKopurua" type="long"/>
-		<column name="gertaeraKopurua" type="long"/>
-		
+		<column name="userId" type="long" />
+		<column name="screenName" type="String" />
+
+		<column name="iruzkinKopurua" type="long" />
+		<column name="balorazioKopurua" type="long" />
+		<column name="argazkiKopurua" type="long" />
+		<column name="gertaeraKopurua" type="long" />
+
 		<!-- Order -->
 		<order by="desc">
 			<order-column name="gertaeraKopurua" />
 		</order>
-		
+
 		<finder return-type="Sailkapena" name="UserId">
-		    <finder-column name="userId"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+
+	</entity>
+
+	<entity name="GoogleDevice" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="googleDeviceId" type="long" primary="true" />
+
+		<!-- FK fields -->
+		<column name="userId" type="long" />
+		<column name="emailAddress" type="String" />
+
+		<column name="registrationId" type="String" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder return-type="GoogleDevice" name="RegistrationId">
+			<finder-column name="registrationId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="UserId">
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="EmailAddress">
+			<finder-column name="emailAddress"></finder-column>
 		</finder>
 		
+
+
 	</entity>
-	
+
+
 </service-builder>

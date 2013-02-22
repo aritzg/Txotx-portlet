@@ -22,6 +22,7 @@ import com.liferay.portal.model.Company;
 import com.liferay.portal.model.CompanyConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.CompanyLocalServiceUtil;
+import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
 import com.liferay.portal.service.persistence.CompanyUtil;
 import com.liferay.util.PwdGenerator;
@@ -61,9 +62,10 @@ public class SagardotegiServiceImpl extends SagardotegiServiceBaseImpl {
 	
 	public void resetPassword(String emailAddress) throws SystemException, PortalException{
 		List<Company> companies = CompanyLocalServiceUtil.getCompanies();
-		User u = UserLocalServiceUtil.getUserByEmailAddress(companies.get(0).getCompanyId(), emailAddress);
+		/*User u = UserLocalServiceUtil.getUserByEmailAddress(companies.get(0).getCompanyId(), emailAddress);
 		String pass = PwdGenerator.getPassword(6);
-		System.out.println("New pass " + pass);
-		UserLocalServiceUtil.updatePassword(u.getUserId(),pass , pass, false, false);
+		System.out.println("New pass " + pass);*/
+		//UserLocalServiceUtil.updatePassword(u.getUserId(),pass , pass, true);
+		UserLocalServiceUtil.sendPassword(companies.get(0).getCompanyId(), emailAddress, "txootx@sareweb.net", "txootx@sareweb.net", null, null, new ServiceContext());
 	}
 }

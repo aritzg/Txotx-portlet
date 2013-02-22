@@ -14,33 +14,33 @@
 
 package net.sareweb.txotx.service.base;
 
-import net.sareweb.txotx.service.SagardotegiLocalServiceUtil;
+import net.sareweb.txotx.service.GoogleDeviceLocalServiceUtil;
 
 import java.util.Arrays;
 
 /**
  * @author Brian Wing Shun Chan
  */
-public class SagardotegiLocalServiceClpInvoker {
-	public SagardotegiLocalServiceClpInvoker() {
-		_methodName0 = "addSagardotegi";
+public class GoogleDeviceLocalServiceClpInvoker {
+	public GoogleDeviceLocalServiceClpInvoker() {
+		_methodName0 = "addGoogleDevice";
 
 		_methodParameterTypes0 = new String[] {
-				"net.sareweb.txotx.model.Sagardotegi"
+				"net.sareweb.txotx.model.GoogleDevice"
 			};
 
-		_methodName1 = "createSagardotegi";
+		_methodName1 = "createGoogleDevice";
 
 		_methodParameterTypes1 = new String[] { "long" };
 
-		_methodName2 = "deleteSagardotegi";
+		_methodName2 = "deleteGoogleDevice";
 
 		_methodParameterTypes2 = new String[] { "long" };
 
-		_methodName3 = "deleteSagardotegi";
+		_methodName3 = "deleteGoogleDevice";
 
 		_methodParameterTypes3 = new String[] {
-				"net.sareweb.txotx.model.Sagardotegi"
+				"net.sareweb.txotx.model.GoogleDevice"
 			};
 
 		_methodName4 = "dynamicQuery";
@@ -72,11 +72,11 @@ public class SagardotegiLocalServiceClpInvoker {
 				"com.liferay.portal.kernel.dao.orm.DynamicQuery"
 			};
 
-		_methodName9 = "fetchSagardotegi";
+		_methodName9 = "fetchGoogleDevice";
 
 		_methodParameterTypes9 = new String[] { "long" };
 
-		_methodName10 = "getSagardotegi";
+		_methodName10 = "getGoogleDevice";
 
 		_methodParameterTypes10 = new String[] { "long" };
 
@@ -84,24 +84,24 @@ public class SagardotegiLocalServiceClpInvoker {
 
 		_methodParameterTypes11 = new String[] { "java.io.Serializable" };
 
-		_methodName12 = "getSagardotegis";
+		_methodName12 = "getGoogleDevices";
 
 		_methodParameterTypes12 = new String[] { "int", "int" };
 
-		_methodName13 = "getSagardotegisCount";
+		_methodName13 = "getGoogleDevicesCount";
 
 		_methodParameterTypes13 = new String[] {  };
 
-		_methodName14 = "updateSagardotegi";
+		_methodName14 = "updateGoogleDevice";
 
 		_methodParameterTypes14 = new String[] {
-				"net.sareweb.txotx.model.Sagardotegi"
+				"net.sareweb.txotx.model.GoogleDevice"
 			};
 
-		_methodName15 = "updateSagardotegi";
+		_methodName15 = "updateGoogleDevice";
 
 		_methodParameterTypes15 = new String[] {
-				"net.sareweb.txotx.model.Sagardotegi", "boolean"
+				"net.sareweb.txotx.model.GoogleDevice", "boolean"
 			};
 
 		_methodName56 = "getBeanIdentifier";
@@ -117,44 +117,44 @@ public class SagardotegiLocalServiceClpInvoker {
 		Object[] arguments) throws Throwable {
 		if (_methodName0.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes0, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.addSagardotegi((net.sareweb.txotx.model.Sagardotegi)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.addGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
 		}
 
 		if (_methodName1.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes1, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.createSagardotegi(((Long)arguments[0]).longValue());
+			return GoogleDeviceLocalServiceUtil.createGoogleDevice(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName2.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes2, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.deleteSagardotegi(((Long)arguments[0]).longValue());
+			return GoogleDeviceLocalServiceUtil.deleteGoogleDevice(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName3.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes3, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.deleteSagardotegi((net.sareweb.txotx.model.Sagardotegi)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.deleteGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
 		}
 
 		if (_methodName4.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes4, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.dynamicQuery();
+			return GoogleDeviceLocalServiceUtil.dynamicQuery();
 		}
 
 		if (_methodName5.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes5, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName6.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes6, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName7.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes7, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				(com.liferay.portal.kernel.util.OrderByComparator)arguments[3]);
@@ -162,54 +162,54 @@ public class SagardotegiLocalServiceClpInvoker {
 
 		if (_methodName8.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes8, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName9.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes9, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.fetchSagardotegi(((Long)arguments[0]).longValue());
+			return GoogleDeviceLocalServiceUtil.fetchGoogleDevice(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName10.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes10, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.getSagardotegi(((Long)arguments[0]).longValue());
+			return GoogleDeviceLocalServiceUtil.getGoogleDevice(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName11.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes11, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
 		}
 
 		if (_methodName12.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes12, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.getSagardotegis(((Integer)arguments[0]).intValue(),
+			return GoogleDeviceLocalServiceUtil.getGoogleDevices(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName13.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes13, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.getSagardotegisCount();
+			return GoogleDeviceLocalServiceUtil.getGoogleDevicesCount();
 		}
 
 		if (_methodName14.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes14, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.updateSagardotegi((net.sareweb.txotx.model.Sagardotegi)arguments[0]);
+			return GoogleDeviceLocalServiceUtil.updateGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
 		}
 
 		if (_methodName15.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.updateSagardotegi((net.sareweb.txotx.model.Sagardotegi)arguments[0],
+			return GoogleDeviceLocalServiceUtil.updateGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0],
 				((Boolean)arguments[1]).booleanValue());
 		}
 
 		if (_methodName56.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes56, parameterTypes)) {
-			return SagardotegiLocalServiceUtil.getBeanIdentifier();
+			return GoogleDeviceLocalServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName57.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes57, parameterTypes)) {
-			SagardotegiLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			GoogleDeviceLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
 		throw new UnsupportedOperationException();

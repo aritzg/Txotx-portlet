@@ -32,11 +32,14 @@ import com.liferay.portal.service.persistence.UserPersistence;
 import net.sareweb.txotx.model.Sagardotegi;
 import net.sareweb.txotx.service.GertaeraLocalService;
 import net.sareweb.txotx.service.GertaeraService;
+import net.sareweb.txotx.service.GoogleDeviceLocalService;
+import net.sareweb.txotx.service.GoogleDeviceService;
 import net.sareweb.txotx.service.SagardotegiLocalService;
 import net.sareweb.txotx.service.SagardotegiService;
 import net.sareweb.txotx.service.SailkapenaLocalService;
 import net.sareweb.txotx.service.SailkapenaService;
 import net.sareweb.txotx.service.persistence.GertaeraPersistence;
+import net.sareweb.txotx.service.persistence.GoogleDevicePersistence;
 import net.sareweb.txotx.service.persistence.SagardotegiPersistence;
 import net.sareweb.txotx.service.persistence.SailkapenaPersistence;
 
@@ -115,6 +118,62 @@ public abstract class SagardotegiServiceBaseImpl extends BaseServiceImpl
 	 */
 	public void setGertaeraPersistence(GertaeraPersistence gertaeraPersistence) {
 		this.gertaeraPersistence = gertaeraPersistence;
+	}
+
+	/**
+	 * Returns the google device local service.
+	 *
+	 * @return the google device local service
+	 */
+	public GoogleDeviceLocalService getGoogleDeviceLocalService() {
+		return googleDeviceLocalService;
+	}
+
+	/**
+	 * Sets the google device local service.
+	 *
+	 * @param googleDeviceLocalService the google device local service
+	 */
+	public void setGoogleDeviceLocalService(
+		GoogleDeviceLocalService googleDeviceLocalService) {
+		this.googleDeviceLocalService = googleDeviceLocalService;
+	}
+
+	/**
+	 * Returns the google device remote service.
+	 *
+	 * @return the google device remote service
+	 */
+	public GoogleDeviceService getGoogleDeviceService() {
+		return googleDeviceService;
+	}
+
+	/**
+	 * Sets the google device remote service.
+	 *
+	 * @param googleDeviceService the google device remote service
+	 */
+	public void setGoogleDeviceService(GoogleDeviceService googleDeviceService) {
+		this.googleDeviceService = googleDeviceService;
+	}
+
+	/**
+	 * Returns the google device persistence.
+	 *
+	 * @return the google device persistence
+	 */
+	public GoogleDevicePersistence getGoogleDevicePersistence() {
+		return googleDevicePersistence;
+	}
+
+	/**
+	 * Sets the google device persistence.
+	 *
+	 * @param googleDevicePersistence the google device persistence
+	 */
+	public void setGoogleDevicePersistence(
+		GoogleDevicePersistence googleDevicePersistence) {
+		this.googleDevicePersistence = googleDevicePersistence;
 	}
 
 	/**
@@ -418,6 +477,12 @@ public abstract class SagardotegiServiceBaseImpl extends BaseServiceImpl
 	protected GertaeraService gertaeraService;
 	@BeanReference(type = GertaeraPersistence.class)
 	protected GertaeraPersistence gertaeraPersistence;
+	@BeanReference(type = GoogleDeviceLocalService.class)
+	protected GoogleDeviceLocalService googleDeviceLocalService;
+	@BeanReference(type = GoogleDeviceService.class)
+	protected GoogleDeviceService googleDeviceService;
+	@BeanReference(type = GoogleDevicePersistence.class)
+	protected GoogleDevicePersistence googleDevicePersistence;
 	@BeanReference(type = SagardotegiLocalService.class)
 	protected SagardotegiLocalService sagardotegiLocalService;
 	@BeanReference(type = SagardotegiService.class)

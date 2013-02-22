@@ -4,6 +4,9 @@
 	<bean id="net.sareweb.txotx.service.GertaeraLocalService" class="net.sareweb.txotx.service.impl.GertaeraLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.GertaeraService" class="net.sareweb.txotx.service.impl.GertaeraServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.GertaeraPersistence" class="net.sareweb.txotx.service.persistence.GertaeraPersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.txotx.service.GoogleDeviceLocalService" class="net.sareweb.txotx.service.impl.GoogleDeviceLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.GoogleDeviceService" class="net.sareweb.txotx.service.impl.GoogleDeviceServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.GoogleDevicePersistence" class="net.sareweb.txotx.service.persistence.GoogleDevicePersistenceImpl" parent="basePersistence" />
 	<bean id="net.sareweb.txotx.service.SagardotegiLocalService" class="net.sareweb.txotx.service.impl.SagardotegiLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.SagardotegiService" class="net.sareweb.txotx.service.impl.SagardotegiServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.SagardotegiPersistence" class="net.sareweb.txotx.service.persistence.SagardotegiPersistenceImpl" parent="basePersistence" />

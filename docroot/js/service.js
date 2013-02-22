@@ -12,6 +12,14 @@ Liferay.Service.registerClass(
 );
 
 Liferay.Service.registerClass(
+	Liferay.Service.Txotx, "GoogleDevice",
+	{
+		addGoogeDevice: true,
+		getGoogleDevicesByUserId: true
+	}
+);
+
+Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Sagardotegi",
 	{
 		getSagardotegia: true,

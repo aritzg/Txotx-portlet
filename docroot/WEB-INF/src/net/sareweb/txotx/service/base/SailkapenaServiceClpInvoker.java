@@ -23,43 +23,43 @@ import java.util.Arrays;
  */
 public class SailkapenaServiceClpInvoker {
 	public SailkapenaServiceClpInvoker() {
-		_methodName34 = "getBeanIdentifier";
-
-		_methodParameterTypes34 = new String[] {  };
-
-		_methodName35 = "setBeanIdentifier";
-
-		_methodParameterTypes35 = new String[] { "java.lang.String" };
-
-		_methodName40 = "getSailkapenak";
+		_methodName40 = "getBeanIdentifier";
 
 		_methodParameterTypes40 = new String[] {  };
+
+		_methodName41 = "setBeanIdentifier";
+
+		_methodParameterTypes41 = new String[] { "java.lang.String" };
+
+		_methodName46 = "getSailkapenak";
+
+		_methodParameterTypes46 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName34.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes34, parameterTypes)) {
+		if (_methodName40.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
 			return SailkapenaServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName35.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes35, parameterTypes)) {
+		if (_methodName41.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes41, parameterTypes)) {
 			SailkapenaServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName40.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes40, parameterTypes)) {
+		if (_methodName46.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
 			return SailkapenaServiceUtil.getSailkapenak();
 		}
 
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName34;
-	private String[] _methodParameterTypes34;
-	private String _methodName35;
-	private String[] _methodParameterTypes35;
 	private String _methodName40;
 	private String[] _methodParameterTypes40;
+	private String _methodName41;
+	private String[] _methodParameterTypes41;
+	private String _methodName46;
+	private String[] _methodParameterTypes46;
 }
