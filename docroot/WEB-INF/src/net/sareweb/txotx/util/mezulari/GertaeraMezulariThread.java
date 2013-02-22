@@ -34,17 +34,20 @@ public class GertaeraMezulariThread extends Thread {
 			for(User user : users){
 				try {
 					List<GoogleDevice> googleDevices =  GoogleDeviceServiceUtil.getGoogleDevicesByUserId(user.getUserId());
-					if(googleDevices!=null){
-						for(GoogleDevice googleDevice : googleDevices){
-							String registrationId = googleDevice.getRegistrationId();
-							if(registrationId!=null){
-								Message message = new Message.Builder()
-									.delayWhileIdle(false)
-									.collapseKey(String.valueOf(gertaera.getGertaeraId()))
-									.addData("message", "Message from pushServer")
-									.build();
-							}
+					if(googleDevices!=null && googleDevices.size()>1){
+						List<String> regIds = new ArrayList<String>();
+						for(int i=0; i<googleDevices.size(); i++){
+							regIds.add(googleDevices.get(i).getRegistrationId());
 						}
+						Message message = new Message.Builder()
+							.delayWhileIdle(false)
+							.collapseKey(String.valueOf(gertaera.getGertaeraId()))
+							.addData("gertaeraId", String.valueOf(gertaera.getGertaeraId()))
+							.addData("sagardotegiId", String.valueOf(gertaera.getSagardotegiId()))
+							.addData("testua", gertaera.getTestua())
+							.addData("nork", user.getScreenName())
+							.build();
+						sender.send(message, regIds, 5);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
