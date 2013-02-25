@@ -37,6 +37,7 @@ import net.sareweb.txotx.service.SagardotegiServiceUtil;
 import net.sareweb.txotx.service.SailkapenaLocalServiceUtil;
 import net.sareweb.txotx.service.base.GertaeraServiceBaseImpl;
 import net.sareweb.txotx.util.Constants;
+import net.sareweb.txotx.util.mezulari.GertaeraMezulariThread;
 
 /**
  * The implementation of the gertaera remote service.
@@ -190,5 +191,26 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		} catch (Exception e) {
 			return "ERROR";
 		}
+	}
+	
+	public void fake() throws PrincipalException{
+		System.out.println("aaa");
+		Gertaera gertaera = GertaeraLocalServiceUtil.createGertaera(2);
+		gertaera.setUserId(getGuestOrUserId());
+		
+		try {
+			gertaera.setScreenName(UserLocalServiceUtil.getUser(getGuestOrUserId()).getScreenName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		gertaera.setSagardotegiId(3);
+		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_TESTUA);
+		gertaera.setCreateDate(new Date());
+		gertaera.setTestua(decode("asffhks @aritzg sdafasd "));
+		gertaera.setIrudiKarpetaId(4);
+		
+		GertaeraMezulariThread mezulari = new GertaeraMezulariThread(gertaera);
+		mezulari.start();
 	}
 }

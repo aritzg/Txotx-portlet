@@ -142,5 +142,16 @@ public class GertaeraServiceSoap {
 		}
 	}
 
+	public static void fake() throws RemoteException {
+		try {
+			GertaeraServiceUtil.fake();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(GertaeraServiceSoap.class);
 }

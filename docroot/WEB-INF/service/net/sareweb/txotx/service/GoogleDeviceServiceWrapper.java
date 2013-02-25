@@ -55,10 +55,10 @@ public class GoogleDeviceServiceWrapper implements GoogleDeviceService,
 		return _googleDeviceService.invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public void addGoogeDevice(java.lang.String emailAddress,
-		java.lang.String registrationId)
+	public net.sareweb.txotx.model.GoogleDevice addGoogleDevice(
+		java.lang.String emailAddress, java.lang.String registrationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		_googleDeviceService.addGoogeDevice(emailAddress, registrationId);
+		return _googleDeviceService.addGoogleDevice(emailAddress, registrationId);
 	}
 
 	public java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(

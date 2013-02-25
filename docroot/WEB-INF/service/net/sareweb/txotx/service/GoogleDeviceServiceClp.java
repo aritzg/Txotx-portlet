@@ -31,7 +31,7 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 
 		_methodParameterTypes1 = new String[] { "java.lang.String" };
 
-		_methodName3 = "addGoogeDevice";
+		_methodName3 = "addGoogleDevice";
 
 		_methodParameterTypes3 = new String[] {
 				"java.lang.String", "java.lang.String"
@@ -89,17 +89,19 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 		throw new UnsupportedOperationException();
 	}
 
-	public void addGoogeDevice(java.lang.String emailAddress,
-		java.lang.String registrationId)
+	public net.sareweb.txotx.model.GoogleDevice addGoogleDevice(
+		java.lang.String emailAddress, java.lang.String registrationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
 		try {
-			_invokableService.invokeMethod(_methodName3,
-				_methodParameterTypes3,
-				new Object[] {
-					ClpSerializer.translateInput(emailAddress),
-					
-				ClpSerializer.translateInput(registrationId)
-				});
+			returnObj = _invokableService.invokeMethod(_methodName3,
+					_methodParameterTypes3,
+					new Object[] {
+						ClpSerializer.translateInput(emailAddress),
+						
+					ClpSerializer.translateInput(registrationId)
+					});
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -116,6 +118,8 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 					" is not a valid exception");
 			}
 		}
+
+		return (net.sareweb.txotx.model.GoogleDevice)ClpSerializer.translateOutput(returnObj);
 	}
 
 	public java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(

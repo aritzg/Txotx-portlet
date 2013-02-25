@@ -7,14 +7,15 @@ Liferay.Service.registerClass(
 		gehituArgazkiGertaera: true,
 		gehituBalorazioGertaera: true,
 		getGertaerakOlderThanDate: true,
-		getGertaerakNewerThanDate: true
+		getGertaerakNewerThanDate: true,
+		fake: true
 	}
 );
 
 Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "GoogleDevice",
 	{
-		addGoogeDevice: true,
+		addGoogleDevice: true,
 		getGoogleDevicesByUserId: true
 	}
 );

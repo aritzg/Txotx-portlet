@@ -31,7 +31,7 @@ public class GoogleDeviceServiceClpInvoker {
 
 		_methodParameterTypes41 = new String[] { "java.lang.String" };
 
-		_methodName46 = "addGoogeDevice";
+		_methodName46 = "addGoogleDevice";
 
 		_methodParameterTypes46 = new String[] {
 				"java.lang.String", "java.lang.String"
@@ -56,7 +56,7 @@ public class GoogleDeviceServiceClpInvoker {
 
 		if (_methodName46.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
-			GoogleDeviceServiceUtil.addGoogeDevice((java.lang.String)arguments[0],
+			return GoogleDeviceServiceUtil.addGoogleDevice((java.lang.String)arguments[0],
 				(java.lang.String)arguments[1]);
 		}
 

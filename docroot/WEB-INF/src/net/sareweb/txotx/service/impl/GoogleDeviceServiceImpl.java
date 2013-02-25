@@ -14,9 +14,13 @@
 
 package net.sareweb.txotx.service.impl;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.google.android.gcm.server.Message;
+import com.google.android.gcm.server.Sender;
 import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -26,6 +30,7 @@ import com.liferay.portal.service.UserLocalServiceUtil;
 import net.sareweb.txotx.model.GoogleDevice;
 import net.sareweb.txotx.service.GoogleDeviceLocalServiceUtil;
 import net.sareweb.txotx.service.base.GoogleDeviceServiceBaseImpl;
+import net.sareweb.txotx.util.Constants;
 
 /**
  * The implementation of the google device remote service.
@@ -43,15 +48,17 @@ import net.sareweb.txotx.service.base.GoogleDeviceServiceBaseImpl;
  */
 public class GoogleDeviceServiceImpl extends GoogleDeviceServiceBaseImpl {
 	
-	public void addGoogeDevice(String emailAddress, String registrationId) throws SystemException{
+	public GoogleDevice addGoogleDevice(String emailAddress, String registrationId) throws SystemException{
+		boolean isNew = false;
 		GoogleDevice googleDevice;
 		User user = null;;
 		Date now = new Date();
 		try {
 			googleDevice = googleDevicePersistence.findByRegistrationId(registrationId);
-			googleDevice.setCreateDate(now);
 		} catch (Exception e) {
 			googleDevice =GoogleDeviceLocalServiceUtil.createGoogleDevice(CounterLocalServiceUtil.increment());
+			googleDevice.setCreateDate(now);
+			isNew=true;
 		}
 		googleDevice.setModifiedDate(now);
 		
@@ -59,14 +66,31 @@ public class GoogleDeviceServiceImpl extends GoogleDeviceServiceBaseImpl {
 			user = UserLocalServiceUtil.getUserByEmailAddress(getGuestOrUser().getCompanyId(), emailAddress);
 		} catch (PortalException e) {
 			e.printStackTrace();
-			return;
+			return null;
 		}
 		
 		googleDevice.setUserId(user.getUserId());
 		googleDevice.setEmailAddress(user.getEmailAddress());
 		googleDevice.setRegistrationId(registrationId);
+		googleDevice = GoogleDeviceLocalServiceUtil.updateGoogleDevice(googleDevice);
 		
-		GoogleDeviceLocalServiceUtil.updateGoogleDevice(googleDevice);
+		if(isNew){
+			Sender sender = new Sender(Constants.API_KEY);
+			List<String> regIds = new ArrayList<String>();
+			regIds.add(googleDevice.getRegistrationId());
+			Message message = new Message.Builder()
+				.delayWhileIdle(false)
+				.collapseKey(String.valueOf(googleDevice.getGoogleDeviceId()))
+				.addData("messageType", "registration")
+				.build();
+			try {
+				sender.send(message, regIds, 5);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return googleDevice;
 		
 	}
 	

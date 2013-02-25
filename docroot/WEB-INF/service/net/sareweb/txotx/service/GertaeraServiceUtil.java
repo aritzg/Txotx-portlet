@@ -101,6 +101,11 @@ public class GertaeraServiceUtil {
 				   .getGertaerakNewerThanDate(sagardotegiId, date, blockSize);
 	}
 
+	public static void fake()
+		throws com.liferay.portal.security.auth.PrincipalException {
+		getService().fake();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

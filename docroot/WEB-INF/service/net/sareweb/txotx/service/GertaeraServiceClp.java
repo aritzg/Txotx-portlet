@@ -52,6 +52,10 @@ public class GertaeraServiceClp implements GertaeraService {
 		_methodName7 = "getGertaerakNewerThanDate";
 
 		_methodParameterTypes7 = new String[] { "long", "long", "int" };
+
+		_methodName8 = "fake";
+
+		_methodParameterTypes8 = new String[] {  };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -280,6 +284,29 @@ public class GertaeraServiceClp implements GertaeraService {
 		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public void fake()
+		throws com.liferay.portal.security.auth.PrincipalException {
+		try {
+			_invokableService.invokeMethod(_methodName8,
+				_methodParameterTypes8, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableService _invokableService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -295,4 +322,6 @@ public class GertaeraServiceClp implements GertaeraService {
 	private String[] _methodParameterTypes6;
 	private String _methodName7;
 	private String[] _methodParameterTypes7;
+	private String _methodName8;
+	private String[] _methodParameterTypes8;
 }

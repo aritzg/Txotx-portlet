@@ -54,6 +54,10 @@ public class GertaeraServiceClpInvoker {
 		_methodName50 = "getGertaerakNewerThanDate";
 
 		_methodParameterTypes50 = new String[] { "long", "long", "int" };
+
+		_methodName52 = "fake";
+
+		_methodParameterTypes52 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -101,6 +105,11 @@ public class GertaeraServiceClpInvoker {
 				((Integer)arguments[2]).intValue());
 		}
 
+		if (_methodName52.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
+			GertaeraServiceUtil.fake();
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -118,4 +127,6 @@ public class GertaeraServiceClpInvoker {
 	private String[] _methodParameterTypes49;
 	private String _methodName50;
 	private String[] _methodParameterTypes50;
+	private String _methodName52;
+	private String[] _methodParameterTypes52;
 }

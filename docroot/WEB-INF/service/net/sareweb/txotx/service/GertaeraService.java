@@ -89,4 +89,7 @@ public interface GertaeraService extends BaseService, InvokableService {
 	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakNewerThanDate(
 		long sagardotegiId, long date, int blockSize)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public void fake()
+		throws com.liferay.portal.security.auth.PrincipalException;
 }

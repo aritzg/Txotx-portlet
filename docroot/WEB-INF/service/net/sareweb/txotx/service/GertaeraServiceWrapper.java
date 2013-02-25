@@ -93,6 +93,11 @@ public class GertaeraServiceWrapper implements GertaeraService,
 			blockSize);
 	}
 
+	public void fake()
+		throws com.liferay.portal.security.auth.PrincipalException {
+		_gertaeraService.fake();
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

@@ -62,10 +62,10 @@ public class GoogleDeviceServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
-	public static void addGoogeDevice(java.lang.String emailAddress,
-		java.lang.String registrationId)
+	public static net.sareweb.txotx.model.GoogleDevice addGoogleDevice(
+		java.lang.String emailAddress, java.lang.String registrationId)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		getService().addGoogeDevice(emailAddress, registrationId);
+		return getService().addGoogleDevice(emailAddress, registrationId);
 	}
 
 	public static java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(

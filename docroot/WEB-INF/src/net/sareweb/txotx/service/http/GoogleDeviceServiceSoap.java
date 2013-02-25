@@ -65,10 +65,14 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class GoogleDeviceServiceSoap {
-	public static void addGoogeDevice(java.lang.String emailAddress,
-		java.lang.String registrationId) throws RemoteException {
+	public static net.sareweb.txotx.model.GoogleDeviceSoap addGoogleDevice(
+		java.lang.String emailAddress, java.lang.String registrationId)
+		throws RemoteException {
 		try {
-			GoogleDeviceServiceUtil.addGoogeDevice(emailAddress, registrationId);
+			net.sareweb.txotx.model.GoogleDevice returnValue = GoogleDeviceServiceUtil.addGoogleDevice(emailAddress,
+					registrationId);
+
+			return net.sareweb.txotx.model.GoogleDeviceSoap.toSoapModel(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);

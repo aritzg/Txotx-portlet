@@ -64,8 +64,8 @@ public interface GoogleDeviceService extends BaseService, InvokableService {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
-	public void addGoogeDevice(java.lang.String emailAddress,
-		java.lang.String registrationId)
+	public net.sareweb.txotx.model.GoogleDevice addGoogleDevice(
+		java.lang.String emailAddress, java.lang.String registrationId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
