@@ -81,6 +81,20 @@ public class GoogleDeviceServiceSoap {
 		}
 	}
 
+	public static net.sareweb.txotx.model.GoogleDeviceSoap unregisterGoogleDevice(
+		java.lang.String registrationId) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.GoogleDevice returnValue = GoogleDeviceServiceUtil.unregisterGoogleDevice(registrationId);
+
+			return net.sareweb.txotx.model.GoogleDeviceSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static net.sareweb.txotx.model.GoogleDeviceSoap[] getGoogleDevicesByUserId(
 		long userId) throws RemoteException {
 		try {

@@ -68,6 +68,10 @@ public interface GoogleDeviceService extends BaseService, InvokableService {
 		java.lang.String emailAddress, java.lang.String registrationId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	public net.sareweb.txotx.model.GoogleDevice unregisterGoogleDevice(
+		java.lang.String registrationId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(
 		long userId) throws com.liferay.portal.kernel.exception.SystemException;

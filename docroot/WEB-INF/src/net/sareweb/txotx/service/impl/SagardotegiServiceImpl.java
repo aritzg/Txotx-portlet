@@ -14,16 +14,22 @@
 
 package net.sareweb.txotx.service.impl;
 
+import java.util.Date;
 import java.util.List;
 
+import javax.mail.internet.InternetAddress;
+
+import com.liferay.mail.service.MailServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.mail.MailMessage;
 import com.liferay.portal.model.Company;
 import com.liferay.portal.model.CompanyConstants;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.CompanyLocalServiceUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.UserLocalServiceUtil;
+import com.liferay.portal.service.UserServiceUtil;
 import com.liferay.portal.service.persistence.CompanyUtil;
 import com.liferay.util.PwdGenerator;
 
@@ -62,10 +68,27 @@ public class SagardotegiServiceImpl extends SagardotegiServiceBaseImpl {
 	
 	public void resetPassword(String emailAddress) throws SystemException, PortalException{
 		List<Company> companies = CompanyLocalServiceUtil.getCompanies();
-		/*User u = UserLocalServiceUtil.getUserByEmailAddress(companies.get(0).getCompanyId(), emailAddress);
+		User u = UserLocalServiceUtil.getUserByEmailAddress(companies.get(0).getCompanyId(), emailAddress);
 		String pass = PwdGenerator.getPassword(6);
-		System.out.println("New pass " + pass);*/
-		//UserLocalServiceUtil.updatePassword(u.getUserId(),pass , pass, true);
-		UserLocalServiceUtil.sendPassword(companies.get(0).getCompanyId(), emailAddress, "txootx@sareweb.net", "txootx@sareweb.net", null, null, new ServiceContext());
+		System.out.println("New pass " + pass);
+		UserServiceUtil.updatePassword(u.getUserId(),pass ,pass, false);
+		
+		try {
+			InternetAddress from = new InternetAddress("txootx@sareweb.net");
+			InternetAddress to = new InternetAddress(emailAddress);
+			MailMessage mailMessage = new MailMessage();
+			mailMessage.setFrom(from);
+			mailMessage.setTo(to);
+			
+			mailMessage.setSubject("Txootx! Pasahitz berria");
+			mailMessage.setBody("Apa " + u.getScreenName() + ": \nTxootx!-eko zure pasahitz berria " + pass + " da. Gogoratu hobespenetatik nahi duzunean alda dezakezula pasahitza.\n\n Ondo pasa eta Txootx!");
+			
+			MailServiceUtil.sendEmail(mailMessage);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		//UserLocalServiceUtil.updatePasswordManually(u.getUserId(),pass , false, false, new Date());
+		//UserLocalServiceUtil.updatePassword(u.getUserId(),pass , pass, false, false);
+		//UserLocalServiceUtil.sendPassword(companies.get(0).getCompanyId(), u.getEmailAddress(), "txootx@sareweb.net", "txootx@sareweb.net", null, null, new ServiceContext());
 	}
 }

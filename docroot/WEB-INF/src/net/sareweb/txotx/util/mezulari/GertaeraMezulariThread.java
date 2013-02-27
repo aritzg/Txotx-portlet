@@ -32,6 +32,10 @@ public class GertaeraMezulariThread extends Thread {
 	public void run() {
 		Sender sender = new Sender(Constants.API_KEY);
 		try {
+			if(gertaera.getTestua()==null) return;
+			
+			User senderUser = UserLocalServiceUtil.getUser(gertaera.getUserId());
+			
 			List<User> users = getMentionedUsers(gertaera.getTestua());
 			for(User user : users){
 				try {
@@ -49,9 +53,10 @@ public class GertaeraMezulariThread extends Thread {
 							.collapseKey(String.valueOf(gertaera.getGertaeraId()))
 							.addData("messageType", "mention")
 							.addData("gertaeraId", String.valueOf(gertaera.getGertaeraId()))
-							.addData("sagardotegiIzena", String.valueOf(sagardotegi.getIzena()))
+							.addData("sagardotegiId", String.valueOf(sagardotegi.getSagardotegiId()))
+							.addData("sagardotegiIzena", sagardotegi.getIzena())
 							.addData("testua", gertaera.getTestua())
-							.addData("nork", user.getScreenName())
+							.addData("nork", senderUser.getScreenName())
 							.build();
 						sender.send(message, regIds, 5);
 					}

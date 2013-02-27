@@ -37,9 +37,13 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName4 = "getGoogleDevicesByUserId";
+		_methodName4 = "unregisterGoogleDevice";
 
-		_methodParameterTypes4 = new String[] { "long" };
+		_methodParameterTypes4 = new String[] { "java.lang.String" };
+
+		_methodName5 = "getGoogleDevicesByUserId";
+
+		_methodParameterTypes5 = new String[] { "long" };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -122,13 +126,42 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 		return (net.sareweb.txotx.model.GoogleDevice)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public net.sareweb.txotx.model.GoogleDevice unregisterGoogleDevice(
+		java.lang.String registrationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName4,
+					_methodParameterTypes4,
+					new Object[] { ClpSerializer.translateInput(registrationId) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.GoogleDevice)ClpSerializer.translateOutput(returnObj);
+	}
+
 	public java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(
 		long userId) throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName4,
-					_methodParameterTypes4, new Object[] { userId });
+			returnObj = _invokableService.invokeMethod(_methodName5,
+					_methodParameterTypes5, new Object[] { userId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -158,4 +191,6 @@ public class GoogleDeviceServiceClp implements GoogleDeviceService {
 	private String[] _methodParameterTypes3;
 	private String _methodName4;
 	private String[] _methodParameterTypes4;
+	private String _methodName5;
+	private String[] _methodParameterTypes5;
 }

@@ -94,6 +94,11 @@ public class GoogleDeviceServiceImpl extends GoogleDeviceServiceBaseImpl {
 		
 	}
 	
+	public GoogleDevice unregisterGoogleDevice(String registrationId) throws SystemException{
+		GoogleDevice googleDevice = googleDevicePersistence.fetchByRegistrationId(registrationId);
+		return GoogleDeviceLocalServiceUtil.deleteGoogleDevice(googleDevice);
+	}
+	
 	public List<GoogleDevice> getGoogleDevicesByUserId(long userId) throws SystemException{
 		return googleDevicePersistence.findByUserId(userId);
 	}

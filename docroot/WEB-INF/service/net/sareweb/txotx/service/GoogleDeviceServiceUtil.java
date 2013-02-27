@@ -68,6 +68,12 @@ public class GoogleDeviceServiceUtil {
 		return getService().addGoogleDevice(emailAddress, registrationId);
 	}
 
+	public static net.sareweb.txotx.model.GoogleDevice unregisterGoogleDevice(
+		java.lang.String registrationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().unregisterGoogleDevice(registrationId);
+	}
+
 	public static java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(
 		long userId) throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getGoogleDevicesByUserId(userId);

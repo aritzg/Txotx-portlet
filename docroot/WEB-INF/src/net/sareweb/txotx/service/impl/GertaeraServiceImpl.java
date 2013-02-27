@@ -82,6 +82,9 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		
 		SailkapenaLocalServiceUtil.incGertaera(gertaera.getUserId(), Constants.GERTAERA_MOTA_TESTUA);
 		
+		GertaeraMezulariThread mezulari = new GertaeraMezulariThread(gertaera);
+		mezulari.start();
+		
 		return gertaera;
 	}
 	
@@ -112,6 +115,9 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		}
 		
 		SailkapenaLocalServiceUtil.incGertaera(gertaera.getUserId(), Constants.GERTAERA_MOTA_ARGAZKIA);
+		
+		GertaeraMezulariThread mezulari = new GertaeraMezulariThread(gertaera);
+		mezulari.start();
 		
 		return gertaera;
 	}

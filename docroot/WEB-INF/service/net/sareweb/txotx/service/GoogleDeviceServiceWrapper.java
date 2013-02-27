@@ -61,6 +61,12 @@ public class GoogleDeviceServiceWrapper implements GoogleDeviceService,
 		return _googleDeviceService.addGoogleDevice(emailAddress, registrationId);
 	}
 
+	public net.sareweb.txotx.model.GoogleDevice unregisterGoogleDevice(
+		java.lang.String registrationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _googleDeviceService.unregisterGoogleDevice(registrationId);
+	}
+
 	public java.util.List<net.sareweb.txotx.model.GoogleDevice> getGoogleDevicesByUserId(
 		long userId) throws com.liferay.portal.kernel.exception.SystemException {
 		return _googleDeviceService.getGoogleDevicesByUserId(userId);

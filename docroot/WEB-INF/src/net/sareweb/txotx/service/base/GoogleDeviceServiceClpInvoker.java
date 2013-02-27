@@ -37,9 +37,13 @@ public class GoogleDeviceServiceClpInvoker {
 				"java.lang.String", "java.lang.String"
 			};
 
-		_methodName47 = "getGoogleDevicesByUserId";
+		_methodName47 = "unregisterGoogleDevice";
 
-		_methodParameterTypes47 = new String[] { "long" };
+		_methodParameterTypes47 = new String[] { "java.lang.String" };
+
+		_methodName48 = "getGoogleDevicesByUserId";
+
+		_methodParameterTypes48 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -62,6 +66,11 @@ public class GoogleDeviceServiceClpInvoker {
 
 		if (_methodName47.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
+			return GoogleDeviceServiceUtil.unregisterGoogleDevice((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName48.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
 			return GoogleDeviceServiceUtil.getGoogleDevicesByUserId(((Long)arguments[0]).longValue());
 		}
 
@@ -76,4 +85,6 @@ public class GoogleDeviceServiceClpInvoker {
 	private String[] _methodParameterTypes46;
 	private String _methodName47;
 	private String[] _methodParameterTypes47;
+	private String _methodName48;
+	private String[] _methodParameterTypes48;
 }
