@@ -22,6 +22,8 @@ import net.sareweb.txotx.service.GertaeraLocalServiceUtil;
 import net.sareweb.txotx.service.GertaeraServiceUtil;
 import net.sareweb.txotx.service.GoogleDeviceLocalServiceUtil;
 import net.sareweb.txotx.service.GoogleDeviceServiceUtil;
+import net.sareweb.txotx.service.OharraLocalServiceUtil;
+import net.sareweb.txotx.service.OharraServiceUtil;
 import net.sareweb.txotx.service.SagardotegiLocalServiceUtil;
 import net.sareweb.txotx.service.SagardotegiServiceUtil;
 import net.sareweb.txotx.service.SailkapenaLocalServiceUtil;
@@ -48,6 +50,9 @@ public class ClpMessageListener extends BaseMessageListener {
 			GoogleDeviceLocalServiceUtil.clearService();
 
 			GoogleDeviceServiceUtil.clearService();
+			OharraLocalServiceUtil.clearService();
+
+			OharraServiceUtil.clearService();
 			SagardotegiLocalServiceUtil.clearService();
 
 			SagardotegiServiceUtil.clearService();

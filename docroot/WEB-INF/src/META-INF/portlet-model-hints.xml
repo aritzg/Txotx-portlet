@@ -26,6 +26,19 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 	</model>
+	<model name="net.sareweb.txotx.model.Oharra">
+		<field name="oharraId" type="long" />
+		<field name="oharMota" type="String" />
+		<field name="irudiKarpetaId" type="long" />
+		<field name="irudia" type="String" />
+		<field name="izenburua" type="String" />
+		<field name="testua" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="esteka" type="String" />
+		<field name="estekaTestua" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
 	<model name="net.sareweb.txotx.model.Sagardotegi">
 		<field name="sagardotegiId" type="long" />
 		<field name="izena" type="String" />

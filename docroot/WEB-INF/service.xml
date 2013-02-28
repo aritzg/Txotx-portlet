@@ -123,7 +123,30 @@
 		<finder return-type="Collection" name="EmailAddress">
 			<finder-column name="emailAddress"></finder-column>
 		</finder>
+
+	</entity>
+	
+	<entity name="Oharra" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="oharraId" type="long" primary="true" />
 		
+		<column name="oharMota" type="String" />
+		<column name="irudiKarpetaId" type="long" />
+		<column name="irudia" type="String" />
+		<column name="izenburua" type="String" />
+		<column name="testua" type="String" />
+		<column name="esteka" type="String" />
+		<column name="estekaTestua" type="String" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+	
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
 
 
 	</entity>

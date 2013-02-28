@@ -21,6 +21,18 @@ create table Txotx_GoogleDevice (
 	modifiedDate DATE null
 );
 
+create table Txotx_Oharra (
+	oharraId LONG not null primary key,
+	oharMota VARCHAR(75) null,
+	irudiKarpetaId LONG,
+	irudia VARCHAR(75) null,
+	izenburua VARCHAR(75) null,
+	testua VARCHAR(1000) null,
+	esteka VARCHAR(75) null,
+	estekaTestua VARCHAR(75) null,
+	createDate DATE null
+);
+
 create table Txotx_Sagardotegi (
 	sagardotegiId LONG not null primary key,
 	izena VARCHAR(75) null,

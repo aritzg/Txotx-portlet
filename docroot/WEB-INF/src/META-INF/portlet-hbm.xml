@@ -4,6 +4,7 @@
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="net.sareweb.txotx.model.Gertaera" />
 	<import class="net.sareweb.txotx.model.GoogleDevice" />
+	<import class="net.sareweb.txotx.model.Oharra" />
 	<import class="net.sareweb.txotx.model.Sagardotegi" />
 	<import class="net.sareweb.txotx.model.Sailkapena" />
 	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
@@ -30,6 +31,19 @@
 		<property name="registrationId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.txotx.model.impl.OharraImpl" table="Txotx_Oharra">
+		<id name="oharraId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="oharMota" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="izenburua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="testua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="esteka" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="estekaTestua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
 	</class>
 	<class name="net.sareweb.txotx.model.impl.SagardotegiImpl" table="Txotx_Sagardotegi">
 		<id name="sagardotegiId" type="long">

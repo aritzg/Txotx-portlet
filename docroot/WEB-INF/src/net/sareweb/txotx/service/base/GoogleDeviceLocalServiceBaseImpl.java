@@ -42,12 +42,15 @@ import net.sareweb.txotx.service.GertaeraLocalService;
 import net.sareweb.txotx.service.GertaeraService;
 import net.sareweb.txotx.service.GoogleDeviceLocalService;
 import net.sareweb.txotx.service.GoogleDeviceService;
+import net.sareweb.txotx.service.OharraLocalService;
+import net.sareweb.txotx.service.OharraService;
 import net.sareweb.txotx.service.SagardotegiLocalService;
 import net.sareweb.txotx.service.SagardotegiService;
 import net.sareweb.txotx.service.SailkapenaLocalService;
 import net.sareweb.txotx.service.SailkapenaService;
 import net.sareweb.txotx.service.persistence.GertaeraPersistence;
 import net.sareweb.txotx.service.persistence.GoogleDevicePersistence;
+import net.sareweb.txotx.service.persistence.OharraPersistence;
 import net.sareweb.txotx.service.persistence.SagardotegiPersistence;
 import net.sareweb.txotx.service.persistence.SailkapenaPersistence;
 
@@ -394,6 +397,60 @@ public abstract class GoogleDeviceLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the oharra local service.
+	 *
+	 * @return the oharra local service
+	 */
+	public OharraLocalService getOharraLocalService() {
+		return oharraLocalService;
+	}
+
+	/**
+	 * Sets the oharra local service.
+	 *
+	 * @param oharraLocalService the oharra local service
+	 */
+	public void setOharraLocalService(OharraLocalService oharraLocalService) {
+		this.oharraLocalService = oharraLocalService;
+	}
+
+	/**
+	 * Returns the oharra remote service.
+	 *
+	 * @return the oharra remote service
+	 */
+	public OharraService getOharraService() {
+		return oharraService;
+	}
+
+	/**
+	 * Sets the oharra remote service.
+	 *
+	 * @param oharraService the oharra remote service
+	 */
+	public void setOharraService(OharraService oharraService) {
+		this.oharraService = oharraService;
+	}
+
+	/**
+	 * Returns the oharra persistence.
+	 *
+	 * @return the oharra persistence
+	 */
+	public OharraPersistence getOharraPersistence() {
+		return oharraPersistence;
+	}
+
+	/**
+	 * Sets the oharra persistence.
+	 *
+	 * @param oharraPersistence the oharra persistence
+	 */
+	public void setOharraPersistence(OharraPersistence oharraPersistence) {
+		this.oharraPersistence = oharraPersistence;
+	}
+
+	/**
 	 * Returns the sagardotegi local service.
 	 *
 	 * @return the sagardotegi local service
@@ -704,6 +761,12 @@ public abstract class GoogleDeviceLocalServiceBaseImpl
 	protected GoogleDeviceService googleDeviceService;
 	@BeanReference(type = GoogleDevicePersistence.class)
 	protected GoogleDevicePersistence googleDevicePersistence;
+	@BeanReference(type = OharraLocalService.class)
+	protected OharraLocalService oharraLocalService;
+	@BeanReference(type = OharraService.class)
+	protected OharraService oharraService;
+	@BeanReference(type = OharraPersistence.class)
+	protected OharraPersistence oharraPersistence;
 	@BeanReference(type = SagardotegiLocalService.class)
 	protected SagardotegiLocalService sagardotegiLocalService;
 	@BeanReference(type = SagardotegiService.class)

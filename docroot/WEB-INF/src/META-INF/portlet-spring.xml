@@ -7,6 +7,9 @@
 	<bean id="net.sareweb.txotx.service.GoogleDeviceLocalService" class="net.sareweb.txotx.service.impl.GoogleDeviceLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.GoogleDeviceService" class="net.sareweb.txotx.service.impl.GoogleDeviceServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.GoogleDevicePersistence" class="net.sareweb.txotx.service.persistence.GoogleDevicePersistenceImpl" parent="basePersistence" />
+	<bean id="net.sareweb.txotx.service.OharraLocalService" class="net.sareweb.txotx.service.impl.OharraLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.OharraService" class="net.sareweb.txotx.service.impl.OharraServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.OharraPersistence" class="net.sareweb.txotx.service.persistence.OharraPersistenceImpl" parent="basePersistence" />
 	<bean id="net.sareweb.txotx.service.SagardotegiLocalService" class="net.sareweb.txotx.service.impl.SagardotegiLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.SagardotegiService" class="net.sareweb.txotx.service.impl.SagardotegiServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.SagardotegiPersistence" class="net.sareweb.txotx.service.persistence.SagardotegiPersistenceImpl" parent="basePersistence" />

@@ -40,10 +40,10 @@ import com.liferay.portal.service.persistence.ResourcePersistence;
 import com.liferay.portal.service.persistence.UserPersistence;
 import com.liferay.portal.service.persistence.impl.BasePersistenceImpl;
 
-import net.sareweb.txotx.NoSuchGertaeraException;
-import net.sareweb.txotx.model.Gertaera;
-import net.sareweb.txotx.model.impl.GertaeraImpl;
-import net.sareweb.txotx.model.impl.GertaeraModelImpl;
+import net.sareweb.txotx.NoSuchOharraException;
+import net.sareweb.txotx.model.Oharra;
+import net.sareweb.txotx.model.impl.OharraImpl;
+import net.sareweb.txotx.model.impl.OharraModelImpl;
 
 import java.io.Serializable;
 
@@ -52,71 +52,71 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * The persistence implementation for the gertaera service.
+ * The persistence implementation for the oharra service.
  *
  * <p>
  * Caching information and settings can be found in <code>portal.properties</code>
  * </p>
  *
  * @author A.Galdos
- * @see GertaeraPersistence
- * @see GertaeraUtil
+ * @see OharraPersistence
+ * @see OharraUtil
  * @generated
  */
-public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
-	implements GertaeraPersistence {
+public class OharraPersistenceImpl extends BasePersistenceImpl<Oharra>
+	implements OharraPersistence {
 	/*
 	 * NOTE FOR DEVELOPERS:
 	 *
-	 * Never modify or reference this class directly. Always use {@link GertaeraUtil} to access the gertaera persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
+	 * Never modify or reference this class directly. Always use {@link OharraUtil} to access the oharra persistence. Modify <code>service.xml</code> and rerun ServiceBuilder to regenerate this class.
 	 */
-	public static final String FINDER_CLASS_NAME_ENTITY = GertaeraImpl.class.getName();
+	public static final String FINDER_CLASS_NAME_ENTITY = OharraImpl.class.getName();
 	public static final String FINDER_CLASS_NAME_LIST_WITH_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List1";
 	public static final String FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION = FINDER_CLASS_NAME_ENTITY +
 		".List2";
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraModelImpl.FINDER_CACHE_ENABLED, GertaeraImpl.class,
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraModelImpl.FINDER_CACHE_ENABLED, OharraImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL = new FinderPath(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraModelImpl.FINDER_CACHE_ENABLED, GertaeraImpl.class,
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_ALL = new FinderPath(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraModelImpl.FINDER_CACHE_ENABLED, OharraImpl.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findAll", new String[0]);
-	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraModelImpl.FINDER_CACHE_ENABLED, Long.class,
+	public static final FinderPath FINDER_PATH_COUNT_ALL = new FinderPath(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countAll", new String[0]);
 
 	/**
-	 * Caches the gertaera in the entity cache if it is enabled.
+	 * Caches the oharra in the entity cache if it is enabled.
 	 *
-	 * @param gertaera the gertaera
+	 * @param oharra the oharra
 	 */
-	public void cacheResult(Gertaera gertaera) {
-		EntityCacheUtil.putResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraImpl.class, gertaera.getPrimaryKey(), gertaera);
+	public void cacheResult(Oharra oharra) {
+		EntityCacheUtil.putResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraImpl.class, oharra.getPrimaryKey(), oharra);
 
-		gertaera.resetOriginalValues();
+		oharra.resetOriginalValues();
 	}
 
 	/**
-	 * Caches the gertaeras in the entity cache if it is enabled.
+	 * Caches the oharras in the entity cache if it is enabled.
 	 *
-	 * @param gertaeras the gertaeras
+	 * @param oharras the oharras
 	 */
-	public void cacheResult(List<Gertaera> gertaeras) {
-		for (Gertaera gertaera : gertaeras) {
+	public void cacheResult(List<Oharra> oharras) {
+		for (Oharra oharra : oharras) {
 			if (EntityCacheUtil.getResult(
-						GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-						GertaeraImpl.class, gertaera.getPrimaryKey()) == null) {
-				cacheResult(gertaera);
+						OharraModelImpl.ENTITY_CACHE_ENABLED, OharraImpl.class,
+						oharra.getPrimaryKey()) == null) {
+				cacheResult(oharra);
 			}
 			else {
-				gertaera.resetOriginalValues();
+				oharra.resetOriginalValues();
 			}
 		}
 	}
 
 	/**
-	 * Clears the cache for all gertaeras.
+	 * Clears the cache for all oharras.
 	 *
 	 * <p>
 	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
@@ -125,10 +125,10 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	@Override
 	public void clearCache() {
 		if (_HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE) {
-			CacheRegistryUtil.clear(GertaeraImpl.class.getName());
+			CacheRegistryUtil.clear(OharraImpl.class.getName());
 		}
 
-		EntityCacheUtil.clearCache(GertaeraImpl.class.getName());
+		EntityCacheUtil.clearCache(OharraImpl.class.getName());
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_ENTITY);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
@@ -136,91 +136,90 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	}
 
 	/**
-	 * Clears the cache for the gertaera.
+	 * Clears the cache for the oharra.
 	 *
 	 * <p>
 	 * The {@link com.liferay.portal.kernel.dao.orm.EntityCache} and {@link com.liferay.portal.kernel.dao.orm.FinderCache} are both cleared by this method.
 	 * </p>
 	 */
 	@Override
-	public void clearCache(Gertaera gertaera) {
-		EntityCacheUtil.removeResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraImpl.class, gertaera.getPrimaryKey());
+	public void clearCache(Oharra oharra) {
+		EntityCacheUtil.removeResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraImpl.class, oharra.getPrimaryKey());
 
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
 	@Override
-	public void clearCache(List<Gertaera> gertaeras) {
+	public void clearCache(List<Oharra> oharras) {
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITH_PAGINATION);
 		FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 
-		for (Gertaera gertaera : gertaeras) {
-			EntityCacheUtil.removeResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-				GertaeraImpl.class, gertaera.getPrimaryKey());
+		for (Oharra oharra : oharras) {
+			EntityCacheUtil.removeResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+				OharraImpl.class, oharra.getPrimaryKey());
 		}
 	}
 
 	/**
-	 * Creates a new gertaera with the primary key. Does not add the gertaera to the database.
+	 * Creates a new oharra with the primary key. Does not add the oharra to the database.
 	 *
-	 * @param gertaeraId the primary key for the new gertaera
-	 * @return the new gertaera
+	 * @param oharraId the primary key for the new oharra
+	 * @return the new oharra
 	 */
-	public Gertaera create(long gertaeraId) {
-		Gertaera gertaera = new GertaeraImpl();
+	public Oharra create(long oharraId) {
+		Oharra oharra = new OharraImpl();
 
-		gertaera.setNew(true);
-		gertaera.setPrimaryKey(gertaeraId);
+		oharra.setNew(true);
+		oharra.setPrimaryKey(oharraId);
 
-		return gertaera;
+		return oharra;
 	}
 
 	/**
-	 * Removes the gertaera with the primary key from the database. Also notifies the appropriate model listeners.
+	 * Removes the oharra with the primary key from the database. Also notifies the appropriate model listeners.
 	 *
-	 * @param gertaeraId the primary key of the gertaera
-	 * @return the gertaera that was removed
-	 * @throws net.sareweb.txotx.NoSuchGertaeraException if a gertaera with the primary key could not be found
+	 * @param oharraId the primary key of the oharra
+	 * @return the oharra that was removed
+	 * @throws net.sareweb.txotx.NoSuchOharraException if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Gertaera remove(long gertaeraId)
-		throws NoSuchGertaeraException, SystemException {
-		return remove(Long.valueOf(gertaeraId));
+	public Oharra remove(long oharraId)
+		throws NoSuchOharraException, SystemException {
+		return remove(Long.valueOf(oharraId));
 	}
 
 	/**
-	 * Removes the gertaera with the primary key from the database. Also notifies the appropriate model listeners.
+	 * Removes the oharra with the primary key from the database. Also notifies the appropriate model listeners.
 	 *
-	 * @param primaryKey the primary key of the gertaera
-	 * @return the gertaera that was removed
-	 * @throws net.sareweb.txotx.NoSuchGertaeraException if a gertaera with the primary key could not be found
+	 * @param primaryKey the primary key of the oharra
+	 * @return the oharra that was removed
+	 * @throws net.sareweb.txotx.NoSuchOharraException if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public Gertaera remove(Serializable primaryKey)
-		throws NoSuchGertaeraException, SystemException {
+	public Oharra remove(Serializable primaryKey)
+		throws NoSuchOharraException, SystemException {
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			Gertaera gertaera = (Gertaera)session.get(GertaeraImpl.class,
-					primaryKey);
+			Oharra oharra = (Oharra)session.get(OharraImpl.class, primaryKey);
 
-			if (gertaera == null) {
+			if (oharra == null) {
 				if (_log.isWarnEnabled()) {
 					_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + primaryKey);
 				}
 
-				throw new NoSuchGertaeraException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+				throw new NoSuchOharraException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
 					primaryKey);
 			}
 
-			return remove(gertaera);
+			return remove(oharra);
 		}
-		catch (NoSuchGertaeraException nsee) {
+		catch (NoSuchOharraException nsee) {
 			throw nsee;
 		}
 		catch (Exception e) {
@@ -232,15 +231,15 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	}
 
 	@Override
-	protected Gertaera removeImpl(Gertaera gertaera) throws SystemException {
-		gertaera = toUnwrappedModel(gertaera);
+	protected Oharra removeImpl(Oharra oharra) throws SystemException {
+		oharra = toUnwrappedModel(oharra);
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			BatchSessionUtil.delete(session, gertaera);
+			BatchSessionUtil.delete(session, oharra);
 		}
 		catch (Exception e) {
 			throw processException(e);
@@ -249,26 +248,26 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 			closeSession(session);
 		}
 
-		clearCache(gertaera);
+		clearCache(oharra);
 
-		return gertaera;
+		return oharra;
 	}
 
 	@Override
-	public Gertaera updateImpl(net.sareweb.txotx.model.Gertaera gertaera,
+	public Oharra updateImpl(net.sareweb.txotx.model.Oharra oharra,
 		boolean merge) throws SystemException {
-		gertaera = toUnwrappedModel(gertaera);
+		oharra = toUnwrappedModel(oharra);
 
-		boolean isNew = gertaera.isNew();
+		boolean isNew = oharra.isNew();
 
 		Session session = null;
 
 		try {
 			session = openSession();
 
-			BatchSessionUtil.update(session, gertaera, merge);
+			BatchSessionUtil.update(session, oharra, merge);
 
-			gertaera.setNew(false);
+			oharra.setNew(false);
 		}
 		catch (Exception e) {
 			throw processException(e);
@@ -283,105 +282,102 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 			FinderCacheUtil.clearCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 		}
 
-		EntityCacheUtil.putResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-			GertaeraImpl.class, gertaera.getPrimaryKey(), gertaera);
+		EntityCacheUtil.putResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+			OharraImpl.class, oharra.getPrimaryKey(), oharra);
 
-		return gertaera;
+		return oharra;
 	}
 
-	protected Gertaera toUnwrappedModel(Gertaera gertaera) {
-		if (gertaera instanceof GertaeraImpl) {
-			return gertaera;
+	protected Oharra toUnwrappedModel(Oharra oharra) {
+		if (oharra instanceof OharraImpl) {
+			return oharra;
 		}
 
-		GertaeraImpl gertaeraImpl = new GertaeraImpl();
+		OharraImpl oharraImpl = new OharraImpl();
 
-		gertaeraImpl.setNew(gertaera.isNew());
-		gertaeraImpl.setPrimaryKey(gertaera.getPrimaryKey());
+		oharraImpl.setNew(oharra.isNew());
+		oharraImpl.setPrimaryKey(oharra.getPrimaryKey());
 
-		gertaeraImpl.setGertaeraId(gertaera.getGertaeraId());
-		gertaeraImpl.setSagardotegiId(gertaera.getSagardotegiId());
-		gertaeraImpl.setUserId(gertaera.getUserId());
-		gertaeraImpl.setScreenName(gertaera.getScreenName());
-		gertaeraImpl.setGertaeraMota(gertaera.getGertaeraMota());
-		gertaeraImpl.setTestua(gertaera.getTestua());
-		gertaeraImpl.setIrudiKarpetaId(gertaera.getIrudiKarpetaId());
-		gertaeraImpl.setIrudia(gertaera.getIrudia());
-		gertaeraImpl.setBalorazioa(gertaera.getBalorazioa());
-		gertaeraImpl.setCreateDate(gertaera.getCreateDate());
-		gertaeraImpl.setModifiedDate(gertaera.getModifiedDate());
+		oharraImpl.setOharraId(oharra.getOharraId());
+		oharraImpl.setOharMota(oharra.getOharMota());
+		oharraImpl.setIrudiKarpetaId(oharra.getIrudiKarpetaId());
+		oharraImpl.setIrudia(oharra.getIrudia());
+		oharraImpl.setIzenburua(oharra.getIzenburua());
+		oharraImpl.setTestua(oharra.getTestua());
+		oharraImpl.setEsteka(oharra.getEsteka());
+		oharraImpl.setEstekaTestua(oharra.getEstekaTestua());
+		oharraImpl.setCreateDate(oharra.getCreateDate());
 
-		return gertaeraImpl;
+		return oharraImpl;
 	}
 
 	/**
-	 * Returns the gertaera with the primary key or throws a {@link com.liferay.portal.NoSuchModelException} if it could not be found.
+	 * Returns the oharra with the primary key or throws a {@link com.liferay.portal.NoSuchModelException} if it could not be found.
 	 *
-	 * @param primaryKey the primary key of the gertaera
-	 * @return the gertaera
-	 * @throws com.liferay.portal.NoSuchModelException if a gertaera with the primary key could not be found
+	 * @param primaryKey the primary key of the oharra
+	 * @return the oharra
+	 * @throws com.liferay.portal.NoSuchModelException if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public Gertaera findByPrimaryKey(Serializable primaryKey)
+	public Oharra findByPrimaryKey(Serializable primaryKey)
 		throws NoSuchModelException, SystemException {
 		return findByPrimaryKey(((Long)primaryKey).longValue());
 	}
 
 	/**
-	 * Returns the gertaera with the primary key or throws a {@link net.sareweb.txotx.NoSuchGertaeraException} if it could not be found.
+	 * Returns the oharra with the primary key or throws a {@link net.sareweb.txotx.NoSuchOharraException} if it could not be found.
 	 *
-	 * @param gertaeraId the primary key of the gertaera
-	 * @return the gertaera
-	 * @throws net.sareweb.txotx.NoSuchGertaeraException if a gertaera with the primary key could not be found
+	 * @param oharraId the primary key of the oharra
+	 * @return the oharra
+	 * @throws net.sareweb.txotx.NoSuchOharraException if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Gertaera findByPrimaryKey(long gertaeraId)
-		throws NoSuchGertaeraException, SystemException {
-		Gertaera gertaera = fetchByPrimaryKey(gertaeraId);
+	public Oharra findByPrimaryKey(long oharraId)
+		throws NoSuchOharraException, SystemException {
+		Oharra oharra = fetchByPrimaryKey(oharraId);
 
-		if (gertaera == null) {
+		if (oharra == null) {
 			if (_log.isWarnEnabled()) {
-				_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + gertaeraId);
+				_log.warn(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY + oharraId);
 			}
 
-			throw new NoSuchGertaeraException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
-				gertaeraId);
+			throw new NoSuchOharraException(_NO_SUCH_ENTITY_WITH_PRIMARY_KEY +
+				oharraId);
 		}
 
-		return gertaera;
+		return oharra;
 	}
 
 	/**
-	 * Returns the gertaera with the primary key or returns <code>null</code> if it could not be found.
+	 * Returns the oharra with the primary key or returns <code>null</code> if it could not be found.
 	 *
-	 * @param primaryKey the primary key of the gertaera
-	 * @return the gertaera, or <code>null</code> if a gertaera with the primary key could not be found
+	 * @param primaryKey the primary key of the oharra
+	 * @return the oharra, or <code>null</code> if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
 	@Override
-	public Gertaera fetchByPrimaryKey(Serializable primaryKey)
+	public Oharra fetchByPrimaryKey(Serializable primaryKey)
 		throws SystemException {
 		return fetchByPrimaryKey(((Long)primaryKey).longValue());
 	}
 
 	/**
-	 * Returns the gertaera with the primary key or returns <code>null</code> if it could not be found.
+	 * Returns the oharra with the primary key or returns <code>null</code> if it could not be found.
 	 *
-	 * @param gertaeraId the primary key of the gertaera
-	 * @return the gertaera, or <code>null</code> if a gertaera with the primary key could not be found
+	 * @param oharraId the primary key of the oharra
+	 * @return the oharra, or <code>null</code> if a oharra with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Gertaera fetchByPrimaryKey(long gertaeraId)
-		throws SystemException {
-		Gertaera gertaera = (Gertaera)EntityCacheUtil.getResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-				GertaeraImpl.class, gertaeraId);
+	public Oharra fetchByPrimaryKey(long oharraId) throws SystemException {
+		Oharra oharra = (Oharra)EntityCacheUtil.getResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+				OharraImpl.class, oharraId);
 
-		if (gertaera == _nullGertaera) {
+		if (oharra == _nullOharra) {
 			return null;
 		}
 
-		if (gertaera == null) {
+		if (oharra == null) {
 			Session session = null;
 
 			boolean hasException = false;
@@ -389,8 +385,8 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 			try {
 				session = openSession();
 
-				gertaera = (Gertaera)session.get(GertaeraImpl.class,
-						Long.valueOf(gertaeraId));
+				oharra = (Oharra)session.get(OharraImpl.class,
+						Long.valueOf(oharraId));
 			}
 			catch (Exception e) {
 				hasException = true;
@@ -398,61 +394,61 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 				throw processException(e);
 			}
 			finally {
-				if (gertaera != null) {
-					cacheResult(gertaera);
+				if (oharra != null) {
+					cacheResult(oharra);
 				}
 				else if (!hasException) {
-					EntityCacheUtil.putResult(GertaeraModelImpl.ENTITY_CACHE_ENABLED,
-						GertaeraImpl.class, gertaeraId, _nullGertaera);
+					EntityCacheUtil.putResult(OharraModelImpl.ENTITY_CACHE_ENABLED,
+						OharraImpl.class, oharraId, _nullOharra);
 				}
 
 				closeSession(session);
 			}
 		}
 
-		return gertaera;
+		return oharra;
 	}
 
 	/**
-	 * Returns all the gertaeras.
+	 * Returns all the oharras.
 	 *
-	 * @return the gertaeras
+	 * @return the oharras
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Gertaera> findAll() throws SystemException {
+	public List<Oharra> findAll() throws SystemException {
 		return findAll(QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
 	}
 
 	/**
-	 * Returns a range of all the gertaeras.
+	 * Returns a range of all the oharras.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
 	 * </p>
 	 *
-	 * @param start the lower bound of the range of gertaeras
-	 * @param end the upper bound of the range of gertaeras (not inclusive)
-	 * @return the range of gertaeras
+	 * @param start the lower bound of the range of oharras
+	 * @param end the upper bound of the range of oharras (not inclusive)
+	 * @return the range of oharras
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Gertaera> findAll(int start, int end) throws SystemException {
+	public List<Oharra> findAll(int start, int end) throws SystemException {
 		return findAll(start, end, null);
 	}
 
 	/**
-	 * Returns an ordered range of all the gertaeras.
+	 * Returns an ordered range of all the oharras.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
 	 * </p>
 	 *
-	 * @param start the lower bound of the range of gertaeras
-	 * @param end the upper bound of the range of gertaeras (not inclusive)
+	 * @param start the lower bound of the range of oharras
+	 * @param end the upper bound of the range of oharras (not inclusive)
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
-	 * @return the ordered range of gertaeras
+	 * @return the ordered range of oharras
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Gertaera> findAll(int start, int end,
+	public List<Oharra> findAll(int start, int end,
 		OrderByComparator orderByComparator) throws SystemException {
 		FinderPath finderPath = null;
 		Object[] finderArgs = new Object[] { start, end, orderByComparator };
@@ -467,7 +463,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 			finderArgs = new Object[] { start, end, orderByComparator };
 		}
 
-		List<Gertaera> list = (List<Gertaera>)FinderCacheUtil.getResult(finderPath,
+		List<Oharra> list = (List<Oharra>)FinderCacheUtil.getResult(finderPath,
 				finderArgs, this);
 
 		if (list == null) {
@@ -478,7 +474,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 				query = new StringBundler(2 +
 						(orderByComparator.getOrderByFields().length * 3));
 
-				query.append(_SQL_SELECT_GERTAERA);
+				query.append(_SQL_SELECT_OHARRA);
 
 				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
 					orderByComparator);
@@ -486,7 +482,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 				sql = query.toString();
 			}
 			else {
-				sql = _SQL_SELECT_GERTAERA.concat(GertaeraModelImpl.ORDER_BY_JPQL);
+				sql = _SQL_SELECT_OHARRA.concat(OharraModelImpl.ORDER_BY_JPQL);
 			}
 
 			Session session = null;
@@ -497,14 +493,14 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 				Query q = session.createQuery(sql);
 
 				if (orderByComparator == null) {
-					list = (List<Gertaera>)QueryUtil.list(q, getDialect(),
-							start, end, false);
+					list = (List<Oharra>)QueryUtil.list(q, getDialect(), start,
+							end, false);
 
 					Collections.sort(list);
 				}
 				else {
-					list = (List<Gertaera>)QueryUtil.list(q, getDialect(),
-							start, end);
+					list = (List<Oharra>)QueryUtil.list(q, getDialect(), start,
+							end);
 				}
 			}
 			catch (Exception e) {
@@ -528,20 +524,20 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	}
 
 	/**
-	 * Removes all the gertaeras from the database.
+	 * Removes all the oharras from the database.
 	 *
 	 * @throws SystemException if a system exception occurred
 	 */
 	public void removeAll() throws SystemException {
-		for (Gertaera gertaera : findAll()) {
-			remove(gertaera);
+		for (Oharra oharra : findAll()) {
+			remove(oharra);
 		}
 	}
 
 	/**
-	 * Returns the number of gertaeras.
+	 * Returns the number of oharras.
 	 *
-	 * @return the number of gertaeras
+	 * @return the number of oharras
 	 * @throws SystemException if a system exception occurred
 	 */
 	public int countAll() throws SystemException {
@@ -554,7 +550,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 			try {
 				session = openSession();
 
-				Query q = session.createQuery(_SQL_COUNT_GERTAERA);
+				Query q = session.createQuery(_SQL_COUNT_OHARRA);
 
 				count = (Long)q.uniqueResult();
 			}
@@ -577,19 +573,19 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	}
 
 	/**
-	 * Initializes the gertaera persistence.
+	 * Initializes the oharra persistence.
 	 */
 	public void afterPropertiesSet() {
 		String[] listenerClassNames = StringUtil.split(GetterUtil.getString(
 					com.liferay.util.service.ServiceProps.get(
-						"value.object.listener.net.sareweb.txotx.model.Gertaera")));
+						"value.object.listener.net.sareweb.txotx.model.Oharra")));
 
 		if (listenerClassNames.length > 0) {
 			try {
-				List<ModelListener<Gertaera>> listenersList = new ArrayList<ModelListener<Gertaera>>();
+				List<ModelListener<Oharra>> listenersList = new ArrayList<ModelListener<Oharra>>();
 
 				for (String listenerClassName : listenerClassNames) {
-					listenersList.add((ModelListener<Gertaera>)InstanceFactory.newInstance(
+					listenersList.add((ModelListener<Oharra>)InstanceFactory.newInstance(
 							listenerClassName));
 				}
 
@@ -602,7 +598,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	}
 
 	public void destroy() {
-		EntityCacheUtil.removeCache(GertaeraImpl.class.getName());
+		EntityCacheUtil.removeCache(OharraImpl.class.getName());
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_ENTITY);
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
@@ -621,28 +617,28 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	protected ResourcePersistence resourcePersistence;
 	@BeanReference(type = UserPersistence.class)
 	protected UserPersistence userPersistence;
-	private static final String _SQL_SELECT_GERTAERA = "SELECT gertaera FROM Gertaera gertaera";
-	private static final String _SQL_COUNT_GERTAERA = "SELECT COUNT(gertaera) FROM Gertaera gertaera";
-	private static final String _ORDER_BY_ENTITY_ALIAS = "gertaera.";
-	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Gertaera exists with the primary key ";
+	private static final String _SQL_SELECT_OHARRA = "SELECT oharra FROM Oharra oharra";
+	private static final String _SQL_COUNT_OHARRA = "SELECT COUNT(oharra) FROM Oharra oharra";
+	private static final String _ORDER_BY_ENTITY_ALIAS = "oharra.";
+	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Oharra exists with the primary key ";
 	private static final boolean _HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE = GetterUtil.getBoolean(PropsUtil.get(
 				PropsKeys.HIBERNATE_CACHE_USE_SECOND_LEVEL_CACHE));
-	private static Log _log = LogFactoryUtil.getLog(GertaeraPersistenceImpl.class);
-	private static Gertaera _nullGertaera = new GertaeraImpl() {
+	private static Log _log = LogFactoryUtil.getLog(OharraPersistenceImpl.class);
+	private static Oharra _nullOharra = new OharraImpl() {
 			@Override
 			public Object clone() {
 				return this;
 			}
 
 			@Override
-			public CacheModel<Gertaera> toCacheModel() {
-				return _nullGertaeraCacheModel;
+			public CacheModel<Oharra> toCacheModel() {
+				return _nullOharraCacheModel;
 			}
 		};
 
-	private static CacheModel<Gertaera> _nullGertaeraCacheModel = new CacheModel<Gertaera>() {
-			public Gertaera toEntityModel() {
-				return _nullGertaera;
+	private static CacheModel<Oharra> _nullOharraCacheModel = new CacheModel<Oharra>() {
+			public Oharra toEntityModel() {
+				return _nullOharra;
 			}
 		};
 }

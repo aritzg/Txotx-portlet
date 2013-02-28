@@ -861,6 +861,8 @@ public class SailkapenaPersistenceImpl extends BasePersistenceImpl<Sailkapena>
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = GoogleDevicePersistence.class)
 	protected GoogleDevicePersistence googleDevicePersistence;
+	@BeanReference(type = OharraPersistence.class)
+	protected OharraPersistence oharraPersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
 	@BeanReference(type = SailkapenaPersistence.class)

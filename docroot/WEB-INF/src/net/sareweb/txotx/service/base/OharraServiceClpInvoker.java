@@ -14,15 +14,15 @@
 
 package net.sareweb.txotx.service.base;
 
-import net.sareweb.txotx.service.GoogleDeviceServiceUtil;
+import net.sareweb.txotx.service.OharraServiceUtil;
 
 import java.util.Arrays;
 
 /**
  * @author Brian Wing Shun Chan
  */
-public class GoogleDeviceServiceClpInvoker {
-	public GoogleDeviceServiceClpInvoker() {
+public class OharraServiceClpInvoker {
+	public OharraServiceClpInvoker() {
 		_methodName46 = "getBeanIdentifier";
 
 		_methodParameterTypes46 = new String[] {  };
@@ -31,47 +31,53 @@ public class GoogleDeviceServiceClpInvoker {
 
 		_methodParameterTypes47 = new String[] { "java.lang.String" };
 
-		_methodName52 = "addGoogleDevice";
+		_methodName52 = "getAzkenErronka";
 
-		_methodParameterTypes52 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
+		_methodParameterTypes52 = new String[] {  };
 
-		_methodName53 = "unregisterGoogleDevice";
+		_methodName53 = "getAzkenOharra";
 
-		_methodParameterTypes53 = new String[] { "java.lang.String" };
+		_methodParameterTypes53 = new String[] {  };
 
-		_methodName54 = "getGoogleDevicesByUserId";
+		_methodName54 = "getOharra";
 
 		_methodParameterTypes54 = new String[] { "long" };
+
+		_methodName55 = "bidaliOharra";
+
+		_methodParameterTypes55 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
 		if (_methodName46.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes46, parameterTypes)) {
-			return GoogleDeviceServiceUtil.getBeanIdentifier();
+			return OharraServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName47.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes47, parameterTypes)) {
-			GoogleDeviceServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			OharraServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
 		if (_methodName52.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes52, parameterTypes)) {
-			return GoogleDeviceServiceUtil.addGoogleDevice((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1]);
+			return OharraServiceUtil.getAzkenErronka();
 		}
 
 		if (_methodName53.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes53, parameterTypes)) {
-			return GoogleDeviceServiceUtil.unregisterGoogleDevice((java.lang.String)arguments[0]);
+			return OharraServiceUtil.getAzkenOharra();
 		}
 
 		if (_methodName54.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes54, parameterTypes)) {
-			return GoogleDeviceServiceUtil.getGoogleDevicesByUserId(((Long)arguments[0]).longValue());
+			return OharraServiceUtil.getOharra(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName55.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes55, parameterTypes)) {
+			OharraServiceUtil.bidaliOharra(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
@@ -87,4 +93,6 @@ public class GoogleDeviceServiceClpInvoker {
 	private String[] _methodParameterTypes53;
 	private String _methodName54;
 	private String[] _methodParameterTypes54;
+	private String _methodName55;
+	private String[] _methodParameterTypes55;
 }

@@ -27,6 +27,7 @@ import com.liferay.portal.model.BaseModel;
 
 import net.sareweb.txotx.model.GertaeraClp;
 import net.sareweb.txotx.model.GoogleDeviceClp;
+import net.sareweb.txotx.model.OharraClp;
 import net.sareweb.txotx.model.SagardotegiClp;
 import net.sareweb.txotx.model.SailkapenaClp;
 
@@ -113,6 +114,10 @@ public class ClpSerializer {
 			return translateInputGoogleDevice(oldModel);
 		}
 
+		if (oldModelClassName.equals(OharraClp.class.getName())) {
+			return translateInputOharra(oldModel);
+		}
+
 		if (oldModelClassName.equals(SagardotegiClp.class.getName())) {
 			return translateInputSagardotegi(oldModel);
 		}
@@ -150,6 +155,16 @@ public class ClpSerializer {
 		GoogleDeviceClp oldClpModel = (GoogleDeviceClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getGoogleDeviceRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputOharra(BaseModel<?> oldModel) {
+		OharraClp oldClpModel = (OharraClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getOharraRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -201,6 +216,10 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"net.sareweb.txotx.model.impl.GoogleDeviceImpl")) {
 			return translateOutputGoogleDevice(oldModel);
+		}
+
+		if (oldModelClassName.equals("net.sareweb.txotx.model.impl.OharraImpl")) {
+			return translateOutputOharra(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -301,6 +320,10 @@ public class ClpSerializer {
 			return new net.sareweb.txotx.NoSuchGoogleDeviceException();
 		}
 
+		if (className.equals("net.sareweb.txotx.NoSuchOharraException")) {
+			return new net.sareweb.txotx.NoSuchOharraException();
+		}
+
 		if (className.equals("net.sareweb.txotx.NoSuchSagardotegiException")) {
 			return new net.sareweb.txotx.NoSuchSagardotegiException();
 		}
@@ -328,6 +351,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setGoogleDeviceRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputOharra(BaseModel<?> oldModel) {
+		OharraClp newModel = new OharraClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setOharraRemoteModel(oldModel);
 
 		return newModel;
 	}

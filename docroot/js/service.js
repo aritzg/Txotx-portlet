@@ -22,6 +22,16 @@ Liferay.Service.registerClass(
 );
 
 Liferay.Service.registerClass(
+	Liferay.Service.Txotx, "Oharra",
+	{
+		getAzkenErronka: true,
+		getAzkenOharra: true,
+		getOharra: true,
+		bidaliOharra: true
+	}
+);
+
+Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Sagardotegi",
 	{
 		getSagardotegia: true,

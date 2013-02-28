@@ -14,34 +14,30 @@
 
 package net.sareweb.txotx.service.base;
 
-import net.sareweb.txotx.service.GoogleDeviceLocalServiceUtil;
+import net.sareweb.txotx.service.OharraLocalServiceUtil;
 
 import java.util.Arrays;
 
 /**
  * @author Brian Wing Shun Chan
  */
-public class GoogleDeviceLocalServiceClpInvoker {
-	public GoogleDeviceLocalServiceClpInvoker() {
-		_methodName0 = "addGoogleDevice";
+public class OharraLocalServiceClpInvoker {
+	public OharraLocalServiceClpInvoker() {
+		_methodName0 = "addOharra";
 
-		_methodParameterTypes0 = new String[] {
-				"net.sareweb.txotx.model.GoogleDevice"
-			};
+		_methodParameterTypes0 = new String[] { "net.sareweb.txotx.model.Oharra" };
 
-		_methodName1 = "createGoogleDevice";
+		_methodName1 = "createOharra";
 
 		_methodParameterTypes1 = new String[] { "long" };
 
-		_methodName2 = "deleteGoogleDevice";
+		_methodName2 = "deleteOharra";
 
 		_methodParameterTypes2 = new String[] { "long" };
 
-		_methodName3 = "deleteGoogleDevice";
+		_methodName3 = "deleteOharra";
 
-		_methodParameterTypes3 = new String[] {
-				"net.sareweb.txotx.model.GoogleDevice"
-			};
+		_methodParameterTypes3 = new String[] { "net.sareweb.txotx.model.Oharra" };
 
 		_methodName4 = "dynamicQuery";
 
@@ -72,11 +68,11 @@ public class GoogleDeviceLocalServiceClpInvoker {
 				"com.liferay.portal.kernel.dao.orm.DynamicQuery"
 			};
 
-		_methodName9 = "fetchGoogleDevice";
+		_methodName9 = "fetchOharra";
 
 		_methodParameterTypes9 = new String[] { "long" };
 
-		_methodName10 = "getGoogleDevice";
+		_methodName10 = "getOharra";
 
 		_methodParameterTypes10 = new String[] { "long" };
 
@@ -84,24 +80,22 @@ public class GoogleDeviceLocalServiceClpInvoker {
 
 		_methodParameterTypes11 = new String[] { "java.io.Serializable" };
 
-		_methodName12 = "getGoogleDevices";
+		_methodName12 = "getOharras";
 
 		_methodParameterTypes12 = new String[] { "int", "int" };
 
-		_methodName13 = "getGoogleDevicesCount";
+		_methodName13 = "getOharrasCount";
 
 		_methodParameterTypes13 = new String[] {  };
 
-		_methodName14 = "updateGoogleDevice";
+		_methodName14 = "updateOharra";
 
-		_methodParameterTypes14 = new String[] {
-				"net.sareweb.txotx.model.GoogleDevice"
-			};
+		_methodParameterTypes14 = new String[] { "net.sareweb.txotx.model.Oharra" };
 
-		_methodName15 = "updateGoogleDevice";
+		_methodName15 = "updateOharra";
 
 		_methodParameterTypes15 = new String[] {
-				"net.sareweb.txotx.model.GoogleDevice", "boolean"
+				"net.sareweb.txotx.model.Oharra", "boolean"
 			};
 
 		_methodName62 = "getBeanIdentifier";
@@ -117,44 +111,44 @@ public class GoogleDeviceLocalServiceClpInvoker {
 		Object[] arguments) throws Throwable {
 		if (_methodName0.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes0, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.addGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
+			return OharraLocalServiceUtil.addOharra((net.sareweb.txotx.model.Oharra)arguments[0]);
 		}
 
 		if (_methodName1.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes1, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.createGoogleDevice(((Long)arguments[0]).longValue());
+			return OharraLocalServiceUtil.createOharra(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName2.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes2, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.deleteGoogleDevice(((Long)arguments[0]).longValue());
+			return OharraLocalServiceUtil.deleteOharra(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName3.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes3, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.deleteGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
+			return OharraLocalServiceUtil.deleteOharra((net.sareweb.txotx.model.Oharra)arguments[0]);
 		}
 
 		if (_methodName4.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes4, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.dynamicQuery();
+			return OharraLocalServiceUtil.dynamicQuery();
 		}
 
 		if (_methodName5.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes5, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return OharraLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName6.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes6, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return OharraLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
 		if (_methodName7.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes7, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
+			return OharraLocalServiceUtil.dynamicQuery((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0],
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
 				(com.liferay.portal.kernel.util.OrderByComparator)arguments[3]);
@@ -162,54 +156,54 @@ public class GoogleDeviceLocalServiceClpInvoker {
 
 		if (_methodName8.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes8, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
+			return OharraLocalServiceUtil.dynamicQueryCount((com.liferay.portal.kernel.dao.orm.DynamicQuery)arguments[0]);
 		}
 
 		if (_methodName9.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes9, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.fetchGoogleDevice(((Long)arguments[0]).longValue());
+			return OharraLocalServiceUtil.fetchOharra(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName10.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes10, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.getGoogleDevice(((Long)arguments[0]).longValue());
+			return OharraLocalServiceUtil.getOharra(((Long)arguments[0]).longValue());
 		}
 
 		if (_methodName11.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes11, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
+			return OharraLocalServiceUtil.getPersistedModel((java.io.Serializable)arguments[0]);
 		}
 
 		if (_methodName12.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes12, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.getGoogleDevices(((Integer)arguments[0]).intValue(),
+			return OharraLocalServiceUtil.getOharras(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue());
 		}
 
 		if (_methodName13.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes13, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.getGoogleDevicesCount();
+			return OharraLocalServiceUtil.getOharrasCount();
 		}
 
 		if (_methodName14.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes14, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.updateGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0]);
+			return OharraLocalServiceUtil.updateOharra((net.sareweb.txotx.model.Oharra)arguments[0]);
 		}
 
 		if (_methodName15.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.updateGoogleDevice((net.sareweb.txotx.model.GoogleDevice)arguments[0],
+			return OharraLocalServiceUtil.updateOharra((net.sareweb.txotx.model.Oharra)arguments[0],
 				((Boolean)arguments[1]).booleanValue());
 		}
 
 		if (_methodName62.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes62, parameterTypes)) {
-			return GoogleDeviceLocalServiceUtil.getBeanIdentifier();
+			return OharraLocalServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName63.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes63, parameterTypes)) {
-			GoogleDeviceLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			OharraLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
 		throw new UnsupportedOperationException();
