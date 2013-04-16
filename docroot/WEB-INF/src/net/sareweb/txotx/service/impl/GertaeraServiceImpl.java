@@ -108,6 +108,7 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		try {
 			Sagardotegi sagardotegi = SagardotegiServiceUtil.getSagardotegia(sagardotegiId);
 			sagardotegi.setIrudiKopurua(sagardotegi.getIrudiKopurua()+1);
+			sagardotegi.setIrudia(irudia);
 			SagardotegiLocalServiceUtil.updateSagardotegi(sagardotegi);
 			
 		} catch (Exception e) {

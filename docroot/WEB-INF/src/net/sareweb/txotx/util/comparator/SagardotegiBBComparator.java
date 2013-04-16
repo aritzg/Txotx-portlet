@@ -7,11 +7,11 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 public class SagardotegiBBComparator extends OrderByComparator {
 
 	
-	public static final String ORDER_BY_ASC = "Txotx_Sagardotegi.balorazioenBB ASC";
+	public static final String ORDER_BY_ASC = "Txotx_Sagardotegi.balorazioenBB ASC, JournalArticle.irudiKopurua ASC";
     
-    public static final String ORDER_BY_DESC = "JournalArticle.balorazioenBB DESC";
+    public static final String ORDER_BY_DESC = "JournalArticle.balorazioenBB DESC, JournalArticle.irudiKopurua DESC";
 
-    public static final String[] ORDER_BY_FIELDS = {"balorazioenBB"};
+    public static final String[] ORDER_BY_FIELDS = {"balorazioenBB", "irudiKopurua"};
 
     public SagardotegiBBComparator() {
             this(false);
@@ -28,8 +28,16 @@ public class SagardotegiBBComparator extends OrderByComparator {
 
            int value = 0;
            
-           if(sagardotegi1.getBalorazioenBB() < sagardotegi2.getBalorazioenBB()) value = -1;
-           else value = 1;
+           if(sagardotegi1.getBalorazioenBB() < sagardotegi2.getBalorazioenBB()){
+        	   value = -1;
+           }
+           else if(sagardotegi1.getBalorazioenBB() == sagardotegi2.getBalorazioenBB()){
+        	   if(sagardotegi1.getIrudiKopurua() < sagardotegi2.getIrudiKopurua())value = -1;
+        	   else value=1;
+           }
+           else {
+        	   value = 1;
+           }
 
             if (_ascending) {
                     return value;
