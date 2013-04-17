@@ -30,6 +30,16 @@ public class JarraipenServiceClpInvoker {
 		_methodName59 = "setBeanIdentifier";
 
 		_methodParameterTypes59 = new String[] { "java.lang.String" };
+
+		_methodName64 = "gehituJarraipena";
+
+		_methodParameterTypes64 = new String[] {
+				"long", "long", "java.lang.String"
+			};
+
+		_methodName65 = "getJarraipenak";
+
+		_methodParameterTypes65 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -44,6 +54,17 @@ public class JarraipenServiceClpInvoker {
 			JarraipenServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 		}
 
+		if (_methodName64.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
+			return JarraipenServiceUtil.gehituJarraipena(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(), (java.lang.String)arguments[2]);
+		}
+
+		if (_methodName65.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
+			return JarraipenServiceUtil.getJarraipenak(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -51,4 +72,8 @@ public class JarraipenServiceClpInvoker {
 	private String[] _methodParameterTypes58;
 	private String _methodName59;
 	private String[] _methodParameterTypes59;
+	private String _methodName64;
+	private String[] _methodParameterTypes64;
+	private String _methodName65;
+	private String[] _methodParameterTypes65;
 }

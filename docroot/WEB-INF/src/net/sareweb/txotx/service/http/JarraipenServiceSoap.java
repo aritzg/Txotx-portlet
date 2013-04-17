@@ -14,6 +14,13 @@
 
 package net.sareweb.txotx.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import net.sareweb.txotx.service.JarraipenServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * <p>
  * This class provides a SOAP utility for the
@@ -58,4 +65,35 @@ package net.sareweb.txotx.service.http;
  * @generated
  */
 public class JarraipenServiceSoap {
+	public static net.sareweb.txotx.model.JarraipenSoap gehituJarraipena(
+		long jarraitzaileUserId, long jarraigaiId,
+		java.lang.String jarraipenMota) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Jarraipen returnValue = JarraipenServiceUtil.gehituJarraipena(jarraitzaileUserId,
+					jarraigaiId, jarraipenMota);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.JarraipenSoap[] getJarraipenak(
+		long jarraitzaileUserId) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getJarraipenak(jarraitzaileUserId);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(JarraipenServiceSoap.class);
 }

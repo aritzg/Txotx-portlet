@@ -62,6 +62,21 @@ public class JarraipenServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static net.sareweb.txotx.model.Jarraipen gehituJarraipena(
+		long jarraitzaileUserId, long jarraigaiId,
+		java.lang.String jarraipenMota)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .gehituJarraipena(jarraitzaileUserId, jarraigaiId,
+			jarraipenMota);
+	}
+
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenak(
+		long jarraitzaileUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getJarraipenak(jarraitzaileUserId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

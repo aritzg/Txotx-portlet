@@ -188,6 +188,154 @@ public class JarraipenUtil {
 	}
 
 	/**
+	* Returns all the jarraipens where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @return the matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraitzaileUserId(
+		long jarraitzaileUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByJarraitzaileUserId(jarraitzaileUserId);
+	}
+
+	/**
+	* Returns a range of all the jarraipens where jarraitzaileUserId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @return the range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraitzaileUserId(
+		long jarraitzaileUserId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByJarraitzaileUserId(jarraitzaileUserId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the jarraipens where jarraitzaileUserId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraitzaileUserId(
+		long jarraitzaileUserId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByJarraitzaileUserId(jarraitzaileUserId, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findByJarraitzaileUserId_First(
+		long jarraitzaileUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraitzaileUserId_First(jarraitzaileUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchByJarraitzaileUserId_First(
+		long jarraitzaileUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByJarraitzaileUserId_First(jarraitzaileUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findByJarraitzaileUserId_Last(
+		long jarraitzaileUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraitzaileUserId_Last(jarraitzaileUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchByJarraitzaileUserId_Last(
+		long jarraitzaileUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByJarraitzaileUserId_Last(jarraitzaileUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the jarraipens before and after the current jarraipen in the ordered set where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraipenId the primary key of the current jarraipen
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen[] findByJarraitzaileUserId_PrevAndNext(
+		long jarraipenId, long jarraitzaileUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraitzaileUserId_PrevAndNext(jarraipenId,
+			jarraitzaileUserId, orderByComparator);
+	}
+
+	/**
 	* Returns all the jarraipens.
 	*
 	* @return the jarraipens
@@ -237,6 +385,17 @@ public class JarraipenUtil {
 	}
 
 	/**
+	* Removes all the jarraipens where jarraitzaileUserId = &#63; from the database.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByJarraitzaileUserId(long jarraitzaileUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByJarraitzaileUserId(jarraitzaileUserId);
+	}
+
+	/**
 	* Removes all the jarraipens from the database.
 	*
 	* @throws SystemException if a system exception occurred
@@ -244,6 +403,18 @@ public class JarraipenUtil {
 	public static void removeAll()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		getPersistence().removeAll();
+	}
+
+	/**
+	* Returns the number of jarraipens where jarraitzaileUserId = &#63;.
+	*
+	* @param jarraitzaileUserId the jarraitzaile user ID
+	* @return the number of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByJarraitzaileUserId(long jarraitzaileUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByJarraitzaileUserId(jarraitzaileUserId);
 	}
 
 	/**

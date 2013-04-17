@@ -88,7 +88,10 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	public static final boolean FINDER_CACHE_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.finder.cache.enabled.net.sareweb.txotx.model.Jarraipen"),
 			false);
-	public static final boolean COLUMN_BITMASK_ENABLED = false;
+	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
+				"value.object.column.bitmask.enabled.net.sareweb.txotx.model.Jarraipen"),
+			true);
+	public static long JARRAITZAILEUSERID_COLUMN_BITMASK = 1L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -239,6 +242,14 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public void setJarraitzaileUserId(long jarraitzaileUserId) {
+		_columnBitmask |= JARRAITZAILEUSERID_COLUMN_BITMASK;
+
+		if (!_setOriginalJarraitzaileUserId) {
+			_setOriginalJarraitzaileUserId = true;
+
+			_originalJarraitzaileUserId = _jarraitzaileUserId;
+		}
+
 		_jarraitzaileUserId = jarraitzaileUserId;
 	}
 
@@ -249,6 +260,10 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 	public void setJarraitzaileUserUuid(String jarraitzaileUserUuid) {
 		_jarraitzaileUserUuid = jarraitzaileUserUuid;
+	}
+
+	public long getOriginalJarraitzaileUserId() {
+		return _originalJarraitzaileUserId;
 	}
 
 	@JSON
@@ -307,7 +322,13 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public void setCreateDate(Date createDate) {
+		_columnBitmask = -1L;
+
 		_createDate = createDate;
+	}
+
+	public long getColumnBitmask() {
+		return _columnBitmask;
 	}
 
 	@Override
@@ -397,6 +418,13 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 	@Override
 	public void resetOriginalValues() {
+		JarraipenModelImpl jarraipenModelImpl = this;
+
+		jarraipenModelImpl._originalJarraitzaileUserId = jarraipenModelImpl._jarraitzaileUserId;
+
+		jarraipenModelImpl._setOriginalJarraitzaileUserId = false;
+
+		jarraipenModelImpl._columnBitmask = 0;
 	}
 
 	@Override
@@ -504,11 +532,14 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	private long _jarraipenId;
 	private long _jarraitzaileUserId;
 	private String _jarraitzaileUserUuid;
+	private long _originalJarraitzaileUserId;
+	private boolean _setOriginalJarraitzaileUserId;
 	private long _sagardotegiId;
 	private long _sagardoEgunId;
 	private long _jarraituaUserId;
 	private String _jarraituaUserUuid;
 	private String _jarraipenMota;
 	private Date _createDate;
+	private long _columnBitmask;
 	private Jarraipen _escapedModelProxy;
 }

@@ -28,6 +28,14 @@ Liferay.Service.registerClass(
 );
 
 Liferay.Service.registerClass(
+	Liferay.Service.Txotx, "Jarraipen",
+	{
+		gehituJarraipena: true,
+		getJarraipenak: true
+	}
+);
+
+Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Oharra",
 	{
 		getAzkenErronka: true,

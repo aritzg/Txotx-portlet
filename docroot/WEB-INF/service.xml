@@ -204,7 +204,10 @@
 		<order by="desc">
 			<order-column name="createDate" />
 		</order>
-
+	
+		<finder return-type="Collection" name="JarraitzaileUserId">
+			<finder-column name="jarraitzaileUserId"></finder-column>
+		</finder>
 
 	</entity>
 

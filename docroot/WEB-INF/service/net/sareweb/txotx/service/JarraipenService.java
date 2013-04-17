@@ -18,6 +18,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
 import com.liferay.portal.service.BaseService;
 import com.liferay.portal.service.InvokableService;
@@ -62,4 +63,14 @@ public interface JarraipenService extends BaseService, InvokableService {
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	public net.sareweb.txotx.model.Jarraipen gehituJarraipena(
+		long jarraitzaileUserId, long jarraigaiId,
+		java.lang.String jarraipenMota)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenak(
+		long jarraitzaileUserId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

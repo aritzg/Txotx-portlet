@@ -14,7 +14,16 @@
 
 package net.sareweb.txotx.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
+import net.sareweb.txotx.model.Jarraipen;
+import net.sareweb.txotx.service.JarraipenLocalServiceUtil;
 import net.sareweb.txotx.service.base.JarraipenServiceBaseImpl;
+import net.sareweb.txotx.util.Constants;
+
+import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.SystemException;
 
 /**
  * The implementation of the jarraipen remote service.
@@ -36,4 +45,27 @@ public class JarraipenServiceImpl extends JarraipenServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link net.sareweb.txotx.service.JarraipenServiceUtil} to access the jarraipen remote service.
 	 */
+	
+	public Jarraipen gehituJarraipena(long jarraitzaileUserId, long jarraigaiId, String jarraipenMota) throws SystemException{
+		if(jarraipenMota==null) return null;
+		Jarraipen jarraipen = JarraipenLocalServiceUtil.createJarraipen(CounterLocalServiceUtil.increment());
+		jarraipen.setJarraipenMota(jarraipenMota);
+		jarraipen.setJarraitzaileUserId(jarraitzaileUserId);
+		jarraipen.setCreateDate(new Date());
+		
+		if(jarraipenMota.equals(Constants.JARRAIPEN_MOTA_PERTSONA)){
+			jarraipen.setJarraituaUserId(jarraigaiId);
+		}
+		else if(jarraipenMota.equals(Constants.JARRAIPEN_MOTA_SAGARDOTEGIA)){
+			jarraipen.setSagardotegiId(jarraigaiId);
+		}
+		else if(jarraipenMota.equals(Constants.JARRAIPEN_MOTA_SAGARDO_EGUNA)){
+			jarraipen.setSagardoEgunId(jarraigaiId);
+		}
+		return JarraipenLocalServiceUtil.addJarraipen(jarraipen);
+	}
+	
+	public List<Jarraipen> getJarraipenak(long jarraitzaileUserId) throws SystemException{
+		return jarraipenPersistence.findByJarraitzaileUserId(jarraitzaileUserId);
+	}
 }
