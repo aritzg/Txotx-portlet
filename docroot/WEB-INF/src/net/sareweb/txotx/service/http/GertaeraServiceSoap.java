@@ -80,6 +80,36 @@ public class GertaeraServiceSoap {
 		}
 	}
 
+	public static net.sareweb.txotx.model.GertaeraSoap gehituTestuGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituTestuGertaeraSagardotegian(sagardotegiId,
+					testua);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap gehituTestuGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituTestuGertaeraSagardoEgunean(sagardoEgunId,
+					testua);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static net.sareweb.txotx.model.GertaeraSoap gehituArgazkiGertaera(
 		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
 		java.lang.String irudia) throws RemoteException {
@@ -96,11 +126,75 @@ public class GertaeraServiceSoap {
 		}
 	}
 
+	public static net.sareweb.txotx.model.GertaeraSoap gehituArgazkiGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituArgazkiGertaeraSagardotegian(sagardotegiId,
+					testua, irudiKarpetaId, irudia);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap gehituArgazkiGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituArgazkiGertaeraSagardoEgunean(sagardoEgunId,
+					testua, irudiKarpetaId, irudia);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static net.sareweb.txotx.model.GertaeraSoap gehituBalorazioGertaera(
 		long sagardotegiId, java.lang.String testua, long balorazioa)
 		throws RemoteException {
 		try {
 			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituBalorazioGertaera(sagardotegiId,
+					testua, balorazioa);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap gehituBalorazioGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long balorazioa)
+		throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituBalorazioGertaeraSagardotegian(sagardotegiId,
+					testua, balorazioa);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap gehituBalorazioGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long balorazioa)
+		throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Gertaera returnValue = GertaeraServiceUtil.gehituBalorazioGertaeraSagardoEgunean(sagardoEgunId,
 					testua, balorazioa);
 
 			return net.sareweb.txotx.model.GertaeraSoap.toSoapModel(returnValue);

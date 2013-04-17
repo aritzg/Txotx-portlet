@@ -35,27 +35,59 @@ public class GertaeraServiceClp implements GertaeraService {
 
 		_methodParameterTypes3 = new String[] { "long", "java.lang.String" };
 
-		_methodName4 = "gehituArgazkiGertaera";
+		_methodName4 = "gehituTestuGertaeraSagardotegian";
 
-		_methodParameterTypes4 = new String[] {
+		_methodParameterTypes4 = new String[] { "long", "java.lang.String" };
+
+		_methodName5 = "gehituTestuGertaeraSagardoEgunean";
+
+		_methodParameterTypes5 = new String[] { "long", "java.lang.String" };
+
+		_methodName6 = "gehituArgazkiGertaera";
+
+		_methodParameterTypes6 = new String[] {
 				"long", "java.lang.String", "long", "java.lang.String"
 			};
 
-		_methodName5 = "gehituBalorazioGertaera";
+		_methodName7 = "gehituArgazkiGertaeraSagardotegian";
 
-		_methodParameterTypes5 = new String[] { "long", "java.lang.String", "long" };
+		_methodParameterTypes7 = new String[] {
+				"long", "java.lang.String", "long", "java.lang.String"
+			};
 
-		_methodName6 = "getGertaerakOlderThanDate";
+		_methodName8 = "gehituArgazkiGertaeraSagardoEgunean";
 
-		_methodParameterTypes6 = new String[] { "long", "long", "int" };
+		_methodParameterTypes8 = new String[] {
+				"long", "java.lang.String", "long", "java.lang.String"
+			};
 
-		_methodName7 = "getGertaerakNewerThanDate";
+		_methodName9 = "gehituBalorazioGertaera";
 
-		_methodParameterTypes7 = new String[] { "long", "long", "int" };
+		_methodParameterTypes9 = new String[] { "long", "java.lang.String", "long" };
 
-		_methodName8 = "fake";
+		_methodName10 = "gehituBalorazioGertaeraSagardotegian";
 
-		_methodParameterTypes8 = new String[] {  };
+		_methodParameterTypes10 = new String[] {
+				"long", "java.lang.String", "long"
+			};
+
+		_methodName11 = "gehituBalorazioGertaeraSagardoEgunean";
+
+		_methodParameterTypes11 = new String[] {
+				"long", "java.lang.String", "long"
+			};
+
+		_methodName12 = "getGertaerakOlderThanDate";
+
+		_methodParameterTypes12 = new String[] { "long", "long", "int" };
+
+		_methodName13 = "getGertaerakNewerThanDate";
+
+		_methodParameterTypes13 = new String[] { "long", "long", "int" };
+
+		_methodName14 = "fake";
+
+		_methodParameterTypes14 = new String[] {  };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -143,9 +175,8 @@ public class GertaeraServiceClp implements GertaeraService {
 		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaera(
-		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
-		java.lang.String irudia)
+	public net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.liferay.portal.security.auth.PrincipalException {
 		Object returnObj = null;
@@ -155,6 +186,169 @@ public class GertaeraServiceClp implements GertaeraService {
 					_methodParameterTypes4,
 					new Object[] {
 						sagardotegiId,
+						
+					ClpSerializer.translateInput(testua)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName5,
+					_methodParameterTypes5,
+					new Object[] {
+						sagardoEgunId,
+						
+					ClpSerializer.translateInput(testua)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaera(
+		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName6,
+					_methodParameterTypes6,
+					new Object[] {
+						sagardotegiId,
+						
+					ClpSerializer.translateInput(testua),
+						
+					irudiKarpetaId,
+						
+					ClpSerializer.translateInput(irudia)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName7,
+					_methodParameterTypes7,
+					new Object[] {
+						sagardotegiId,
+						
+					ClpSerializer.translateInput(testua),
+						
+					irudiKarpetaId,
+						
+					ClpSerializer.translateInput(irudia)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName8,
+					_methodParameterTypes8,
+					new Object[] {
+						sagardoEgunId,
 						
 					ClpSerializer.translateInput(testua),
 						
@@ -193,10 +387,90 @@ public class GertaeraServiceClp implements GertaeraService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName5,
-					_methodParameterTypes5,
+			returnObj = _invokableService.invokeMethod(_methodName9,
+					_methodParameterTypes9,
 					new Object[] {
 						sagardotegiId,
+						
+					ClpSerializer.translateInput(testua),
+						
+					balorazioa
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName10,
+					_methodParameterTypes10,
+					new Object[] {
+						sagardotegiId,
+						
+					ClpSerializer.translateInput(testua),
+						
+					balorazioa
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof com.liferay.portal.security.auth.PrincipalException) {
+				throw (com.liferay.portal.security.auth.PrincipalException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (net.sareweb.txotx.model.Gertaera)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName11,
+					_methodParameterTypes11,
+					new Object[] {
+						sagardoEgunId,
 						
 					ClpSerializer.translateInput(testua),
 						
@@ -232,8 +506,8 @@ public class GertaeraServiceClp implements GertaeraService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName6,
-					_methodParameterTypes6,
+			returnObj = _invokableService.invokeMethod(_methodName12,
+					_methodParameterTypes12,
 					new Object[] { sagardotegiId, date, blockSize });
 		}
 		catch (Throwable t) {
@@ -261,8 +535,8 @@ public class GertaeraServiceClp implements GertaeraService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName7,
-					_methodParameterTypes7,
+			returnObj = _invokableService.invokeMethod(_methodName13,
+					_methodParameterTypes13,
 					new Object[] { sagardotegiId, date, blockSize });
 		}
 		catch (Throwable t) {
@@ -287,8 +561,8 @@ public class GertaeraServiceClp implements GertaeraService {
 	public void fake()
 		throws com.liferay.portal.security.auth.PrincipalException {
 		try {
-			_invokableService.invokeMethod(_methodName8,
-				_methodParameterTypes8, new Object[] {  });
+			_invokableService.invokeMethod(_methodName14,
+				_methodParameterTypes14, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -324,4 +598,16 @@ public class GertaeraServiceClp implements GertaeraService {
 	private String[] _methodParameterTypes7;
 	private String _methodName8;
 	private String[] _methodParameterTypes8;
+	private String _methodName9;
+	private String[] _methodParameterTypes9;
+	private String _methodName10;
+	private String[] _methodParameterTypes10;
+	private String _methodName11;
+	private String[] _methodParameterTypes11;
+	private String _methodName12;
+	private String[] _methodParameterTypes12;
+	private String _methodName13;
+	private String[] _methodParameterTypes13;
+	private String _methodName14;
+	private String[] _methodParameterTypes14;
 }

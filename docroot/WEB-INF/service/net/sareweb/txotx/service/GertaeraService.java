@@ -69,14 +69,46 @@ public interface GertaeraService extends BaseService, InvokableService {
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.liferay.portal.security.auth.PrincipalException;
 
+	public net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
+	public net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
 	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaera(
 		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
 		java.lang.String irudia)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.liferay.portal.security.auth.PrincipalException;
 
+	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
+	public net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
 	public net.sareweb.txotx.model.Gertaera gehituBalorazioGertaera(
 		long sagardotegiId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
+	public net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException;
+
+	public net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long balorazioa)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.liferay.portal.security.auth.PrincipalException;
 

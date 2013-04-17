@@ -47,6 +47,7 @@ public class GertaeraWrapper implements Gertaera, ModelWrapper<Gertaera> {
 
 		attributes.put("gertaeraId", getGertaeraId());
 		attributes.put("sagardotegiId", getSagardotegiId());
+		attributes.put("sagardoEgunId", getSagardoEgunId());
 		attributes.put("userId", getUserId());
 		attributes.put("screenName", getScreenName());
 		attributes.put("gertaeraMota", getGertaeraMota());
@@ -71,6 +72,12 @@ public class GertaeraWrapper implements Gertaera, ModelWrapper<Gertaera> {
 
 		if (sagardotegiId != null) {
 			setSagardotegiId(sagardotegiId);
+		}
+
+		Long sagardoEgunId = (Long)attributes.get("sagardoEgunId");
+
+		if (sagardoEgunId != null) {
+			setSagardoEgunId(sagardoEgunId);
 		}
 
 		Long userId = (Long)attributes.get("userId");
@@ -180,6 +187,24 @@ public class GertaeraWrapper implements Gertaera, ModelWrapper<Gertaera> {
 	*/
 	public void setSagardotegiId(long sagardotegiId) {
 		_gertaera.setSagardotegiId(sagardotegiId);
+	}
+
+	/**
+	* Returns the sagardo egun ID of this gertaera.
+	*
+	* @return the sagardo egun ID of this gertaera
+	*/
+	public long getSagardoEgunId() {
+		return _gertaera.getSagardoEgunId();
+	}
+
+	/**
+	* Sets the sagardo egun ID of this gertaera.
+	*
+	* @param sagardoEgunId the sagardo egun ID of this gertaera
+	*/
+	public void setSagardoEgunId(long sagardoEgunId) {
+		_gertaera.setSagardoEgunId(sagardoEgunId);
 	}
 
 	/**

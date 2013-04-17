@@ -69,6 +69,22 @@ public class GertaeraServiceUtil {
 		return getService().gehituTestuGertaera(sagardotegiId, testua);
 	}
 
+	public static net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituTestuGertaeraSagardotegian(sagardotegiId, testua);
+	}
+
+	public static net.sareweb.txotx.model.Gertaera gehituTestuGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituTestuGertaeraSagardoEgunean(sagardoEgunId, testua);
+	}
+
 	public static net.sareweb.txotx.model.Gertaera gehituArgazkiGertaera(
 		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
 		java.lang.String irudia)
@@ -79,12 +95,50 @@ public class GertaeraServiceUtil {
 			irudiKarpetaId, irudia);
 	}
 
+	public static net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituArgazkiGertaeraSagardotegian(sagardotegiId, testua,
+			irudiKarpetaId, irudia);
+	}
+
+	public static net.sareweb.txotx.model.Gertaera gehituArgazkiGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long irudiKarpetaId,
+		java.lang.String irudia)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituArgazkiGertaeraSagardoEgunean(sagardoEgunId, testua,
+			irudiKarpetaId, irudia);
+	}
+
 	public static net.sareweb.txotx.model.Gertaera gehituBalorazioGertaera(
 		long sagardotegiId, java.lang.String testua, long balorazioa)
 		throws com.liferay.portal.kernel.exception.SystemException,
 			com.liferay.portal.security.auth.PrincipalException {
 		return getService()
 				   .gehituBalorazioGertaera(sagardotegiId, testua, balorazioa);
+	}
+
+	public static net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardotegian(
+		long sagardotegiId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituBalorazioGertaeraSagardotegian(sagardotegiId, testua,
+			balorazioa);
+	}
+
+	public static net.sareweb.txotx.model.Gertaera gehituBalorazioGertaeraSagardoEgunean(
+		long sagardoEgunId, java.lang.String testua, long balorazioa)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.liferay.portal.security.auth.PrincipalException {
+		return getService()
+				   .gehituBalorazioGertaeraSagardoEgunean(sagardoEgunId,
+			testua, balorazioa);
 	}
 
 	public static java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakOlderThanDate(

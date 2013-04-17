@@ -4,6 +4,7 @@
 	<model name="net.sareweb.txotx.model.Gertaera">
 		<field name="gertaeraId" type="long" />
 		<field name="sagardotegiId" type="long" />
+		<field name="sagardoEgunId" type="long" />
 		<field name="userId" type="long" />
 		<field name="screenName" type="String" />
 		<field name="gertaeraMota" type="String" />
@@ -26,6 +27,15 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 	</model>
+	<model name="net.sareweb.txotx.model.Jarraipen">
+		<field name="jarraipenId" type="long" />
+		<field name="jarraitzaileUserId" type="long" />
+		<field name="sagardotegiId" type="long" />
+		<field name="sagardoEgunId" type="long" />
+		<field name="jarraituaUserId" type="long" />
+		<field name="jarraipenMota" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
 	<model name="net.sareweb.txotx.model.Oharra">
 		<field name="oharraId" type="long" />
 		<field name="oharMota" type="String" />
@@ -38,6 +48,28 @@
 		<field name="esteka" type="String" />
 		<field name="estekaTestua" type="String" />
 		<field name="createDate" type="Date" />
+	</model>
+	<model name="net.sareweb.txotx.model.SagardoEgun">
+		<field name="sagardoEgunId" type="long" />
+		<field name="izena" type="String" />
+		<field name="edizioa" type="long" />
+		<field name="herria" type="String" />
+		<field name="lekua" type="String" />
+		<field name="emaila" type="String" />
+		<field name="twitter" type="String" />
+		<field name="weborria" type="String" />
+		<field name="hasieraDate" type="Date" />
+		<field name="lat" type="double" />
+		<field name="lng" type="double" />
+		<field name="irudiKarpetaId" type="long" />
+		<field name="irudia" type="String" />
+		<field name="irudiKopurua" type="long" />
+		<field name="iruzkinKopurua" type="long" />
+		<field name="balorazioKopurua" type="long" />
+		<field name="balorazioenBB" type="double" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
 	</model>
 	<model name="net.sareweb.txotx.model.Sagardotegi">
 		<field name="sagardotegiId" type="long" />

@@ -34,12 +34,14 @@ import java.util.Date;
 public class GertaeraCacheModel implements CacheModel<Gertaera>, Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(23);
+		StringBundler sb = new StringBundler(25);
 
 		sb.append("{gertaeraId=");
 		sb.append(gertaeraId);
 		sb.append(", sagardotegiId=");
 		sb.append(sagardotegiId);
+		sb.append(", sagardoEgunId=");
+		sb.append(sagardoEgunId);
 		sb.append(", userId=");
 		sb.append(userId);
 		sb.append(", screenName=");
@@ -68,6 +70,7 @@ public class GertaeraCacheModel implements CacheModel<Gertaera>, Serializable {
 
 		gertaeraImpl.setGertaeraId(gertaeraId);
 		gertaeraImpl.setSagardotegiId(sagardotegiId);
+		gertaeraImpl.setSagardoEgunId(sagardoEgunId);
 		gertaeraImpl.setUserId(userId);
 
 		if (screenName == null) {
@@ -123,6 +126,7 @@ public class GertaeraCacheModel implements CacheModel<Gertaera>, Serializable {
 
 	public long gertaeraId;
 	public long sagardotegiId;
+	public long sagardoEgunId;
 	public long userId;
 	public String screenName;
 	public String gertaeraMota;

@@ -34,15 +34,21 @@ import net.sareweb.txotx.service.GertaeraLocalService;
 import net.sareweb.txotx.service.GertaeraService;
 import net.sareweb.txotx.service.GoogleDeviceLocalService;
 import net.sareweb.txotx.service.GoogleDeviceService;
+import net.sareweb.txotx.service.JarraipenLocalService;
+import net.sareweb.txotx.service.JarraipenService;
 import net.sareweb.txotx.service.OharraLocalService;
 import net.sareweb.txotx.service.OharraService;
+import net.sareweb.txotx.service.SagardoEgunLocalService;
+import net.sareweb.txotx.service.SagardoEgunService;
 import net.sareweb.txotx.service.SagardotegiLocalService;
 import net.sareweb.txotx.service.SagardotegiService;
 import net.sareweb.txotx.service.SailkapenaLocalService;
 import net.sareweb.txotx.service.SailkapenaService;
 import net.sareweb.txotx.service.persistence.GertaeraPersistence;
 import net.sareweb.txotx.service.persistence.GoogleDevicePersistence;
+import net.sareweb.txotx.service.persistence.JarraipenPersistence;
 import net.sareweb.txotx.service.persistence.OharraPersistence;
+import net.sareweb.txotx.service.persistence.SagardoEgunPersistence;
 import net.sareweb.txotx.service.persistence.SagardotegiPersistence;
 import net.sareweb.txotx.service.persistence.SailkapenaPersistence;
 
@@ -180,6 +186,62 @@ public abstract class OharraServiceBaseImpl extends BaseServiceImpl
 	}
 
 	/**
+	 * Returns the jarraipen local service.
+	 *
+	 * @return the jarraipen local service
+	 */
+	public JarraipenLocalService getJarraipenLocalService() {
+		return jarraipenLocalService;
+	}
+
+	/**
+	 * Sets the jarraipen local service.
+	 *
+	 * @param jarraipenLocalService the jarraipen local service
+	 */
+	public void setJarraipenLocalService(
+		JarraipenLocalService jarraipenLocalService) {
+		this.jarraipenLocalService = jarraipenLocalService;
+	}
+
+	/**
+	 * Returns the jarraipen remote service.
+	 *
+	 * @return the jarraipen remote service
+	 */
+	public JarraipenService getJarraipenService() {
+		return jarraipenService;
+	}
+
+	/**
+	 * Sets the jarraipen remote service.
+	 *
+	 * @param jarraipenService the jarraipen remote service
+	 */
+	public void setJarraipenService(JarraipenService jarraipenService) {
+		this.jarraipenService = jarraipenService;
+	}
+
+	/**
+	 * Returns the jarraipen persistence.
+	 *
+	 * @return the jarraipen persistence
+	 */
+	public JarraipenPersistence getJarraipenPersistence() {
+		return jarraipenPersistence;
+	}
+
+	/**
+	 * Sets the jarraipen persistence.
+	 *
+	 * @param jarraipenPersistence the jarraipen persistence
+	 */
+	public void setJarraipenPersistence(
+		JarraipenPersistence jarraipenPersistence) {
+		this.jarraipenPersistence = jarraipenPersistence;
+	}
+
+	/**
 	 * Returns the oharra local service.
 	 *
 	 * @return the oharra local service
@@ -231,6 +293,62 @@ public abstract class OharraServiceBaseImpl extends BaseServiceImpl
 	 */
 	public void setOharraPersistence(OharraPersistence oharraPersistence) {
 		this.oharraPersistence = oharraPersistence;
+	}
+
+	/**
+	 * Returns the sagardo egun local service.
+	 *
+	 * @return the sagardo egun local service
+	 */
+	public SagardoEgunLocalService getSagardoEgunLocalService() {
+		return sagardoEgunLocalService;
+	}
+
+	/**
+	 * Sets the sagardo egun local service.
+	 *
+	 * @param sagardoEgunLocalService the sagardo egun local service
+	 */
+	public void setSagardoEgunLocalService(
+		SagardoEgunLocalService sagardoEgunLocalService) {
+		this.sagardoEgunLocalService = sagardoEgunLocalService;
+	}
+
+	/**
+	 * Returns the sagardo egun remote service.
+	 *
+	 * @return the sagardo egun remote service
+	 */
+	public SagardoEgunService getSagardoEgunService() {
+		return sagardoEgunService;
+	}
+
+	/**
+	 * Sets the sagardo egun remote service.
+	 *
+	 * @param sagardoEgunService the sagardo egun remote service
+	 */
+	public void setSagardoEgunService(SagardoEgunService sagardoEgunService) {
+		this.sagardoEgunService = sagardoEgunService;
+	}
+
+	/**
+	 * Returns the sagardo egun persistence.
+	 *
+	 * @return the sagardo egun persistence
+	 */
+	public SagardoEgunPersistence getSagardoEgunPersistence() {
+		return sagardoEgunPersistence;
+	}
+
+	/**
+	 * Sets the sagardo egun persistence.
+	 *
+	 * @param sagardoEgunPersistence the sagardo egun persistence
+	 */
+	public void setSagardoEgunPersistence(
+		SagardoEgunPersistence sagardoEgunPersistence) {
+		this.sagardoEgunPersistence = sagardoEgunPersistence;
 	}
 
 	/**
@@ -540,12 +658,24 @@ public abstract class OharraServiceBaseImpl extends BaseServiceImpl
 	protected GoogleDeviceService googleDeviceService;
 	@BeanReference(type = GoogleDevicePersistence.class)
 	protected GoogleDevicePersistence googleDevicePersistence;
+	@BeanReference(type = JarraipenLocalService.class)
+	protected JarraipenLocalService jarraipenLocalService;
+	@BeanReference(type = JarraipenService.class)
+	protected JarraipenService jarraipenService;
+	@BeanReference(type = JarraipenPersistence.class)
+	protected JarraipenPersistence jarraipenPersistence;
 	@BeanReference(type = OharraLocalService.class)
 	protected OharraLocalService oharraLocalService;
 	@BeanReference(type = OharraService.class)
 	protected OharraService oharraService;
 	@BeanReference(type = OharraPersistence.class)
 	protected OharraPersistence oharraPersistence;
+	@BeanReference(type = SagardoEgunLocalService.class)
+	protected SagardoEgunLocalService sagardoEgunLocalService;
+	@BeanReference(type = SagardoEgunService.class)
+	protected SagardoEgunService sagardoEgunService;
+	@BeanReference(type = SagardoEgunPersistence.class)
+	protected SagardoEgunPersistence sagardoEgunPersistence;
 	@BeanReference(type = SagardotegiLocalService.class)
 	protected SagardotegiLocalService sagardotegiLocalService;
 	@BeanReference(type = SagardotegiService.class)

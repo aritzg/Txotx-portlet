@@ -7,9 +7,9 @@ import com.liferay.portal.kernel.util.OrderByComparator;
 public class SagardotegiBBComparator extends OrderByComparator {
 
 	
-	public static final String ORDER_BY_ASC = "Txotx_Sagardotegi.balorazioenBB ASC, JournalArticle.irudiKopurua ASC";
+	public static final String ORDER_BY_ASC = "Txotx_Sagardotegi.balorazioenBB ASC, Txotx_Sagardotegi.irudiKopurua ASC";
     
-    public static final String ORDER_BY_DESC = "JournalArticle.balorazioenBB DESC, JournalArticle.irudiKopurua DESC";
+    public static final String ORDER_BY_DESC = "Txotx_Sagardotegi.balorazioenBB DESC, Txotx_Sagardotegi.irudiKopurua DESC";
 
     public static final String[] ORDER_BY_FIELDS = {"balorazioenBB", "irudiKopurua"};
 

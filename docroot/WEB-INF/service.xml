@@ -40,8 +40,42 @@
 		<order by="desc">
 			<order-column name="createDate" />
 		</order>
+	</entity>
+	
+		<entity name="SagardoEgun" local-service="true" remote-service="true"
+		cache-enabled="false">
 
+		<!-- PK fields -->
+		<column name="sagardoEgunId" type="long" primary="true" />
 
+		<column name="izena" type="String" />
+		<column name="edizioa" type="long" />
+		<column name="herria" type="String" />
+		<column name="lekua" type="String" />
+		<column name="emaila" type="String" />
+		<column name="twitter" type="String" />
+		<column name="weborria" type="String" />
+		<column name="hasieraDate" type="Date" />
+
+		<column name="lat" type="double" />
+		<column name="lng" type="double" />
+
+		<column name="irudiKarpetaId" type="long" />
+		<column name="irudia" type="String" />
+
+		<column name="irudiKopurua" type="long" />
+		<column name="iruzkinKopurua" type="long" />
+		<column name="balorazioKopurua" type="long" />
+		<column name="balorazioenBB" type="double" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" /><column name="userId" type="long" />
+
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
 	</entity>
 
 	<entity name="Gertaera" local-service="true" remote-service="true"
@@ -52,6 +86,7 @@
 
 		<!-- FK fields -->
 		<column name="sagardotegiId" type="long" />
+		<column name="sagardoEgunId" type="long" />
 		<column name="userId" type="long" />
 		<column name="screenName" type="String" />
 
@@ -139,6 +174,28 @@
 		<column name="testua" type="String" />
 		<column name="esteka" type="String" />
 		<column name="estekaTestua" type="String" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+	
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+
+
+	</entity>
+	
+	<entity name="Jarraipen" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="jarraipenId" type="long" primary="true" />
+		<column name="jarraitzaileUserId" type="long" />
+		<column name="sagardotegiId" type="long" />
+		<column name="sagardoEgunId" type="long" />
+		<column name="jarraituaUserId" type="long" />
+		<column name="jarraipenMota" type="String" />
 
 		<!-- Audit fields -->
 		<column name="createDate" type="Date" />

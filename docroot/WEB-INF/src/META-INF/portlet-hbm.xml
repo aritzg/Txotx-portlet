@@ -4,7 +4,9 @@
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="net.sareweb.txotx.model.Gertaera" />
 	<import class="net.sareweb.txotx.model.GoogleDevice" />
+	<import class="net.sareweb.txotx.model.Jarraipen" />
 	<import class="net.sareweb.txotx.model.Oharra" />
+	<import class="net.sareweb.txotx.model.SagardoEgun" />
 	<import class="net.sareweb.txotx.model.Sagardotegi" />
 	<import class="net.sareweb.txotx.model.Sailkapena" />
 	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
@@ -12,6 +14,7 @@
 			<generator class="assigned" />
 		</id>
 		<property name="sagardotegiId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sagardoEgunId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="screenName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="gertaeraMota" type="com.liferay.portal.dao.orm.hibernate.StringType" />
@@ -32,6 +35,17 @@
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 	</class>
+	<class name="net.sareweb.txotx.model.impl.JarraipenImpl" table="Txotx_Jarraipen">
+		<id name="jarraipenId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="jarraitzaileUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sagardotegiId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="sagardoEgunId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="jarraituaUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="jarraipenMota" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
 	<class name="net.sareweb.txotx.model.impl.OharraImpl" table="Txotx_Oharra">
 		<id name="oharraId" type="long">
 			<generator class="assigned" />
@@ -44,6 +58,30 @@
 		<property name="esteka" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="estekaTestua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="net.sareweb.txotx.model.impl.SagardoEgunImpl" table="Txotx_SagardoEgun">
+		<id name="sagardoEgunId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="izena" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="edizioa" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="herria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lekua" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="emaila" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="twitter" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="weborria" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hasieraDate" type="org.hibernate.type.TimestampType" />
+		<property name="lat" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="lng" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="irudiKarpetaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="irudia" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="irudiKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="iruzkinKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="balorazioKopurua" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="balorazioenBB" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="net.sareweb.txotx.model.impl.SagardotegiImpl" table="Txotx_Sagardotegi">
 		<id name="sagardotegiId" type="long">

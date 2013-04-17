@@ -11,6 +11,7 @@
 		<attributes>
 			<id name="gertaeraId" />
 			<basic name="sagardotegiId" />
+			<basic name="sagardoEgunId" />
 			<basic name="userId" />
 			<basic name="screenName" />
 			<basic name="gertaeraMota" />
@@ -48,6 +49,24 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="net.sareweb.txotx.model.impl.JarraipenModelImpl">
+		<attributes>
+			<id name="jarraipenId" />
+			<basic name="jarraitzaileUserId" />
+			<basic name="sagardotegiId" />
+			<basic name="sagardoEgunId" />
+			<basic name="jarraituaUserId" />
+			<basic name="jarraipenMota" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="jarraituaUserUuid" />
+			<transient name="jarraitzaileUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="net.sareweb.txotx.model.impl.OharraModelImpl">
 		<attributes>
 			<id name="oharraId" />
@@ -64,6 +83,40 @@
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="net.sareweb.txotx.model.impl.SagardoEgunModelImpl">
+		<attributes>
+			<id name="sagardoEgunId" />
+			<basic name="izena" />
+			<basic name="edizioa" />
+			<basic name="herria" />
+			<basic name="lekua" />
+			<basic name="emaila" />
+			<basic name="twitter" />
+			<basic name="weborria" />
+			<basic name="hasieraDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="lat" />
+			<basic name="lng" />
+			<basic name="irudiKarpetaId" />
+			<basic name="irudia" />
+			<basic name="irudiKopurua" />
+			<basic name="iruzkinKopurua" />
+			<basic name="balorazioKopurua" />
+			<basic name="balorazioenBB" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
 	<mapped-superclass class="net.sareweb.txotx.model.impl.SagardotegiModelImpl">
@@ -119,8 +172,16 @@
 		<table name="Txotx_GoogleDevice" />
 		<attributes />
 	</entity>
+	<entity class="net.sareweb.txotx.model.impl.JarraipenImpl" name="Jarraipen">
+		<table name="Txotx_Jarraipen" />
+		<attributes />
+	</entity>
 	<entity class="net.sareweb.txotx.model.impl.OharraImpl" name="Oharra">
 		<table name="Txotx_Oharra" />
+		<attributes />
+	</entity>
+	<entity class="net.sareweb.txotx.model.impl.SagardoEgunImpl" name="SagardoEgun">
+		<table name="Txotx_SagardoEgun" />
 		<attributes />
 	</entity>
 	<entity class="net.sareweb.txotx.model.impl.SagardotegiImpl" name="Sagardotegi">

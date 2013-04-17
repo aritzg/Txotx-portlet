@@ -89,6 +89,20 @@ public interface GertaeraModel extends BaseModel<Gertaera> {
 	public void setSagardotegiId(long sagardotegiId);
 
 	/**
+	 * Returns the sagardo egun ID of this gertaera.
+	 *
+	 * @return the sagardo egun ID of this gertaera
+	 */
+	public long getSagardoEgunId();
+
+	/**
+	 * Sets the sagardo egun ID of this gertaera.
+	 *
+	 * @param sagardoEgunId the sagardo egun ID of this gertaera
+	 */
+	public void setSagardoEgunId(long sagardoEgunId);
+
+	/**
 	 * Returns the user ID of this gertaera.
 	 *
 	 * @return the user ID of this gertaera

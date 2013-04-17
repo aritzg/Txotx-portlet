@@ -69,6 +69,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "gertaeraId", Types.BIGINT },
 			{ "sagardotegiId", Types.BIGINT },
+			{ "sagardoEgunId", Types.BIGINT },
 			{ "userId", Types.BIGINT },
 			{ "screenName", Types.VARCHAR },
 			{ "gertaeraMota", Types.VARCHAR },
@@ -79,7 +80,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Gertaera (gertaeraId LONG not null primary key,sagardotegiId LONG,userId LONG,screenName VARCHAR(75) null,gertaeraMota VARCHAR(75) null,testua VARCHAR(1000) null,irudiKarpetaId LONG,irudia VARCHAR(75) null,balorazioa LONG,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Gertaera (gertaeraId LONG not null primary key,sagardotegiId LONG,sagardoEgunId LONG,userId LONG,screenName VARCHAR(75) null,gertaeraMota VARCHAR(75) null,testua VARCHAR(1000) null,irudiKarpetaId LONG,irudia VARCHAR(75) null,balorazioa LONG,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Gertaera";
 	public static final String ORDER_BY_JPQL = " ORDER BY gertaera.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Gertaera.createDate DESC";
@@ -109,6 +110,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 		model.setGertaeraId(soapModel.getGertaeraId());
 		model.setSagardotegiId(soapModel.getSagardotegiId());
+		model.setSagardoEgunId(soapModel.getSagardoEgunId());
 		model.setUserId(soapModel.getUserId());
 		model.setScreenName(soapModel.getScreenName());
 		model.setGertaeraMota(soapModel.getGertaeraMota());
@@ -178,6 +180,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 		attributes.put("gertaeraId", getGertaeraId());
 		attributes.put("sagardotegiId", getSagardotegiId());
+		attributes.put("sagardoEgunId", getSagardoEgunId());
 		attributes.put("userId", getUserId());
 		attributes.put("screenName", getScreenName());
 		attributes.put("gertaeraMota", getGertaeraMota());
@@ -203,6 +206,12 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 		if (sagardotegiId != null) {
 			setSagardotegiId(sagardotegiId);
+		}
+
+		Long sagardoEgunId = (Long)attributes.get("sagardoEgunId");
+
+		if (sagardoEgunId != null) {
+			setSagardoEgunId(sagardoEgunId);
 		}
 
 		Long userId = (Long)attributes.get("userId");
@@ -276,6 +285,15 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 	public void setSagardotegiId(long sagardotegiId) {
 		_sagardotegiId = sagardotegiId;
+	}
+
+	@JSON
+	public long getSagardoEgunId() {
+		return _sagardoEgunId;
+	}
+
+	public void setSagardoEgunId(long sagardoEgunId) {
+		_sagardoEgunId = sagardoEgunId;
 	}
 
 	@JSON
@@ -417,6 +435,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 		gertaeraImpl.setGertaeraId(getGertaeraId());
 		gertaeraImpl.setSagardotegiId(getSagardotegiId());
+		gertaeraImpl.setSagardoEgunId(getSagardoEgunId());
 		gertaeraImpl.setUserId(getUserId());
 		gertaeraImpl.setScreenName(getScreenName());
 		gertaeraImpl.setGertaeraMota(getGertaeraMota());
@@ -488,6 +507,8 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 		gertaeraCacheModel.sagardotegiId = getSagardotegiId();
 
+		gertaeraCacheModel.sagardoEgunId = getSagardoEgunId();
+
 		gertaeraCacheModel.userId = getUserId();
 
 		gertaeraCacheModel.screenName = getScreenName();
@@ -549,12 +570,14 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(23);
+		StringBundler sb = new StringBundler(25);
 
 		sb.append("{gertaeraId=");
 		sb.append(getGertaeraId());
 		sb.append(", sagardotegiId=");
 		sb.append(getSagardotegiId());
+		sb.append(", sagardoEgunId=");
+		sb.append(getSagardoEgunId());
 		sb.append(", userId=");
 		sb.append(getUserId());
 		sb.append(", screenName=");
@@ -579,7 +602,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(37);
+		StringBundler sb = new StringBundler(40);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Gertaera");
@@ -592,6 +615,10 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 		sb.append(
 			"<column><column-name>sagardotegiId</column-name><column-value><![CDATA[");
 		sb.append(getSagardotegiId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>sagardoEgunId</column-name><column-value><![CDATA[");
+		sb.append(getSagardoEgunId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>userId</column-name><column-value><![CDATA[");
@@ -641,6 +668,7 @@ public class GertaeraModelImpl extends BaseModelImpl<Gertaera>
 		};
 	private long _gertaeraId;
 	private long _sagardotegiId;
+	private long _sagardoEgunId;
 	private long _userId;
 	private String _userUuid;
 	private String _screenName;

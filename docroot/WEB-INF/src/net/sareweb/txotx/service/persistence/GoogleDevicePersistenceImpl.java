@@ -1890,8 +1890,12 @@ public class GoogleDevicePersistenceImpl extends BasePersistenceImpl<GoogleDevic
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = GoogleDevicePersistence.class)
 	protected GoogleDevicePersistence googleDevicePersistence;
+	@BeanReference(type = JarraipenPersistence.class)
+	protected JarraipenPersistence jarraipenPersistence;
 	@BeanReference(type = OharraPersistence.class)
 	protected OharraPersistence oharraPersistence;
+	@BeanReference(type = SagardoEgunPersistence.class)
+	protected SagardoEgunPersistence sagardoEgunPersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
 	@BeanReference(type = SailkapenaPersistence.class)

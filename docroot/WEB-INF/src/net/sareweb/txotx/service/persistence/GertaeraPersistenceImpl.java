@@ -301,6 +301,7 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 
 		gertaeraImpl.setGertaeraId(gertaera.getGertaeraId());
 		gertaeraImpl.setSagardotegiId(gertaera.getSagardotegiId());
+		gertaeraImpl.setSagardoEgunId(gertaera.getSagardoEgunId());
 		gertaeraImpl.setUserId(gertaera.getUserId());
 		gertaeraImpl.setScreenName(gertaera.getScreenName());
 		gertaeraImpl.setGertaeraMota(gertaera.getGertaeraMota());
@@ -611,8 +612,12 @@ public class GertaeraPersistenceImpl extends BasePersistenceImpl<Gertaera>
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = GoogleDevicePersistence.class)
 	protected GoogleDevicePersistence googleDevicePersistence;
+	@BeanReference(type = JarraipenPersistence.class)
+	protected JarraipenPersistence jarraipenPersistence;
 	@BeanReference(type = OharraPersistence.class)
 	protected OharraPersistence oharraPersistence;
+	@BeanReference(type = SagardoEgunPersistence.class)
+	protected SagardoEgunPersistence sagardoEgunPersistence;
 	@BeanReference(type = SagardotegiPersistence.class)
 	protected SagardotegiPersistence sagardotegiPersistence;
 	@BeanReference(type = SailkapenaPersistence.class)

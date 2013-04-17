@@ -33,6 +33,7 @@ public class GertaeraSoap implements Serializable {
 
 		soapModel.setGertaeraId(model.getGertaeraId());
 		soapModel.setSagardotegiId(model.getSagardotegiId());
+		soapModel.setSagardoEgunId(model.getSagardoEgunId());
 		soapModel.setUserId(model.getUserId());
 		soapModel.setScreenName(model.getScreenName());
 		soapModel.setGertaeraMota(model.getGertaeraMota());
@@ -110,6 +111,14 @@ public class GertaeraSoap implements Serializable {
 		_sagardotegiId = sagardotegiId;
 	}
 
+	public long getSagardoEgunId() {
+		return _sagardoEgunId;
+	}
+
+	public void setSagardoEgunId(long sagardoEgunId) {
+		_sagardoEgunId = sagardoEgunId;
+	}
+
 	public long getUserId() {
 		return _userId;
 	}
@@ -184,6 +193,7 @@ public class GertaeraSoap implements Serializable {
 
 	private long _gertaeraId;
 	private long _sagardotegiId;
+	private long _sagardoEgunId;
 	private long _userId;
 	private String _screenName;
 	private String _gertaeraMota;

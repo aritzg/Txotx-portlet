@@ -27,7 +27,9 @@ import com.liferay.portal.model.BaseModel;
 
 import net.sareweb.txotx.model.GertaeraClp;
 import net.sareweb.txotx.model.GoogleDeviceClp;
+import net.sareweb.txotx.model.JarraipenClp;
 import net.sareweb.txotx.model.OharraClp;
+import net.sareweb.txotx.model.SagardoEgunClp;
 import net.sareweb.txotx.model.SagardotegiClp;
 import net.sareweb.txotx.model.SailkapenaClp;
 
@@ -114,8 +116,16 @@ public class ClpSerializer {
 			return translateInputGoogleDevice(oldModel);
 		}
 
+		if (oldModelClassName.equals(JarraipenClp.class.getName())) {
+			return translateInputJarraipen(oldModel);
+		}
+
 		if (oldModelClassName.equals(OharraClp.class.getName())) {
 			return translateInputOharra(oldModel);
+		}
+
+		if (oldModelClassName.equals(SagardoEgunClp.class.getName())) {
+			return translateInputSagardoEgun(oldModel);
 		}
 
 		if (oldModelClassName.equals(SagardotegiClp.class.getName())) {
@@ -161,10 +171,30 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputJarraipen(BaseModel<?> oldModel) {
+		JarraipenClp oldClpModel = (JarraipenClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getJarraipenRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputOharra(BaseModel<?> oldModel) {
 		OharraClp oldClpModel = (OharraClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getOharraRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputSagardoEgun(BaseModel<?> oldModel) {
+		SagardoEgunClp oldClpModel = (SagardoEgunClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getSagardoEgunRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -218,8 +248,18 @@ public class ClpSerializer {
 			return translateOutputGoogleDevice(oldModel);
 		}
 
+		if (oldModelClassName.equals(
+					"net.sareweb.txotx.model.impl.JarraipenImpl")) {
+			return translateOutputJarraipen(oldModel);
+		}
+
 		if (oldModelClassName.equals("net.sareweb.txotx.model.impl.OharraImpl")) {
 			return translateOutputOharra(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"net.sareweb.txotx.model.impl.SagardoEgunImpl")) {
+			return translateOutputSagardoEgun(oldModel);
 		}
 
 		if (oldModelClassName.equals(
@@ -320,8 +360,16 @@ public class ClpSerializer {
 			return new net.sareweb.txotx.NoSuchGoogleDeviceException();
 		}
 
+		if (className.equals("net.sareweb.txotx.NoSuchJarraipenException")) {
+			return new net.sareweb.txotx.NoSuchJarraipenException();
+		}
+
 		if (className.equals("net.sareweb.txotx.NoSuchOharraException")) {
 			return new net.sareweb.txotx.NoSuchOharraException();
+		}
+
+		if (className.equals("net.sareweb.txotx.NoSuchSagardoEgunException")) {
+			return new net.sareweb.txotx.NoSuchSagardoEgunException();
 		}
 
 		if (className.equals("net.sareweb.txotx.NoSuchSagardotegiException")) {
@@ -355,12 +403,32 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputJarraipen(BaseModel<?> oldModel) {
+		JarraipenClp newModel = new JarraipenClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setJarraipenRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputOharra(BaseModel<?> oldModel) {
 		OharraClp newModel = new OharraClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setOharraRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputSagardoEgun(BaseModel<?> oldModel) {
+		SagardoEgunClp newModel = new SagardoEgunClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setSagardoEgunRemoteModel(oldModel);
 
 		return newModel;
 	}

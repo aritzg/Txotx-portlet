@@ -246,4 +246,8 @@ public interface GertaeraLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public double getSagardotegiarenBalorazioBB(long sagardotegiId)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public double getSagardoEgunarenBalorazioBB(long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

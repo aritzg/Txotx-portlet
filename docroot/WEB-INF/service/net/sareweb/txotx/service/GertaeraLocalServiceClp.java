@@ -111,6 +111,10 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 		_methodName19 = "getSagardotegiarenBalorazioBB";
 
 		_methodParameterTypes19 = new String[] { "long" };
+
+		_methodName20 = "getSagardoEgunarenBalorazioBB";
+
+		_methodParameterTypes20 = new String[] { "long" };
 	}
 
 	public net.sareweb.txotx.model.Gertaera addGertaera(
@@ -662,6 +666,33 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 		return ((Double)returnObj).doubleValue();
 	}
 
+	public double getSagardoEgunarenBalorazioBB(long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName20,
+					_methodParameterTypes20, new Object[] { sagardoEgunId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return ((Double)returnObj).doubleValue();
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -701,4 +732,6 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
+	private String _methodName20;
+	private String[] _methodParameterTypes20;
 }

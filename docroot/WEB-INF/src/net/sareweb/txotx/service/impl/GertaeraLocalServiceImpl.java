@@ -63,6 +63,22 @@ public class GertaeraLocalServiceImpl extends GertaeraLocalServiceBaseImpl {
 		}else{
 			return 0;
 		}
+	}
+	
+	public double getSagardoEgunarenBalorazioBB(long sagardoEgunId) throws SystemException{
+		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
+		Criterion sagardoEgunCr = PropertyFactoryUtil.forName("sagardoEgunId").eq(sagardoEgunId);
+		dq.add(sagardoEgunCr);
 		
+		Criterion gertaeraMotaCr = PropertyFactoryUtil.forName("gertaeraMota").eq("GERTAERA_MOTA_BALORAZIOA");
+		dq.add(gertaeraMotaCr);
+		
+		dq.setProjection(ProjectionFactoryUtil.avg("balorazioa"));
+		List<Double> results = GertaeraLocalServiceUtil.dynamicQuery(dq);
+		if(results!=null){
+			return results.get(0);
+		}else{
+			return 0;
+		}
 	}
 }
