@@ -78,4 +78,11 @@ public class OharraServiceImpl extends OharraServiceBaseImpl {
 		return;
 	}
 	
+	public void bidaliOharra(long oharraId, String toEmailAddress) throws PortalException, SystemException{
+		Oharra oharra = OharraLocalServiceUtil.getOharra(oharraId);
+		OharraMezulariThread mezulari = new OharraMezulariThread(oharra, toEmailAddress);
+		mezulari.start();
+		return;
+	}
+	
 }

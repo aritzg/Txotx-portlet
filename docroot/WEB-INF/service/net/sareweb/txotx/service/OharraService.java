@@ -80,4 +80,8 @@ public interface OharraService extends BaseService, InvokableService {
 	public void bidaliOharra(long oharraId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void bidaliOharra(long oharraId, java.lang.String toEmailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

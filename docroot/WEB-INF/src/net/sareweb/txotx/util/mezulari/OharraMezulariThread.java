@@ -14,9 +14,15 @@ import com.google.android.gcm.server.Sender;
 public class OharraMezulariThread extends Thread {
 
 	private Oharra oharra;
+	private String toEmailAddress;
 	
 	public OharraMezulariThread(Oharra oharra){
 		this.oharra=oharra;
+	}
+	
+	public OharraMezulariThread(Oharra oharra, String toEmailAddress){
+		this.oharra=oharra;
+		this.toEmailAddress=toEmailAddress;
 	}
 	
 	@Override
@@ -30,7 +36,9 @@ public class OharraMezulariThread extends Thread {
 				if(googleDevices!=null && googleDevices.size()>0){
 					List<String> regIds = new ArrayList<String>();
 					for(int i=0; i<googleDevices.size(); i++){
-						regIds.add(googleDevices.get(i).getRegistrationId());
+						if(toEmailAddress==null || toEmailAddress.equals(googleDevices.get(i).getEmailAddress())){
+							regIds.add(googleDevices.get(i).getRegistrationId());
+						}
 					}
 					
 					Message message = new Message.Builder()

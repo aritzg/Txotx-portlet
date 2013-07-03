@@ -84,6 +84,13 @@ public class OharraServiceUtil {
 		getService().bidaliOharra(oharraId);
 	}
 
+	public static void bidaliOharra(long oharraId,
+		java.lang.String toEmailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService().bidaliOharra(oharraId, toEmailAddress);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

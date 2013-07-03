@@ -46,6 +46,10 @@ public class OharraServiceClpInvoker {
 		_methodName67 = "bidaliOharra";
 
 		_methodParameterTypes67 = new String[] { "long" };
+
+		_methodName68 = "bidaliOharra";
+
+		_methodParameterTypes68 = new String[] { "long", "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -80,6 +84,12 @@ public class OharraServiceClpInvoker {
 			OharraServiceUtil.bidaliOharra(((Long)arguments[0]).longValue());
 		}
 
+		if (_methodName68.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+			OharraServiceUtil.bidaliOharra(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -95,4 +105,6 @@ public class OharraServiceClpInvoker {
 	private String[] _methodParameterTypes66;
 	private String _methodName67;
 	private String[] _methodParameterTypes67;
+	private String _methodName68;
+	private String[] _methodParameterTypes68;
 }
