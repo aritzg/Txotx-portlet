@@ -45,6 +45,18 @@
             </init-param>
         <load-on-startup>0</load-on-startup>
     </servlet>
+    
+	<servlet>
+        <servlet-name>GooglePlusContentServlet</servlet-name>
+        <servlet-class>net.sareweb.txotx.servlet.GooglePlusContentServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GooglePlusContentServlet</servlet-name>
+        <url-pattern>/content/*</url-pattern>
+    </servlet-mapping>
+	
+	
     <servlet-mapping>
         <servlet-name>JSON Web Service Servlet</servlet-name>
         <url-pattern>/api/secure/jsonws/*</url-pattern>
