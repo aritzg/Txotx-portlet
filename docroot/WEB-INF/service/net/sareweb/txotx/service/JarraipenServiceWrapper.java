@@ -69,6 +69,24 @@ public class JarraipenServiceWrapper implements JarraipenService,
 		return _jarraipenService.getJarraipenak(jarraitzaileUserId);
 	}
 
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getErabiltzailearenJarraitzaileak(
+		long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.getErabiltzailearenJarraitzaileak(jarraituaUserId);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardotegiarenJarraitzaileak(
+		long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.getSagardotegiarenJarraitzaileak(sagardotegiId);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardoEgunarenJarraitzaileak(
+		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.getSagardoEgunarenJarraitzaileak(sagardoEgunId);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */

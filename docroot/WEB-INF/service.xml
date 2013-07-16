@@ -208,6 +208,15 @@
 		<finder return-type="Collection" name="JarraitzaileUserId">
 			<finder-column name="jarraitzaileUserId"></finder-column>
 		</finder>
+		<finder return-type="Collection" name="SagardotegiId">
+			<finder-column name="sagardotegiId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="SagardoEgunId">
+			<finder-column name="sagardoEgunId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="JarraituaUserId">
+			<finder-column name="jarraituaUserId"></finder-column>
+		</finder>
 
 	</entity>
 

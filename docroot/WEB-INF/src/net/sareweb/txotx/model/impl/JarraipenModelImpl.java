@@ -91,7 +91,10 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.net.sareweb.txotx.model.Jarraipen"),
 			true);
-	public static long JARRAITZAILEUSERID_COLUMN_BITMASK = 1L;
+	public static long JARRAITUAUSERID_COLUMN_BITMASK = 1L;
+	public static long JARRAITZAILEUSERID_COLUMN_BITMASK = 2L;
+	public static long SAGARDOEGUNID_COLUMN_BITMASK = 4L;
+	public static long SAGARDOTEGIID_COLUMN_BITMASK = 8L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -272,7 +275,19 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public void setSagardotegiId(long sagardotegiId) {
+		_columnBitmask |= SAGARDOTEGIID_COLUMN_BITMASK;
+
+		if (!_setOriginalSagardotegiId) {
+			_setOriginalSagardotegiId = true;
+
+			_originalSagardotegiId = _sagardotegiId;
+		}
+
 		_sagardotegiId = sagardotegiId;
+	}
+
+	public long getOriginalSagardotegiId() {
+		return _originalSagardotegiId;
 	}
 
 	@JSON
@@ -281,7 +296,19 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public void setSagardoEgunId(long sagardoEgunId) {
+		_columnBitmask |= SAGARDOEGUNID_COLUMN_BITMASK;
+
+		if (!_setOriginalSagardoEgunId) {
+			_setOriginalSagardoEgunId = true;
+
+			_originalSagardoEgunId = _sagardoEgunId;
+		}
+
 		_sagardoEgunId = sagardoEgunId;
+	}
+
+	public long getOriginalSagardoEgunId() {
+		return _originalSagardoEgunId;
 	}
 
 	@JSON
@@ -290,6 +317,14 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public void setJarraituaUserId(long jarraituaUserId) {
+		_columnBitmask |= JARRAITUAUSERID_COLUMN_BITMASK;
+
+		if (!_setOriginalJarraituaUserId) {
+			_setOriginalJarraituaUserId = true;
+
+			_originalJarraituaUserId = _jarraituaUserId;
+		}
+
 		_jarraituaUserId = jarraituaUserId;
 	}
 
@@ -300,6 +335,10 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 	public void setJarraituaUserUuid(String jarraituaUserUuid) {
 		_jarraituaUserUuid = jarraituaUserUuid;
+	}
+
+	public long getOriginalJarraituaUserId() {
+		return _originalJarraituaUserId;
 	}
 
 	@JSON
@@ -424,6 +463,18 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		jarraipenModelImpl._setOriginalJarraitzaileUserId = false;
 
+		jarraipenModelImpl._originalSagardotegiId = jarraipenModelImpl._sagardotegiId;
+
+		jarraipenModelImpl._setOriginalSagardotegiId = false;
+
+		jarraipenModelImpl._originalSagardoEgunId = jarraipenModelImpl._sagardoEgunId;
+
+		jarraipenModelImpl._setOriginalSagardoEgunId = false;
+
+		jarraipenModelImpl._originalJarraituaUserId = jarraipenModelImpl._jarraituaUserId;
+
+		jarraipenModelImpl._setOriginalJarraituaUserId = false;
+
 		jarraipenModelImpl._columnBitmask = 0;
 	}
 
@@ -535,9 +586,15 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	private long _originalJarraitzaileUserId;
 	private boolean _setOriginalJarraitzaileUserId;
 	private long _sagardotegiId;
+	private long _originalSagardotegiId;
+	private boolean _setOriginalSagardotegiId;
 	private long _sagardoEgunId;
+	private long _originalSagardoEgunId;
+	private boolean _setOriginalSagardoEgunId;
 	private long _jarraituaUserId;
 	private String _jarraituaUserUuid;
+	private long _originalJarraituaUserId;
+	private boolean _setOriginalJarraituaUserId;
 	private String _jarraipenMota;
 	private Date _createDate;
 	private long _columnBitmask;

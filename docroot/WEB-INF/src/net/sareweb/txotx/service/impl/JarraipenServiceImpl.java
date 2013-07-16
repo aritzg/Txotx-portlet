@@ -68,4 +68,16 @@ public class JarraipenServiceImpl extends JarraipenServiceBaseImpl {
 	public List<Jarraipen> getJarraipenak(long jarraitzaileUserId) throws SystemException{
 		return jarraipenPersistence.findByJarraitzaileUserId(jarraitzaileUserId);
 	}
+	
+	public List<Jarraipen> getErabiltzailearenJarraitzaileak(long jarraituaUserId) throws SystemException{
+		return jarraipenPersistence.findByJarraituaUserId(jarraituaUserId);
+	}
+	
+	public List<Jarraipen> getSagardotegiarenJarraitzaileak(long sagardotegiId) throws SystemException{
+		return jarraipenPersistence.findBySagardotegiId(sagardotegiId);
+	}
+	
+	public List<Jarraipen> getSagardoEgunarenJarraitzaileak(long sagardoEgunId) throws SystemException{
+		return jarraipenPersistence.findBySagardoEgunId(sagardoEgunId);
+	}
 }

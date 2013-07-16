@@ -38,6 +38,18 @@ public class JarraipenServiceClp implements JarraipenService {
 		_methodName4 = "getJarraipenak";
 
 		_methodParameterTypes4 = new String[] { "long" };
+
+		_methodName5 = "getErabiltzailearenJarraitzaileak";
+
+		_methodParameterTypes5 = new String[] { "long" };
+
+		_methodName6 = "getSagardotegiarenJarraitzaileak";
+
+		_methodParameterTypes6 = new String[] { "long" };
+
+		_methodName7 = "getSagardoEgunarenJarraitzaileak";
+
+		_methodParameterTypes7 = new String[] { "long" };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -151,6 +163,90 @@ public class JarraipenServiceClp implements JarraipenService {
 		return (java.util.List<net.sareweb.txotx.model.Jarraipen>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getErabiltzailearenJarraitzaileak(
+		long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName5,
+					_methodParameterTypes5, new Object[] { jarraituaUserId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Jarraipen>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardotegiarenJarraitzaileak(
+		long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName6,
+					_methodParameterTypes6, new Object[] { sagardotegiId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Jarraipen>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardoEgunarenJarraitzaileak(
+		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName7,
+					_methodParameterTypes7, new Object[] { sagardoEgunId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Jarraipen>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	private InvokableService _invokableService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -160,4 +256,10 @@ public class JarraipenServiceClp implements JarraipenService {
 	private String[] _methodParameterTypes3;
 	private String _methodName4;
 	private String[] _methodParameterTypes4;
+	private String _methodName5;
+	private String[] _methodParameterTypes5;
+	private String _methodName6;
+	private String[] _methodParameterTypes6;
+	private String _methodName7;
+	private String[] _methodParameterTypes7;
 }

@@ -336,6 +336,440 @@ public class JarraipenUtil {
 	}
 
 	/**
+	* Returns all the jarraipens where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @return the matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardotegiId(
+		long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findBySagardotegiId(sagardotegiId);
+	}
+
+	/**
+	* Returns a range of all the jarraipens where sagardotegiId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @return the range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardotegiId(
+		long sagardotegiId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findBySagardotegiId(sagardotegiId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the jarraipens where sagardotegiId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardotegiId(
+		long sagardotegiId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findBySagardotegiId(sagardotegiId, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findBySagardotegiId_First(
+		long sagardotegiId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardotegiId_First(sagardotegiId, orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchBySagardotegiId_First(
+		long sagardotegiId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBySagardotegiId_First(sagardotegiId, orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findBySagardotegiId_Last(
+		long sagardotegiId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardotegiId_Last(sagardotegiId, orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchBySagardotegiId_Last(
+		long sagardotegiId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBySagardotegiId_Last(sagardotegiId, orderByComparator);
+	}
+
+	/**
+	* Returns the jarraipens before and after the current jarraipen in the ordered set where sagardotegiId = &#63;.
+	*
+	* @param jarraipenId the primary key of the current jarraipen
+	* @param sagardotegiId the sagardotegi ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen[] findBySagardotegiId_PrevAndNext(
+		long jarraipenId, long sagardotegiId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardotegiId_PrevAndNext(jarraipenId, sagardotegiId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns all the jarraipens where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @return the matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardoEgunId(
+		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findBySagardoEgunId(sagardoEgunId);
+	}
+
+	/**
+	* Returns a range of all the jarraipens where sagardoEgunId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @return the range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardoEgunId(
+		long sagardoEgunId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findBySagardoEgunId(sagardoEgunId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the jarraipens where sagardoEgunId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findBySagardoEgunId(
+		long sagardoEgunId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findBySagardoEgunId(sagardoEgunId, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findBySagardoEgunId_First(
+		long sagardoEgunId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardoEgunId_First(sagardoEgunId, orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchBySagardoEgunId_First(
+		long sagardoEgunId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBySagardoEgunId_First(sagardoEgunId, orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findBySagardoEgunId_Last(
+		long sagardoEgunId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardoEgunId_Last(sagardoEgunId, orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchBySagardoEgunId_Last(
+		long sagardoEgunId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBySagardoEgunId_Last(sagardoEgunId, orderByComparator);
+	}
+
+	/**
+	* Returns the jarraipens before and after the current jarraipen in the ordered set where sagardoEgunId = &#63;.
+	*
+	* @param jarraipenId the primary key of the current jarraipen
+	* @param sagardoEgunId the sagardo egun ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen[] findBySagardoEgunId_PrevAndNext(
+		long jarraipenId, long sagardoEgunId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findBySagardoEgunId_PrevAndNext(jarraipenId, sagardoEgunId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns all the jarraipens where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @return the matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraituaUserId(
+		long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByJarraituaUserId(jarraituaUserId);
+	}
+
+	/**
+	* Returns a range of all the jarraipens where jarraituaUserId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @return the range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraituaUserId(
+		long jarraituaUserId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByJarraituaUserId(jarraituaUserId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the jarraipens where jarraituaUserId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param start the lower bound of the range of jarraipens
+	* @param end the upper bound of the range of jarraipens (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> findByJarraituaUserId(
+		long jarraituaUserId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByJarraituaUserId(jarraituaUserId, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findByJarraituaUserId_First(
+		long jarraituaUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraituaUserId_First(jarraituaUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first jarraipen in the ordered set where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchByJarraituaUserId_First(
+		long jarraituaUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByJarraituaUserId_First(jarraituaUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen findByJarraituaUserId_Last(
+		long jarraituaUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraituaUserId_Last(jarraituaUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last jarraipen in the ordered set where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen fetchByJarraituaUserId_Last(
+		long jarraituaUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByJarraituaUserId_Last(jarraituaUserId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the jarraipens before and after the current jarraipen in the ordered set where jarraituaUserId = &#63;.
+	*
+	* @param jarraipenId the primary key of the current jarraipen
+	* @param jarraituaUserId the jarraitua user ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next jarraipen
+	* @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static net.sareweb.txotx.model.Jarraipen[] findByJarraituaUserId_PrevAndNext(
+		long jarraipenId, long jarraituaUserId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			net.sareweb.txotx.NoSuchJarraipenException {
+		return getPersistence()
+				   .findByJarraituaUserId_PrevAndNext(jarraipenId,
+			jarraituaUserId, orderByComparator);
+	}
+
+	/**
 	* Returns all the jarraipens.
 	*
 	* @return the jarraipens
@@ -396,6 +830,39 @@ public class JarraipenUtil {
 	}
 
 	/**
+	* Removes all the jarraipens where sagardotegiId = &#63; from the database.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeBySagardotegiId(long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeBySagardotegiId(sagardotegiId);
+	}
+
+	/**
+	* Removes all the jarraipens where sagardoEgunId = &#63; from the database.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeBySagardoEgunId(long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeBySagardoEgunId(sagardoEgunId);
+	}
+
+	/**
+	* Removes all the jarraipens where jarraituaUserId = &#63; from the database.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByJarraituaUserId(long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByJarraituaUserId(jarraituaUserId);
+	}
+
+	/**
 	* Removes all the jarraipens from the database.
 	*
 	* @throws SystemException if a system exception occurred
@@ -415,6 +882,42 @@ public class JarraipenUtil {
 	public static int countByJarraitzaileUserId(long jarraitzaileUserId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getPersistence().countByJarraitzaileUserId(jarraitzaileUserId);
+	}
+
+	/**
+	* Returns the number of jarraipens where sagardotegiId = &#63;.
+	*
+	* @param sagardotegiId the sagardotegi ID
+	* @return the number of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countBySagardotegiId(long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countBySagardotegiId(sagardotegiId);
+	}
+
+	/**
+	* Returns the number of jarraipens where sagardoEgunId = &#63;.
+	*
+	* @param sagardoEgunId the sagardo egun ID
+	* @return the number of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countBySagardoEgunId(long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countBySagardoEgunId(sagardoEgunId);
+	}
+
+	/**
+	* Returns the number of jarraipens where jarraituaUserId = &#63;.
+	*
+	* @param jarraituaUserId the jarraitua user ID
+	* @return the number of matching jarraipens
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByJarraituaUserId(long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByJarraituaUserId(jarraituaUserId);
 	}
 
 	/**

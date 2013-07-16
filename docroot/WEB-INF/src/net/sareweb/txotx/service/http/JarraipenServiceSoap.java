@@ -95,5 +95,47 @@ public class JarraipenServiceSoap {
 		}
 	}
 
+	public static net.sareweb.txotx.model.JarraipenSoap[] getErabiltzailearenJarraitzaileak(
+		long jarraituaUserId) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getErabiltzailearenJarraitzaileak(jarraituaUserId);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.JarraipenSoap[] getSagardotegiarenJarraitzaileak(
+		long sagardotegiId) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getSagardotegiarenJarraitzaileak(sagardotegiId);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.JarraipenSoap[] getSagardoEgunarenJarraitzaileak(
+		long sagardoEgunId) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getSagardoEgunarenJarraitzaileak(sagardoEgunId);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(JarraipenServiceSoap.class);
 }

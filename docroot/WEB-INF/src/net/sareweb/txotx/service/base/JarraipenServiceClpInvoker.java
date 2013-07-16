@@ -40,6 +40,18 @@ public class JarraipenServiceClpInvoker {
 		_methodName65 = "getJarraipenak";
 
 		_methodParameterTypes65 = new String[] { "long" };
+
+		_methodName66 = "getErabiltzailearenJarraitzaileak";
+
+		_methodParameterTypes66 = new String[] { "long" };
+
+		_methodName67 = "getSagardotegiarenJarraitzaileak";
+
+		_methodParameterTypes67 = new String[] { "long" };
+
+		_methodName68 = "getSagardoEgunarenJarraitzaileak";
+
+		_methodParameterTypes68 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -65,6 +77,21 @@ public class JarraipenServiceClpInvoker {
 			return JarraipenServiceUtil.getJarraipenak(((Long)arguments[0]).longValue());
 		}
 
+		if (_methodName66.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
+			return JarraipenServiceUtil.getErabiltzailearenJarraitzaileak(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName67.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes67, parameterTypes)) {
+			return JarraipenServiceUtil.getSagardotegiarenJarraitzaileak(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName68.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+			return JarraipenServiceUtil.getSagardoEgunarenJarraitzaileak(((Long)arguments[0]).longValue());
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -76,4 +103,10 @@ public class JarraipenServiceClpInvoker {
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
 	private String[] _methodParameterTypes65;
+	private String _methodName66;
+	private String[] _methodParameterTypes66;
+	private String _methodName67;
+	private String[] _methodParameterTypes67;
+	private String _methodName68;
+	private String[] _methodParameterTypes68;
 }

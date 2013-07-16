@@ -73,4 +73,19 @@ public interface JarraipenService extends BaseService, InvokableService {
 	public java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenak(
 		long jarraitzaileUserId)
 		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getErabiltzailearenJarraitzaileak(
+		long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardotegiarenJarraitzaileak(
+		long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardoEgunarenJarraitzaileak(
+		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException;
 }

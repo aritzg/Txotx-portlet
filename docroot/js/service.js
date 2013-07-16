@@ -31,7 +31,10 @@ Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Jarraipen",
 	{
 		gehituJarraipena: true,
-		getJarraipenak: true
+		getJarraipenak: true,
+		getErabiltzailearenJarraitzaileak: true,
+		getSagardotegiarenJarraitzaileak: true,
+		getSagardoEgunarenJarraitzaileak: true
 	}
 );
 

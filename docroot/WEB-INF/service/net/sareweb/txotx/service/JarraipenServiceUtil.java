@@ -77,6 +77,24 @@ public class JarraipenServiceUtil {
 		return getService().getJarraipenak(jarraitzaileUserId);
 	}
 
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> getErabiltzailearenJarraitzaileak(
+		long jarraituaUserId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getErabiltzailearenJarraitzaileak(jarraituaUserId);
+	}
+
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardotegiarenJarraitzaileak(
+		long sagardotegiId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getSagardotegiarenJarraitzaileak(sagardotegiId);
+	}
+
+	public static java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardoEgunarenJarraitzaileak(
+		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getSagardoEgunarenJarraitzaileak(sagardoEgunId);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}
