@@ -118,5 +118,17 @@ public class OharraServiceSoap {
 		}
 	}
 
+	public static void bidaliOharra(long oharraId,
+		java.lang.String toEmailAddress) throws RemoteException {
+		try {
+			OharraServiceUtil.bidaliOharra(oharraId, toEmailAddress);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	private static Log _log = LogFactoryUtil.getLog(OharraServiceSoap.class);
 }

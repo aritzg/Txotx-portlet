@@ -46,6 +46,10 @@ public class OharraServiceClp implements OharraService {
 		_methodName6 = "bidaliOharra";
 
 		_methodParameterTypes6 = new String[] { "long" };
+
+		_methodName7 = "bidaliOharra";
+
+		_methodParameterTypes7 = new String[] { "long", "java.lang.String" };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -209,6 +213,39 @@ public class OharraServiceClp implements OharraService {
 		}
 	}
 
+	public void bidaliOharra(long oharraId, java.lang.String toEmailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		try {
+			_invokableService.invokeMethod(_methodName7,
+				_methodParameterTypes7,
+				new Object[] {
+					oharraId,
+					
+				ClpSerializer.translateInput(toEmailAddress)
+				});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableService _invokableService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -222,4 +259,6 @@ public class OharraServiceClp implements OharraService {
 	private String[] _methodParameterTypes5;
 	private String _methodName6;
 	private String[] _methodParameterTypes6;
+	private String _methodName7;
+	private String[] _methodParameterTypes7;
 }

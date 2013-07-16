@@ -77,6 +77,12 @@ public class OharraServiceWrapper implements OharraService,
 		_oharraService.bidaliOharra(oharraId);
 	}
 
+	public void bidaliOharra(long oharraId, java.lang.String toEmailAddress)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_oharraService.bidaliOharra(oharraId, toEmailAddress);
+	}
+
 	/**
 	 * @deprecated Renamed to {@link #getWrappedService}
 	 */
