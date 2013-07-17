@@ -48,18 +48,33 @@ public class GooglePlusContentServlet extends HttpServlet {
 			throws PortalException, SystemException {
 		Sagardotegi sagardotegi = SagardotegiLocalServiceUtil
 				.getSagardotegi(sagardotegiId);
-		out.print(sagardotegi.getIzena());
+		
+		String img = "/documents/10180/" + sagardotegi.getIrudiKarpetaId() + "/"
+		+ sagardotegi.getIrudia();
+		
+		//Generar snippet		
+		out.print("<body itemscope itemtype=\"http://schema.org/Event\">"
+					+"<h1 itemprop=\"name\">" + sagardotegi.getIzena() + "</h1>"
+					+"<img itemprop=\"image\" src=\"" + img + "\"/>"
+					+"<p itemprop=\"description\">" + sagardotegi.getHelbidea() + "</p>"
+					+"</body>");
+		
 	}
 
 	private void serveSagardoEgunContent(long sagardoEgunId, PrintWriter out)
 			throws PortalException, SystemException {
 		SagardoEgun sagardoEgun = SagardoEgunLocalServiceUtil
 				.getSagardoEgun(sagardoEgunId);
-		
 		String img = "/documents/10180/" + sagardoEgun.getIrudiKarpetaId() + "/"
 		+ sagardoEgun.getIrudia();
 		
-		out.print("<html><head></head><body><img src=\"" + img + "\"/>" + sagardoEgun.getIzena()+ "</body></html>");
+		//Generar snippet
+		out.print("<body itemscope itemtype=\"http://schema.org/Event\">"
+					+"<h1 itemprop=\"name\">" + sagardoEgun.getIzena() + "</h1>"
+					+"<img itemprop=\"image\" src=\"" + img + "\"/>"
+					+"<p itemprop=\"description\">" + sagardoEgun.getIzena() + " - " + sagardoEgun.getEdizioa() + ". Edizioa</p>"
+					+"<p itemprop=\"location\">" + sagardoEgun.getHerria() + "</p>"
+					+"</body>");
 	}
 
 }
