@@ -619,6 +619,8 @@ public class SagardoEgunPersistenceImpl extends BasePersistenceImpl<SagardoEgun>
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
+	@BeanReference(type = APKVersionPersistence.class)
+	protected APKVersionPersistence apkVersionPersistence;
 	@BeanReference(type = GertaeraPersistence.class)
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = GoogleDevicePersistence.class)

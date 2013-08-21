@@ -55,12 +55,26 @@ public class JarraipenServiceWrapper implements JarraipenService,
 		return _jarraipenService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public net.sareweb.txotx.model.Jarraipen gehituJarraipenaByEmail(
+		java.lang.String emailAddress, long jarraituaId,
+		java.lang.String jarraipenMota)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.gehituJarraipenaByEmail(emailAddress,
+			jarraituaId, jarraipenMota);
+	}
+
 	public net.sareweb.txotx.model.Jarraipen gehituJarraipena(
-		long jarraitzaileUserId, long jarraigaiId,
+		long jarraitzaileUserId, long jarraituaId,
 		java.lang.String jarraipenMota)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _jarraipenService.gehituJarraipena(jarraitzaileUserId,
-			jarraigaiId, jarraipenMota);
+			jarraituaId, jarraipenMota);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenakByEmail(
+		java.lang.String emailAddress)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.getJarraipenakByEmail(emailAddress);
 	}
 
 	public java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenak(
@@ -85,6 +99,12 @@ public class JarraipenServiceWrapper implements JarraipenService,
 		long sagardoEgunId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _jarraipenService.getSagardoEgunarenJarraitzaileak(sagardoEgunId);
+	}
+
+	public boolean deleteJarraipena(java.lang.String emailAddress,
+		long jarraituaId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _jarraipenService.deleteJarraipena(emailAddress, jarraituaId);
 	}
 
 	/**

@@ -25,6 +25,7 @@ import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.BaseModel;
 
+import net.sareweb.txotx.model.APKVersionClp;
 import net.sareweb.txotx.model.GertaeraClp;
 import net.sareweb.txotx.model.GoogleDeviceClp;
 import net.sareweb.txotx.model.JarraipenClp;
@@ -108,6 +109,10 @@ public class ClpSerializer {
 
 		String oldModelClassName = oldModelClass.getName();
 
+		if (oldModelClassName.equals(APKVersionClp.class.getName())) {
+			return translateInputAPKVersion(oldModel);
+		}
+
 		if (oldModelClassName.equals(GertaeraClp.class.getName())) {
 			return translateInputGertaera(oldModel);
 		}
@@ -149,6 +154,16 @@ public class ClpSerializer {
 		}
 
 		return newList;
+	}
+
+	public static Object translateInputAPKVersion(BaseModel<?> oldModel) {
+		APKVersionClp oldClpModel = (APKVersionClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getAPKVersionRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
 	}
 
 	public static Object translateInputGertaera(BaseModel<?> oldModel) {
@@ -237,6 +252,11 @@ public class ClpSerializer {
 		Class<?> oldModelClass = oldModel.getClass();
 
 		String oldModelClassName = oldModelClass.getName();
+
+		if (oldModelClassName.equals(
+					"net.sareweb.txotx.model.impl.APKVersionImpl")) {
+			return translateOutputAPKVersion(oldModel);
+		}
 
 		if (oldModelClassName.equals(
 					"net.sareweb.txotx.model.impl.GertaeraImpl")) {
@@ -352,6 +372,10 @@ public class ClpSerializer {
 			return new SystemException();
 		}
 
+		if (className.equals("net.sareweb.txotx.NoSuchAPKVersionException")) {
+			return new net.sareweb.txotx.NoSuchAPKVersionException();
+		}
+
 		if (className.equals("net.sareweb.txotx.NoSuchGertaeraException")) {
 			return new net.sareweb.txotx.NoSuchGertaeraException();
 		}
@@ -381,6 +405,16 @@ public class ClpSerializer {
 		}
 
 		return throwable;
+	}
+
+	public static Object translateOutputAPKVersion(BaseModel<?> oldModel) {
+		APKVersionClp newModel = new APKVersionClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setAPKVersionRemoteModel(oldModel);
+
+		return newModel;
 	}
 
 	public static Object translateOutputGertaera(BaseModel<?> oldModel) {

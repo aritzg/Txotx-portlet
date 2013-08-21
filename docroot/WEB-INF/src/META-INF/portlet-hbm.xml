@@ -2,6 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="net.sareweb.txotx.model.APKVersion" />
 	<import class="net.sareweb.txotx.model.Gertaera" />
 	<import class="net.sareweb.txotx.model.GoogleDevice" />
 	<import class="net.sareweb.txotx.model.Jarraipen" />
@@ -9,6 +10,16 @@
 	<import class="net.sareweb.txotx.model.SagardoEgun" />
 	<import class="net.sareweb.txotx.model.Sagardotegi" />
 	<import class="net.sareweb.txotx.model.Sailkapena" />
+	<class name="net.sareweb.txotx.model.impl.APKVersionImpl" table="Txotx_APKVersion">
+		<id name="apkVersionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="supportedMinVersion" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="supportedMinVersionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="currentVersion" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="currentVersionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+	</class>
 	<class name="net.sareweb.txotx.model.impl.GertaeraImpl" table="Txotx_Gertaera">
 		<id name="gertaeraId" type="long">
 			<generator class="assigned" />
@@ -40,9 +51,7 @@
 			<generator class="assigned" />
 		</id>
 		<property name="jarraitzaileUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="sagardotegiId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="sagardoEgunId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
-		<property name="jarraituaUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="jarraituaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="jarraipenMota" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 	</class>

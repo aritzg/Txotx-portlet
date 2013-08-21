@@ -104,61 +104,18 @@ public interface JarraipenModel extends BaseModel<Jarraipen> {
 	public void setJarraitzaileUserUuid(String jarraitzaileUserUuid);
 
 	/**
-	 * Returns the sagardotegi ID of this jarraipen.
+	 * Returns the jarraitua ID of this jarraipen.
 	 *
-	 * @return the sagardotegi ID of this jarraipen
+	 * @return the jarraitua ID of this jarraipen
 	 */
-	public long getSagardotegiId();
+	public long getJarraituaId();
 
 	/**
-	 * Sets the sagardotegi ID of this jarraipen.
+	 * Sets the jarraitua ID of this jarraipen.
 	 *
-	 * @param sagardotegiId the sagardotegi ID of this jarraipen
+	 * @param jarraituaId the jarraitua ID of this jarraipen
 	 */
-	public void setSagardotegiId(long sagardotegiId);
-
-	/**
-	 * Returns the sagardo egun ID of this jarraipen.
-	 *
-	 * @return the sagardo egun ID of this jarraipen
-	 */
-	public long getSagardoEgunId();
-
-	/**
-	 * Sets the sagardo egun ID of this jarraipen.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID of this jarraipen
-	 */
-	public void setSagardoEgunId(long sagardoEgunId);
-
-	/**
-	 * Returns the jarraitua user ID of this jarraipen.
-	 *
-	 * @return the jarraitua user ID of this jarraipen
-	 */
-	public long getJarraituaUserId();
-
-	/**
-	 * Sets the jarraitua user ID of this jarraipen.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID of this jarraipen
-	 */
-	public void setJarraituaUserId(long jarraituaUserId);
-
-	/**
-	 * Returns the jarraitua user uuid of this jarraipen.
-	 *
-	 * @return the jarraitua user uuid of this jarraipen
-	 * @throws SystemException if a system exception occurred
-	 */
-	public String getJarraituaUserUuid() throws SystemException;
-
-	/**
-	 * Sets the jarraitua user uuid of this jarraipen.
-	 *
-	 * @param jarraituaUserUuid the jarraitua user uuid of this jarraipen
-	 */
-	public void setJarraituaUserUuid(String jarraituaUserUuid);
+	public void setJarraituaId(long jarraituaId);
 
 	/**
 	 * Returns the jarraipen mota of this jarraipen.

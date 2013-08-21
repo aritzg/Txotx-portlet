@@ -221,10 +221,70 @@ public class GertaeraServiceSoap {
 		}
 	}
 
+	public static net.sareweb.txotx.model.GertaeraSoap[] getGertaerakSagardotegianOlderThanDate(
+		long sagardotegiId, long date, int blockSize) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Gertaera> returnValue = GertaeraServiceUtil.getGertaerakSagardotegianOlderThanDate(sagardotegiId,
+					date, blockSize);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap[] getGertaerakSagardoEguneanOlderThanDate(
+		long sagardoEgunId, long date, int blockSize) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Gertaera> returnValue = GertaeraServiceUtil.getGertaerakSagardoEguneanOlderThanDate(sagardoEgunId,
+					date, blockSize);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static net.sareweb.txotx.model.GertaeraSoap[] getGertaerakNewerThanDate(
 		long sagardotegiId, long date, int blockSize) throws RemoteException {
 		try {
 			java.util.List<net.sareweb.txotx.model.Gertaera> returnValue = GertaeraServiceUtil.getGertaerakNewerThanDate(sagardotegiId,
+					date, blockSize);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap[] getGertaerakSagardotegianNewerThanDate(
+		long sagardotegiId, long date, int blockSize) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Gertaera> returnValue = GertaeraServiceUtil.getGertaerakSagardotegianNewerThanDate(sagardotegiId,
+					date, blockSize);
+
+			return net.sareweb.txotx.model.GertaeraSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.GertaeraSoap[] getGertaerakSagardoEguneanNewerThanDate(
+		long sagardoEgunId, long date, int blockSize) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Gertaera> returnValue = GertaeraServiceUtil.getGertaerakSagardoEguneanNewerThanDate(sagardoEgunId,
 					date, blockSize);
 
 			return net.sareweb.txotx.model.GertaeraSoap.toSoapModels(returnValue);

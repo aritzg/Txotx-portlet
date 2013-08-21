@@ -30,6 +30,8 @@ import com.liferay.portal.service.persistence.ResourcePersistence;
 import com.liferay.portal.service.persistence.UserPersistence;
 
 import net.sareweb.txotx.model.Sagardotegi;
+import net.sareweb.txotx.service.APKVersionLocalService;
+import net.sareweb.txotx.service.APKVersionService;
 import net.sareweb.txotx.service.GertaeraLocalService;
 import net.sareweb.txotx.service.GertaeraService;
 import net.sareweb.txotx.service.GoogleDeviceLocalService;
@@ -44,6 +46,7 @@ import net.sareweb.txotx.service.SagardotegiLocalService;
 import net.sareweb.txotx.service.SagardotegiService;
 import net.sareweb.txotx.service.SailkapenaLocalService;
 import net.sareweb.txotx.service.SailkapenaService;
+import net.sareweb.txotx.service.persistence.APKVersionPersistence;
 import net.sareweb.txotx.service.persistence.GertaeraPersistence;
 import net.sareweb.txotx.service.persistence.GoogleDevicePersistence;
 import net.sareweb.txotx.service.persistence.JarraipenPersistence;
@@ -73,6 +76,62 @@ public abstract class SagardotegiServiceBaseImpl extends BaseServiceImpl
 	 *
 	 * Never modify or reference this class directly. Always use {@link net.sareweb.txotx.service.SagardotegiServiceUtil} to access the sagardotegi remote service.
 	 */
+
+	/**
+	 * Returns the a p k version local service.
+	 *
+	 * @return the a p k version local service
+	 */
+	public APKVersionLocalService getAPKVersionLocalService() {
+		return apkVersionLocalService;
+	}
+
+	/**
+	 * Sets the a p k version local service.
+	 *
+	 * @param apkVersionLocalService the a p k version local service
+	 */
+	public void setAPKVersionLocalService(
+		APKVersionLocalService apkVersionLocalService) {
+		this.apkVersionLocalService = apkVersionLocalService;
+	}
+
+	/**
+	 * Returns the a p k version remote service.
+	 *
+	 * @return the a p k version remote service
+	 */
+	public APKVersionService getAPKVersionService() {
+		return apkVersionService;
+	}
+
+	/**
+	 * Sets the a p k version remote service.
+	 *
+	 * @param apkVersionService the a p k version remote service
+	 */
+	public void setAPKVersionService(APKVersionService apkVersionService) {
+		this.apkVersionService = apkVersionService;
+	}
+
+	/**
+	 * Returns the a p k version persistence.
+	 *
+	 * @return the a p k version persistence
+	 */
+	public APKVersionPersistence getAPKVersionPersistence() {
+		return apkVersionPersistence;
+	}
+
+	/**
+	 * Sets the a p k version persistence.
+	 *
+	 * @param apkVersionPersistence the a p k version persistence
+	 */
+	public void setAPKVersionPersistence(
+		APKVersionPersistence apkVersionPersistence) {
+		this.apkVersionPersistence = apkVersionPersistence;
+	}
 
 	/**
 	 * Returns the gertaera local service.
@@ -646,6 +705,12 @@ public abstract class SagardotegiServiceBaseImpl extends BaseServiceImpl
 		}
 	}
 
+	@BeanReference(type = APKVersionLocalService.class)
+	protected APKVersionLocalService apkVersionLocalService;
+	@BeanReference(type = APKVersionService.class)
+	protected APKVersionService apkVersionService;
+	@BeanReference(type = APKVersionPersistence.class)
+	protected APKVersionPersistence apkVersionPersistence;
 	@BeanReference(type = GertaeraLocalService.class)
 	protected GertaeraLocalService gertaeraLocalService;
 	@BeanReference(type = GertaeraService.class)

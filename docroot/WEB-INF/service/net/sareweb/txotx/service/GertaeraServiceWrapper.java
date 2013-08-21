@@ -136,11 +136,39 @@ public class GertaeraServiceWrapper implements GertaeraService,
 			blockSize);
 	}
 
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardotegianOlderThanDate(
+		long sagardotegiId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _gertaeraService.getGertaerakSagardotegianOlderThanDate(sagardotegiId,
+			date, blockSize);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardoEguneanOlderThanDate(
+		long sagardoEgunId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _gertaeraService.getGertaerakSagardoEguneanOlderThanDate(sagardoEgunId,
+			date, blockSize);
+	}
+
 	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakNewerThanDate(
 		long sagardotegiId, long date, int blockSize)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return _gertaeraService.getGertaerakNewerThanDate(sagardotegiId, date,
 			blockSize);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardotegianNewerThanDate(
+		long sagardotegiId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _gertaeraService.getGertaerakSagardotegianNewerThanDate(sagardotegiId,
+			date, blockSize);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardoEguneanNewerThanDate(
+		long sagardoEgunId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _gertaeraService.getGertaerakSagardoEguneanNewerThanDate(sagardoEgunId,
+			date, blockSize);
 	}
 
 	public void fake()

@@ -33,9 +33,7 @@ public class JarraipenSoap implements Serializable {
 
 		soapModel.setJarraipenId(model.getJarraipenId());
 		soapModel.setJarraitzaileUserId(model.getJarraitzaileUserId());
-		soapModel.setSagardotegiId(model.getSagardotegiId());
-		soapModel.setSagardoEgunId(model.getSagardoEgunId());
-		soapModel.setJarraituaUserId(model.getJarraituaUserId());
+		soapModel.setJarraituaId(model.getJarraituaId());
 		soapModel.setJarraipenMota(model.getJarraipenMota());
 		soapModel.setCreateDate(model.getCreateDate());
 
@@ -106,28 +104,12 @@ public class JarraipenSoap implements Serializable {
 		_jarraitzaileUserId = jarraitzaileUserId;
 	}
 
-	public long getSagardotegiId() {
-		return _sagardotegiId;
+	public long getJarraituaId() {
+		return _jarraituaId;
 	}
 
-	public void setSagardotegiId(long sagardotegiId) {
-		_sagardotegiId = sagardotegiId;
-	}
-
-	public long getSagardoEgunId() {
-		return _sagardoEgunId;
-	}
-
-	public void setSagardoEgunId(long sagardoEgunId) {
-		_sagardoEgunId = sagardoEgunId;
-	}
-
-	public long getJarraituaUserId() {
-		return _jarraituaUserId;
-	}
-
-	public void setJarraituaUserId(long jarraituaUserId) {
-		_jarraituaUserId = jarraituaUserId;
+	public void setJarraituaId(long jarraituaId) {
+		_jarraituaId = jarraituaId;
 	}
 
 	public String getJarraipenMota() {
@@ -148,9 +130,7 @@ public class JarraipenSoap implements Serializable {
 
 	private long _jarraipenId;
 	private long _jarraitzaileUserId;
-	private long _sagardotegiId;
-	private long _sagardoEgunId;
-	private long _jarraituaUserId;
+	private long _jarraituaId;
 	private String _jarraipenMota;
 	private Date _createDate;
 }

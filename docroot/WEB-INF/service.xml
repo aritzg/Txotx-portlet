@@ -192,9 +192,7 @@
 		<!-- PK fields -->
 		<column name="jarraipenId" type="long" primary="true" />
 		<column name="jarraitzaileUserId" type="long" />
-		<column name="sagardotegiId" type="long" />
-		<column name="sagardoEgunId" type="long" />
-		<column name="jarraituaUserId" type="long" />
+		<column name="jarraituaId" type="long" /><!-- Jarraitua sagardo egun sagardotegi edo erabiltzailea izan daiteke-->
 		<column name="jarraipenMota" type="String" />
 
 		<!-- Audit fields -->
@@ -208,15 +206,30 @@
 		<finder return-type="Collection" name="JarraitzaileUserId">
 			<finder-column name="jarraitzaileUserId"></finder-column>
 		</finder>
-		<finder return-type="Collection" name="SagardotegiId">
-			<finder-column name="sagardotegiId"></finder-column>
+		<finder return-type="Collection" name="JarraituaId">
+			<finder-column name="jarraituaId"></finder-column>
 		</finder>
-		<finder return-type="Collection" name="SagardoEgunId">
-			<finder-column name="sagardoEgunId"></finder-column>
-		</finder>
-		<finder return-type="Collection" name="JarraituaUserId">
-			<finder-column name="jarraituaUserId"></finder-column>
-		</finder>
+
+	</entity>
+	
+	<entity name="APKVersion" local-service="true" remote-service="true"
+		cache-enabled="false">
+
+		<!-- PK fields -->
+		<column name="apkVersionId" type="long" primary="true" />
+		<column name="supportedMinVersion" type="int" />
+		<column name="supportedMinVersionName" type="String" />
+		<column name="currentVersion" type="int" />
+		<column name="currentVersionName" type="String" />
+
+		<!-- Audit fields -->
+		<column name="createDate" type="Date" />
+	
+		<!-- Order -->
+		<order by="desc">
+			<order-column name="createDate" />
+		</order>
+	
 
 	</entity>
 

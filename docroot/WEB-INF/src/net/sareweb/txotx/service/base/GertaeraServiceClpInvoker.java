@@ -23,192 +23,244 @@ import java.util.Arrays;
  */
 public class GertaeraServiceClpInvoker {
 	public GertaeraServiceClpInvoker() {
-		_methodName58 = "getBeanIdentifier";
+		_methodName64 = "getBeanIdentifier";
 
-		_methodParameterTypes58 = new String[] {  };
+		_methodParameterTypes64 = new String[] {  };
 
-		_methodName59 = "setBeanIdentifier";
+		_methodName65 = "setBeanIdentifier";
 
-		_methodParameterTypes59 = new String[] { "java.lang.String" };
+		_methodParameterTypes65 = new String[] { "java.lang.String" };
 
-		_methodName64 = "gehituTestuGertaera";
+		_methodName70 = "gehituTestuGertaera";
 
-		_methodParameterTypes64 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes70 = new String[] { "long", "java.lang.String" };
 
-		_methodName65 = "gehituTestuGertaeraSagardotegian";
+		_methodName71 = "gehituTestuGertaeraSagardotegian";
 
-		_methodParameterTypes65 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes71 = new String[] { "long", "java.lang.String" };
 
-		_methodName66 = "gehituTestuGertaeraSagardoEgunean";
+		_methodName72 = "gehituTestuGertaeraSagardoEgunean";
 
-		_methodParameterTypes66 = new String[] { "long", "java.lang.String" };
+		_methodParameterTypes72 = new String[] { "long", "java.lang.String" };
 
-		_methodName68 = "gehituArgazkiGertaera";
-
-		_methodParameterTypes68 = new String[] {
-				"long", "java.lang.String", "long", "java.lang.String"
-			};
-
-		_methodName69 = "gehituArgazkiGertaeraSagardotegian";
-
-		_methodParameterTypes69 = new String[] {
-				"long", "java.lang.String", "long", "java.lang.String"
-			};
-
-		_methodName70 = "gehituArgazkiGertaeraSagardoEgunean";
-
-		_methodParameterTypes70 = new String[] {
-				"long", "java.lang.String", "long", "java.lang.String"
-			};
-
-		_methodName72 = "gehituBalorazioGertaera";
-
-		_methodParameterTypes72 = new String[] {
-				"long", "java.lang.String", "long"
-			};
-
-		_methodName73 = "gehituBalorazioGertaeraSagardotegian";
-
-		_methodParameterTypes73 = new String[] {
-				"long", "java.lang.String", "long"
-			};
-
-		_methodName74 = "gehituBalorazioGertaeraSagardoEgunean";
+		_methodName74 = "gehituArgazkiGertaera";
 
 		_methodParameterTypes74 = new String[] {
+				"long", "java.lang.String", "long", "java.lang.String"
+			};
+
+		_methodName75 = "gehituArgazkiGertaeraSagardotegian";
+
+		_methodParameterTypes75 = new String[] {
+				"long", "java.lang.String", "long", "java.lang.String"
+			};
+
+		_methodName76 = "gehituArgazkiGertaeraSagardoEgunean";
+
+		_methodParameterTypes76 = new String[] {
+				"long", "java.lang.String", "long", "java.lang.String"
+			};
+
+		_methodName78 = "gehituBalorazioGertaera";
+
+		_methodParameterTypes78 = new String[] {
 				"long", "java.lang.String", "long"
 			};
 
-		_methodName76 = "getGertaerakOlderThanDate";
+		_methodName79 = "gehituBalorazioGertaeraSagardotegian";
 
-		_methodParameterTypes76 = new String[] { "long", "long", "int" };
+		_methodParameterTypes79 = new String[] {
+				"long", "java.lang.String", "long"
+			};
 
-		_methodName77 = "getGertaerakNewerThanDate";
+		_methodName80 = "gehituBalorazioGertaeraSagardoEgunean";
 
-		_methodParameterTypes77 = new String[] { "long", "long", "int" };
+		_methodParameterTypes80 = new String[] {
+				"long", "java.lang.String", "long"
+			};
 
-		_methodName79 = "fake";
+		_methodName82 = "getGertaerakOlderThanDate";
 
-		_methodParameterTypes79 = new String[] {  };
+		_methodParameterTypes82 = new String[] { "long", "long", "int" };
+
+		_methodName83 = "getGertaerakSagardotegianOlderThanDate";
+
+		_methodParameterTypes83 = new String[] { "long", "long", "int" };
+
+		_methodName84 = "getGertaerakSagardoEguneanOlderThanDate";
+
+		_methodParameterTypes84 = new String[] { "long", "long", "int" };
+
+		_methodName86 = "getGertaerakNewerThanDate";
+
+		_methodParameterTypes86 = new String[] { "long", "long", "int" };
+
+		_methodName87 = "getGertaerakSagardotegianNewerThanDate";
+
+		_methodParameterTypes87 = new String[] { "long", "long", "int" };
+
+		_methodName88 = "getGertaerakSagardoEguneanNewerThanDate";
+
+		_methodParameterTypes88 = new String[] { "long", "long", "int" };
+
+		_methodName91 = "fake";
+
+		_methodParameterTypes91 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName58.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-			return GertaeraServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName59.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
-			GertaeraServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
-		}
-
 		if (_methodName64.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
-			return GertaeraServiceUtil.gehituTestuGertaera(((Long)arguments[0]).longValue(),
-				(java.lang.String)arguments[1]);
+			return GertaeraServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName65.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
+			GertaeraServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName70.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+			return GertaeraServiceUtil.gehituTestuGertaera(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName71.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes71, parameterTypes)) {
 			return GertaeraServiceUtil.gehituTestuGertaeraSagardotegian(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName66.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
+		if (_methodName72.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
 			return GertaeraServiceUtil.gehituTestuGertaeraSagardoEgunean(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1]);
 		}
 
-		if (_methodName68.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes68, parameterTypes)) {
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
 			return GertaeraServiceUtil.gehituArgazkiGertaera(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(), (java.lang.String)arguments[3]);
 		}
 
-		if (_methodName69.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes69, parameterTypes)) {
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
 			return GertaeraServiceUtil.gehituArgazkiGertaeraSagardotegian(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(), (java.lang.String)arguments[3]);
 		}
 
-		if (_methodName70.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+		if (_methodName76.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
 			return GertaeraServiceUtil.gehituArgazkiGertaeraSagardoEgunean(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1],
 				((Long)arguments[2]).longValue(), (java.lang.String)arguments[3]);
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName78.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
 			return GertaeraServiceUtil.gehituBalorazioGertaera(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName79.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
 			return GertaeraServiceUtil.gehituBalorazioGertaeraSagardotegian(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName74.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
+		if (_methodName80.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes80, parameterTypes)) {
 			return GertaeraServiceUtil.gehituBalorazioGertaeraSagardoEgunean(((Long)arguments[0]).longValue(),
 				(java.lang.String)arguments[1], ((Long)arguments[2]).longValue());
 		}
 
-		if (_methodName76.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
+		if (_methodName82.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
 			return GertaeraServiceUtil.getGertaerakOlderThanDate(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName77.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes77, parameterTypes)) {
+		if (_methodName83.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes83, parameterTypes)) {
+			return GertaeraServiceUtil.getGertaerakSagardotegianOlderThanDate(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName84.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes84, parameterTypes)) {
+			return GertaeraServiceUtil.getGertaerakSagardoEguneanOlderThanDate(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName86.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes86, parameterTypes)) {
 			return GertaeraServiceUtil.getGertaerakNewerThanDate(((Long)arguments[0]).longValue(),
 				((Long)arguments[1]).longValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName79.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
+		if (_methodName87.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
+			return GertaeraServiceUtil.getGertaerakSagardotegianNewerThanDate(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName88.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes88, parameterTypes)) {
+			return GertaeraServiceUtil.getGertaerakSagardoEguneanNewerThanDate(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName91.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes91, parameterTypes)) {
 			GertaeraServiceUtil.fake();
 		}
 
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName58;
-	private String[] _methodParameterTypes58;
-	private String _methodName59;
-	private String[] _methodParameterTypes59;
 	private String _methodName64;
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
 	private String[] _methodParameterTypes65;
-	private String _methodName66;
-	private String[] _methodParameterTypes66;
-	private String _methodName68;
-	private String[] _methodParameterTypes68;
-	private String _methodName69;
-	private String[] _methodParameterTypes69;
 	private String _methodName70;
 	private String[] _methodParameterTypes70;
+	private String _methodName71;
+	private String[] _methodParameterTypes71;
 	private String _methodName72;
 	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
 	private String _methodName74;
 	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
 	private String _methodName76;
 	private String[] _methodParameterTypes76;
-	private String _methodName77;
-	private String[] _methodParameterTypes77;
+	private String _methodName78;
+	private String[] _methodParameterTypes78;
 	private String _methodName79;
 	private String[] _methodParameterTypes79;
+	private String _methodName80;
+	private String[] _methodParameterTypes80;
+	private String _methodName82;
+	private String[] _methodParameterTypes82;
+	private String _methodName83;
+	private String[] _methodParameterTypes83;
+	private String _methodName84;
+	private String[] _methodParameterTypes84;
+	private String _methodName86;
+	private String[] _methodParameterTypes86;
+	private String _methodName87;
+	private String[] _methodParameterTypes87;
+	private String _methodName88;
+	private String[] _methodParameterTypes88;
+	private String _methodName91;
+	private String[] _methodParameterTypes91;
 }

@@ -65,14 +65,44 @@ import java.rmi.RemoteException;
  * @generated
  */
 public class JarraipenServiceSoap {
+	public static net.sareweb.txotx.model.JarraipenSoap gehituJarraipenaByEmail(
+		java.lang.String emailAddress, long jarraituaId,
+		java.lang.String jarraipenMota) throws RemoteException {
+		try {
+			net.sareweb.txotx.model.Jarraipen returnValue = JarraipenServiceUtil.gehituJarraipenaByEmail(emailAddress,
+					jarraituaId, jarraipenMota);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static net.sareweb.txotx.model.JarraipenSoap gehituJarraipena(
-		long jarraitzaileUserId, long jarraigaiId,
+		long jarraitzaileUserId, long jarraituaId,
 		java.lang.String jarraipenMota) throws RemoteException {
 		try {
 			net.sareweb.txotx.model.Jarraipen returnValue = JarraipenServiceUtil.gehituJarraipena(jarraitzaileUserId,
-					jarraigaiId, jarraipenMota);
+					jarraituaId, jarraipenMota);
 
 			return net.sareweb.txotx.model.JarraipenSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static net.sareweb.txotx.model.JarraipenSoap[] getJarraipenakByEmail(
+		java.lang.String emailAddress) throws RemoteException {
+		try {
+			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getJarraipenakByEmail(emailAddress);
+
+			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
 		}
 		catch (Exception e) {
 			_log.error(e, e);
@@ -129,6 +159,21 @@ public class JarraipenServiceSoap {
 			java.util.List<net.sareweb.txotx.model.Jarraipen> returnValue = JarraipenServiceUtil.getSagardoEgunarenJarraitzaileak(sagardoEgunId);
 
 			return net.sareweb.txotx.model.JarraipenSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static boolean deleteJarraipena(java.lang.String emailAddress,
+		long jarraituaId) throws RemoteException {
+		try {
+			boolean returnValue = JarraipenServiceUtil.deleteJarraipena(emailAddress,
+					jarraituaId);
+
+			return returnValue;
 		}
 		catch (Exception e) {
 			_log.error(e, e);

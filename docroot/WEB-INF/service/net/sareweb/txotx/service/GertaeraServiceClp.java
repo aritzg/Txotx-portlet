@@ -81,13 +81,29 @@ public class GertaeraServiceClp implements GertaeraService {
 
 		_methodParameterTypes12 = new String[] { "long", "long", "int" };
 
-		_methodName13 = "getGertaerakNewerThanDate";
+		_methodName13 = "getGertaerakSagardotegianOlderThanDate";
 
 		_methodParameterTypes13 = new String[] { "long", "long", "int" };
 
-		_methodName14 = "fake";
+		_methodName14 = "getGertaerakSagardoEguneanOlderThanDate";
 
-		_methodParameterTypes14 = new String[] {  };
+		_methodParameterTypes14 = new String[] { "long", "long", "int" };
+
+		_methodName15 = "getGertaerakNewerThanDate";
+
+		_methodParameterTypes15 = new String[] { "long", "long", "int" };
+
+		_methodName16 = "getGertaerakSagardotegianNewerThanDate";
+
+		_methodParameterTypes16 = new String[] { "long", "long", "int" };
+
+		_methodName17 = "getGertaerakSagardoEguneanNewerThanDate";
+
+		_methodParameterTypes17 = new String[] { "long", "long", "int" };
+
+		_methodName18 = "fake";
+
+		_methodParameterTypes18 = new String[] {  };
 	}
 
 	public java.lang.String getBeanIdentifier() {
@@ -529,7 +545,7 @@ public class GertaeraServiceClp implements GertaeraService {
 		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakNewerThanDate(
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardotegianOlderThanDate(
 		long sagardotegiId, long date, int blockSize)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -558,11 +574,127 @@ public class GertaeraServiceClp implements GertaeraService {
 		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
 	}
 
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardoEguneanOlderThanDate(
+		long sagardoEgunId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName14,
+					_methodParameterTypes14,
+					new Object[] { sagardoEgunId, date, blockSize });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakNewerThanDate(
+		long sagardotegiId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName15,
+					_methodParameterTypes15,
+					new Object[] { sagardotegiId, date, blockSize });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardotegianNewerThanDate(
+		long sagardotegiId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName16,
+					_methodParameterTypes16,
+					new Object[] { sagardotegiId, date, blockSize });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	public java.util.List<net.sareweb.txotx.model.Gertaera> getGertaerakSagardoEguneanNewerThanDate(
+		long sagardoEgunId, long date, int blockSize)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName17,
+					_methodParameterTypes17,
+					new Object[] { sagardoEgunId, date, blockSize });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<net.sareweb.txotx.model.Gertaera>)ClpSerializer.translateOutput(returnObj);
+	}
+
 	public void fake()
 		throws com.liferay.portal.security.auth.PrincipalException {
 		try {
-			_invokableService.invokeMethod(_methodName14,
-				_methodParameterTypes14, new Object[] {  });
+			_invokableService.invokeMethod(_methodName18,
+				_methodParameterTypes18, new Object[] {  });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -610,4 +742,12 @@ public class GertaeraServiceClp implements GertaeraService {
 	private String[] _methodParameterTypes13;
 	private String _methodName14;
 	private String[] _methodParameterTypes14;
+	private String _methodName15;
+	private String[] _methodParameterTypes15;
+	private String _methodName16;
+	private String[] _methodParameterTypes16;
+	private String _methodName17;
+	private String[] _methodParameterTypes17;
+	private String _methodName18;
+	private String[] _methodParameterTypes18;
 }

@@ -34,18 +34,14 @@ import java.util.Date;
 public class JarraipenCacheModel implements CacheModel<Jarraipen>, Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(15);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{jarraipenId=");
 		sb.append(jarraipenId);
 		sb.append(", jarraitzaileUserId=");
 		sb.append(jarraitzaileUserId);
-		sb.append(", sagardotegiId=");
-		sb.append(sagardotegiId);
-		sb.append(", sagardoEgunId=");
-		sb.append(sagardoEgunId);
-		sb.append(", jarraituaUserId=");
-		sb.append(jarraituaUserId);
+		sb.append(", jarraituaId=");
+		sb.append(jarraituaId);
 		sb.append(", jarraipenMota=");
 		sb.append(jarraipenMota);
 		sb.append(", createDate=");
@@ -60,9 +56,7 @@ public class JarraipenCacheModel implements CacheModel<Jarraipen>, Serializable 
 
 		jarraipenImpl.setJarraipenId(jarraipenId);
 		jarraipenImpl.setJarraitzaileUserId(jarraitzaileUserId);
-		jarraipenImpl.setSagardotegiId(sagardotegiId);
-		jarraipenImpl.setSagardoEgunId(sagardoEgunId);
-		jarraipenImpl.setJarraituaUserId(jarraituaUserId);
+		jarraipenImpl.setJarraituaId(jarraituaId);
 
 		if (jarraipenMota == null) {
 			jarraipenImpl.setJarraipenMota(StringPool.BLANK);
@@ -85,9 +79,7 @@ public class JarraipenCacheModel implements CacheModel<Jarraipen>, Serializable 
 
 	public long jarraipenId;
 	public long jarraitzaileUserId;
-	public long sagardotegiId;
-	public long sagardoEgunId;
-	public long jarraituaUserId;
+	public long jarraituaId;
 	public String jarraipenMota;
 	public long createDate;
 }

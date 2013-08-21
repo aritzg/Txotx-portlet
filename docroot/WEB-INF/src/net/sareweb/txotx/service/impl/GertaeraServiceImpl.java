@@ -128,11 +128,8 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			e.printStackTrace();
 		}
 
-		if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDOTEGI)) {
-			gertaera.setSagardotegiId(lekuId);
-		} else if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDO_EGUN)) {
-			gertaera.setSagardoEgunId(lekuId);
-		}
+		gertaera.setSagardotegiId(lekuId);
+
 		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_TESTUA);
 		gertaera.setCreateDate(new Date());
 		gertaera.setTestua(decode(testua));
@@ -225,11 +222,8 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			e.printStackTrace();
 		}
 
-		if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDOTEGI)) {
-			gertaera.setSagardotegiId(lekuId);
-		} else if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDO_EGUN)) {
-			gertaera.setSagardoEgunId(lekuId);
-		}
+		gertaera.setSagardotegiId(lekuId);
+		
 		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_ARGAZKIA);
 		gertaera.setCreateDate(new Date());
 		gertaera.setTestua(decode(testua));
@@ -319,11 +313,8 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			e.printStackTrace();
 		}
 
-		if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDOTEGI)) {
-			gertaera.setSagardotegiId(lekuId);
-		} else if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDO_EGUN)) {
-			gertaera.setSagardoEgunId(lekuId);
-		}
+		gertaera.setSagardotegiId(lekuId);
+		
 		gertaera.setGertaeraMota(Constants.GERTAERA_MOTA_BALORAZIOA);
 		gertaera.setCreateDate(new Date());
 		gertaera.setTestua(decode(testua));
@@ -344,6 +335,7 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		return gertaera;
 	}
 	
+	@Deprecated
 	public List<Gertaera> getGertaerakOlderThanDate(long sagardotegiId,
 			long date, int blockSize) throws SystemException {
 		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
@@ -364,7 +356,47 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		dq.addOrder(OrderFactoryUtil.desc("createDate"));
 		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
 	}
-
+	
+	public List<Gertaera> getGertaerakSagardotegianOlderThanDate(long sagardotegiId,
+			long date, int blockSize) throws SystemException {
+		return getGertaerakOlderThanDate(sagardotegiId, date, blockSize, Constants.GERTAERA_LEKU_SAGARDOTEGI);
+	}
+	
+	public List<Gertaera> getGertaerakSagardoEguneanOlderThanDate(long sagardoEgunId,
+			long date, int blockSize) throws SystemException {
+		return getGertaerakOlderThanDate(sagardoEgunId, date, blockSize, Constants.GERTAERA_LEKU_SAGARDO_EGUN);
+	}
+	
+	private List<Gertaera> getGertaerakOlderThanDate(long lekuId,
+			long date, int blockSize, String gertaeraLeku)throws SystemException {
+		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
+		
+		if(lekuId!=0){
+			if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDOTEGI)) {
+				Criterion lekuCr = PropertyFactoryUtil.forName(
+						"sagardotegiId").eq(lekuId);
+				dq.add(lekuCr);
+			} else if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDO_EGUN)) {
+				Criterion lekuCr = PropertyFactoryUtil.forName(
+						"sagardoEgunId").eq(lekuId);
+				dq.add(lekuCr);
+			}
+		}
+		
+		if (date == 0) {
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(
+					new Date());
+			dq.add(dateCr);
+		} else {
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").le(
+					new Date(date));
+			dq.add(dateCr);
+		}
+		dq.addOrder(OrderFactoryUtil.desc("createDate"));
+		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
+	}
+	
+	@Deprecated
 	public List<Gertaera> getGertaerakNewerThanDate(long sagardotegiId,
 			long date, int blockSize) throws SystemException {
 		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
@@ -385,6 +417,51 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 		dq.addOrder(OrderFactoryUtil.desc("createDate"));
 		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
 	}
+	
+	public List<Gertaera> getGertaerakSagardotegianNewerThanDate(long sagardotegiId,
+			long date, int blockSize) throws SystemException {
+		return getGertaerakNewerThanDate(sagardotegiId, date, blockSize, Constants.GERTAERA_LEKU_SAGARDOTEGI);
+	}
+	
+	public List<Gertaera> getGertaerakSagardoEguneanNewerThanDate(long sagardoEgunId,
+			long date, int blockSize) throws SystemException {
+		return getGertaerakNewerThanDate(sagardoEgunId, date, blockSize, Constants.GERTAERA_LEKU_SAGARDO_EGUN);
+	}
+	
+
+	private List<Gertaera> getGertaerakNewerThanDate(long lekuId,
+			long date, int blockSize, String gertaeraLeku)throws SystemException {
+		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
+		
+		if(lekuId!=0){
+			if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDOTEGI)) {
+				Criterion lekuCr = PropertyFactoryUtil.forName(
+						"sagardotegiId").eq(lekuId);
+				dq.add(lekuCr);
+			} else if (gertaeraLeku.equals(Constants.GERTAERA_LEKU_SAGARDO_EGUN)) {
+				Criterion lekuCr = PropertyFactoryUtil.forName(
+						"sagardoEgunId").eq(lekuId);
+				dq.add(lekuCr);
+			}
+		}
+		if (date == 0) {
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(
+					new Date());
+			dq.add(dateCr);
+		} else {
+			Criterion dateCr = PropertyFactoryUtil.forName("createDate").gt(
+					new Date(date + 1000));
+			dq.add(dateCr);
+		}
+		dq.addOrder(OrderFactoryUtil.desc("createDate"));
+		return gertaeraPersistence.findWithDynamicQuery(dq, 0, blockSize);
+	}
+	
+	
+	
+	
+	
+	
 
 	private String decode(String codedString) {
 		if (codedString == null || codedString.equals(""))

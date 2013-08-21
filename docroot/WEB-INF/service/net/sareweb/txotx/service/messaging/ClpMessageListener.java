@@ -17,6 +17,8 @@ package net.sareweb.txotx.service.messaging;
 import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
+import net.sareweb.txotx.service.APKVersionLocalServiceUtil;
+import net.sareweb.txotx.service.APKVersionServiceUtil;
 import net.sareweb.txotx.service.ClpSerializer;
 import net.sareweb.txotx.service.GertaeraLocalServiceUtil;
 import net.sareweb.txotx.service.GertaeraServiceUtil;
@@ -48,6 +50,9 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
+			APKVersionLocalServiceUtil.clearService();
+
+			APKVersionServiceUtil.clearService();
 			GertaeraLocalServiceUtil.clearService();
 
 			GertaeraServiceUtil.clearService();

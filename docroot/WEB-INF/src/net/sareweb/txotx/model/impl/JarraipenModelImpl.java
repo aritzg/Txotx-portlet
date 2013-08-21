@@ -69,13 +69,11 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "jarraipenId", Types.BIGINT },
 			{ "jarraitzaileUserId", Types.BIGINT },
-			{ "sagardotegiId", Types.BIGINT },
-			{ "sagardoEgunId", Types.BIGINT },
-			{ "jarraituaUserId", Types.BIGINT },
+			{ "jarraituaId", Types.BIGINT },
 			{ "jarraipenMota", Types.VARCHAR },
 			{ "createDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Jarraipen (jarraipenId LONG not null primary key,jarraitzaileUserId LONG,sagardotegiId LONG,sagardoEgunId LONG,jarraituaUserId LONG,jarraipenMota VARCHAR(75) null,createDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Jarraipen (jarraipenId LONG not null primary key,jarraitzaileUserId LONG,jarraituaId LONG,jarraipenMota VARCHAR(75) null,createDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Jarraipen";
 	public static final String ORDER_BY_JPQL = " ORDER BY jarraipen.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Jarraipen.createDate DESC";
@@ -91,10 +89,8 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.net.sareweb.txotx.model.Jarraipen"),
 			true);
-	public static long JARRAITUAUSERID_COLUMN_BITMASK = 1L;
+	public static long JARRAITUAID_COLUMN_BITMASK = 1L;
 	public static long JARRAITZAILEUSERID_COLUMN_BITMASK = 2L;
-	public static long SAGARDOEGUNID_COLUMN_BITMASK = 4L;
-	public static long SAGARDOTEGIID_COLUMN_BITMASK = 8L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -111,9 +107,7 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		model.setJarraipenId(soapModel.getJarraipenId());
 		model.setJarraitzaileUserId(soapModel.getJarraitzaileUserId());
-		model.setSagardotegiId(soapModel.getSagardotegiId());
-		model.setSagardoEgunId(soapModel.getSagardoEgunId());
-		model.setJarraituaUserId(soapModel.getJarraituaUserId());
+		model.setJarraituaId(soapModel.getJarraituaId());
 		model.setJarraipenMota(soapModel.getJarraipenMota());
 		model.setCreateDate(soapModel.getCreateDate());
 
@@ -176,9 +170,7 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		attributes.put("jarraipenId", getJarraipenId());
 		attributes.put("jarraitzaileUserId", getJarraitzaileUserId());
-		attributes.put("sagardotegiId", getSagardotegiId());
-		attributes.put("sagardoEgunId", getSagardoEgunId());
-		attributes.put("jarraituaUserId", getJarraituaUserId());
+		attributes.put("jarraituaId", getJarraituaId());
 		attributes.put("jarraipenMota", getJarraipenMota());
 		attributes.put("createDate", getCreateDate());
 
@@ -199,22 +191,10 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 			setJarraitzaileUserId(jarraitzaileUserId);
 		}
 
-		Long sagardotegiId = (Long)attributes.get("sagardotegiId");
+		Long jarraituaId = (Long)attributes.get("jarraituaId");
 
-		if (sagardotegiId != null) {
-			setSagardotegiId(sagardotegiId);
-		}
-
-		Long sagardoEgunId = (Long)attributes.get("sagardoEgunId");
-
-		if (sagardoEgunId != null) {
-			setSagardoEgunId(sagardoEgunId);
-		}
-
-		Long jarraituaUserId = (Long)attributes.get("jarraituaUserId");
-
-		if (jarraituaUserId != null) {
-			setJarraituaUserId(jarraituaUserId);
+		if (jarraituaId != null) {
+			setJarraituaId(jarraituaId);
 		}
 
 		String jarraipenMota = (String)attributes.get("jarraipenMota");
@@ -270,75 +250,24 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	@JSON
-	public long getSagardotegiId() {
-		return _sagardotegiId;
+	public long getJarraituaId() {
+		return _jarraituaId;
 	}
 
-	public void setSagardotegiId(long sagardotegiId) {
-		_columnBitmask |= SAGARDOTEGIID_COLUMN_BITMASK;
+	public void setJarraituaId(long jarraituaId) {
+		_columnBitmask |= JARRAITUAID_COLUMN_BITMASK;
 
-		if (!_setOriginalSagardotegiId) {
-			_setOriginalSagardotegiId = true;
+		if (!_setOriginalJarraituaId) {
+			_setOriginalJarraituaId = true;
 
-			_originalSagardotegiId = _sagardotegiId;
+			_originalJarraituaId = _jarraituaId;
 		}
 
-		_sagardotegiId = sagardotegiId;
+		_jarraituaId = jarraituaId;
 	}
 
-	public long getOriginalSagardotegiId() {
-		return _originalSagardotegiId;
-	}
-
-	@JSON
-	public long getSagardoEgunId() {
-		return _sagardoEgunId;
-	}
-
-	public void setSagardoEgunId(long sagardoEgunId) {
-		_columnBitmask |= SAGARDOEGUNID_COLUMN_BITMASK;
-
-		if (!_setOriginalSagardoEgunId) {
-			_setOriginalSagardoEgunId = true;
-
-			_originalSagardoEgunId = _sagardoEgunId;
-		}
-
-		_sagardoEgunId = sagardoEgunId;
-	}
-
-	public long getOriginalSagardoEgunId() {
-		return _originalSagardoEgunId;
-	}
-
-	@JSON
-	public long getJarraituaUserId() {
-		return _jarraituaUserId;
-	}
-
-	public void setJarraituaUserId(long jarraituaUserId) {
-		_columnBitmask |= JARRAITUAUSERID_COLUMN_BITMASK;
-
-		if (!_setOriginalJarraituaUserId) {
-			_setOriginalJarraituaUserId = true;
-
-			_originalJarraituaUserId = _jarraituaUserId;
-		}
-
-		_jarraituaUserId = jarraituaUserId;
-	}
-
-	public String getJarraituaUserUuid() throws SystemException {
-		return PortalUtil.getUserValue(getJarraituaUserId(), "uuid",
-			_jarraituaUserUuid);
-	}
-
-	public void setJarraituaUserUuid(String jarraituaUserUuid) {
-		_jarraituaUserUuid = jarraituaUserUuid;
-	}
-
-	public long getOriginalJarraituaUserId() {
-		return _originalJarraituaUserId;
+	public long getOriginalJarraituaId() {
+		return _originalJarraituaId;
 	}
 
 	@JSON
@@ -400,9 +329,7 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		jarraipenImpl.setJarraipenId(getJarraipenId());
 		jarraipenImpl.setJarraitzaileUserId(getJarraitzaileUserId());
-		jarraipenImpl.setSagardotegiId(getSagardotegiId());
-		jarraipenImpl.setSagardoEgunId(getSagardoEgunId());
-		jarraipenImpl.setJarraituaUserId(getJarraituaUserId());
+		jarraipenImpl.setJarraituaId(getJarraituaId());
 		jarraipenImpl.setJarraipenMota(getJarraipenMota());
 		jarraipenImpl.setCreateDate(getCreateDate());
 
@@ -463,17 +390,9 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		jarraipenModelImpl._setOriginalJarraitzaileUserId = false;
 
-		jarraipenModelImpl._originalSagardotegiId = jarraipenModelImpl._sagardotegiId;
+		jarraipenModelImpl._originalJarraituaId = jarraipenModelImpl._jarraituaId;
 
-		jarraipenModelImpl._setOriginalSagardotegiId = false;
-
-		jarraipenModelImpl._originalSagardoEgunId = jarraipenModelImpl._sagardoEgunId;
-
-		jarraipenModelImpl._setOriginalSagardoEgunId = false;
-
-		jarraipenModelImpl._originalJarraituaUserId = jarraipenModelImpl._jarraituaUserId;
-
-		jarraipenModelImpl._setOriginalJarraituaUserId = false;
+		jarraipenModelImpl._setOriginalJarraituaId = false;
 
 		jarraipenModelImpl._columnBitmask = 0;
 	}
@@ -486,11 +405,7 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 		jarraipenCacheModel.jarraitzaileUserId = getJarraitzaileUserId();
 
-		jarraipenCacheModel.sagardotegiId = getSagardotegiId();
-
-		jarraipenCacheModel.sagardoEgunId = getSagardoEgunId();
-
-		jarraipenCacheModel.jarraituaUserId = getJarraituaUserId();
+		jarraipenCacheModel.jarraituaId = getJarraituaId();
 
 		jarraipenCacheModel.jarraipenMota = getJarraipenMota();
 
@@ -514,18 +429,14 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(15);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{jarraipenId=");
 		sb.append(getJarraipenId());
 		sb.append(", jarraitzaileUserId=");
 		sb.append(getJarraitzaileUserId());
-		sb.append(", sagardotegiId=");
-		sb.append(getSagardotegiId());
-		sb.append(", sagardoEgunId=");
-		sb.append(getSagardoEgunId());
-		sb.append(", jarraituaUserId=");
-		sb.append(getJarraituaUserId());
+		sb.append(", jarraituaId=");
+		sb.append(getJarraituaId());
 		sb.append(", jarraipenMota=");
 		sb.append(getJarraipenMota());
 		sb.append(", createDate=");
@@ -536,7 +447,7 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Jarraipen");
@@ -551,16 +462,8 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 		sb.append(getJarraitzaileUserId());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>sagardotegiId</column-name><column-value><![CDATA[");
-		sb.append(getSagardotegiId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>sagardoEgunId</column-name><column-value><![CDATA[");
-		sb.append(getSagardoEgunId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>jarraituaUserId</column-name><column-value><![CDATA[");
-		sb.append(getJarraituaUserId());
+			"<column><column-name>jarraituaId</column-name><column-value><![CDATA[");
+		sb.append(getJarraituaId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>jarraipenMota</column-name><column-value><![CDATA[");
@@ -585,16 +488,9 @@ public class JarraipenModelImpl extends BaseModelImpl<Jarraipen>
 	private String _jarraitzaileUserUuid;
 	private long _originalJarraitzaileUserId;
 	private boolean _setOriginalJarraitzaileUserId;
-	private long _sagardotegiId;
-	private long _originalSagardotegiId;
-	private boolean _setOriginalSagardotegiId;
-	private long _sagardoEgunId;
-	private long _originalSagardoEgunId;
-	private boolean _setOriginalSagardoEgunId;
-	private long _jarraituaUserId;
-	private String _jarraituaUserUuid;
-	private long _originalJarraituaUserId;
-	private boolean _setOriginalJarraituaUserId;
+	private long _jarraituaId;
+	private long _originalJarraituaId;
+	private boolean _setOriginalJarraituaId;
 	private String _jarraipenMota;
 	private Date _createDate;
 	private long _columnBitmask;

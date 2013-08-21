@@ -47,9 +47,7 @@ public class JarraipenWrapper implements Jarraipen, ModelWrapper<Jarraipen> {
 
 		attributes.put("jarraipenId", getJarraipenId());
 		attributes.put("jarraitzaileUserId", getJarraitzaileUserId());
-		attributes.put("sagardotegiId", getSagardotegiId());
-		attributes.put("sagardoEgunId", getSagardoEgunId());
-		attributes.put("jarraituaUserId", getJarraituaUserId());
+		attributes.put("jarraituaId", getJarraituaId());
 		attributes.put("jarraipenMota", getJarraipenMota());
 		attributes.put("createDate", getCreateDate());
 
@@ -69,22 +67,10 @@ public class JarraipenWrapper implements Jarraipen, ModelWrapper<Jarraipen> {
 			setJarraitzaileUserId(jarraitzaileUserId);
 		}
 
-		Long sagardotegiId = (Long)attributes.get("sagardotegiId");
+		Long jarraituaId = (Long)attributes.get("jarraituaId");
 
-		if (sagardotegiId != null) {
-			setSagardotegiId(sagardotegiId);
-		}
-
-		Long sagardoEgunId = (Long)attributes.get("sagardoEgunId");
-
-		if (sagardoEgunId != null) {
-			setSagardoEgunId(sagardoEgunId);
-		}
-
-		Long jarraituaUserId = (Long)attributes.get("jarraituaUserId");
-
-		if (jarraituaUserId != null) {
-			setJarraituaUserId(jarraituaUserId);
+		if (jarraituaId != null) {
+			setJarraituaId(jarraituaId);
 		}
 
 		String jarraipenMota = (String)attributes.get("jarraipenMota");
@@ -175,77 +161,21 @@ public class JarraipenWrapper implements Jarraipen, ModelWrapper<Jarraipen> {
 	}
 
 	/**
-	* Returns the sagardotegi ID of this jarraipen.
+	* Returns the jarraitua ID of this jarraipen.
 	*
-	* @return the sagardotegi ID of this jarraipen
+	* @return the jarraitua ID of this jarraipen
 	*/
-	public long getSagardotegiId() {
-		return _jarraipen.getSagardotegiId();
+	public long getJarraituaId() {
+		return _jarraipen.getJarraituaId();
 	}
 
 	/**
-	* Sets the sagardotegi ID of this jarraipen.
+	* Sets the jarraitua ID of this jarraipen.
 	*
-	* @param sagardotegiId the sagardotegi ID of this jarraipen
+	* @param jarraituaId the jarraitua ID of this jarraipen
 	*/
-	public void setSagardotegiId(long sagardotegiId) {
-		_jarraipen.setSagardotegiId(sagardotegiId);
-	}
-
-	/**
-	* Returns the sagardo egun ID of this jarraipen.
-	*
-	* @return the sagardo egun ID of this jarraipen
-	*/
-	public long getSagardoEgunId() {
-		return _jarraipen.getSagardoEgunId();
-	}
-
-	/**
-	* Sets the sagardo egun ID of this jarraipen.
-	*
-	* @param sagardoEgunId the sagardo egun ID of this jarraipen
-	*/
-	public void setSagardoEgunId(long sagardoEgunId) {
-		_jarraipen.setSagardoEgunId(sagardoEgunId);
-	}
-
-	/**
-	* Returns the jarraitua user ID of this jarraipen.
-	*
-	* @return the jarraitua user ID of this jarraipen
-	*/
-	public long getJarraituaUserId() {
-		return _jarraipen.getJarraituaUserId();
-	}
-
-	/**
-	* Sets the jarraitua user ID of this jarraipen.
-	*
-	* @param jarraituaUserId the jarraitua user ID of this jarraipen
-	*/
-	public void setJarraituaUserId(long jarraituaUserId) {
-		_jarraipen.setJarraituaUserId(jarraituaUserId);
-	}
-
-	/**
-	* Returns the jarraitua user uuid of this jarraipen.
-	*
-	* @return the jarraitua user uuid of this jarraipen
-	* @throws SystemException if a system exception occurred
-	*/
-	public java.lang.String getJarraituaUserUuid()
-		throws com.liferay.portal.kernel.exception.SystemException {
-		return _jarraipen.getJarraituaUserUuid();
-	}
-
-	/**
-	* Sets the jarraitua user uuid of this jarraipen.
-	*
-	* @param jarraituaUserUuid the jarraitua user uuid of this jarraipen
-	*/
-	public void setJarraituaUserUuid(java.lang.String jarraituaUserUuid) {
-		_jarraipen.setJarraituaUserUuid(jarraituaUserUuid);
+	public void setJarraituaId(long jarraituaId) {
+		_jarraipen.setJarraituaId(jarraituaId);
 	}
 
 	/**

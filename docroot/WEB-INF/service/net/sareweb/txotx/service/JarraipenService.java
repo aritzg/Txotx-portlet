@@ -64,9 +64,19 @@ public interface JarraipenService extends BaseService, InvokableService {
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
 
-	public net.sareweb.txotx.model.Jarraipen gehituJarraipena(
-		long jarraitzaileUserId, long jarraigaiId,
+	public net.sareweb.txotx.model.Jarraipen gehituJarraipenaByEmail(
+		java.lang.String emailAddress, long jarraituaId,
 		java.lang.String jarraipenMota)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public net.sareweb.txotx.model.Jarraipen gehituJarraipena(
+		long jarraitzaileUserId, long jarraituaId,
+		java.lang.String jarraipenMota)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<net.sareweb.txotx.model.Jarraipen> getJarraipenakByEmail(
+		java.lang.String emailAddress)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
@@ -87,5 +97,9 @@ public interface JarraipenService extends BaseService, InvokableService {
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<net.sareweb.txotx.model.Jarraipen> getSagardoEgunarenJarraitzaileak(
 		long sagardoEgunId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public boolean deleteJarraipena(java.lang.String emailAddress,
+		long jarraituaId)
 		throws com.liferay.portal.kernel.exception.SystemException;
 }

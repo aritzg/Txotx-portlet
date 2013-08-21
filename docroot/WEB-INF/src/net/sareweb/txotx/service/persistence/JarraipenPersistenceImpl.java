@@ -97,66 +97,26 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 			JarraipenModelImpl.FINDER_CACHE_ENABLED, Long.class,
 			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
 			"countByJarraitzaileUserId", new String[] { Long.class.getName() });
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_SAGARDOTEGIID =
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_JARRAITUAID =
 		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
 			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findBySagardotegiId",
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByJarraituaId",
 			new String[] {
 				Long.class.getName(),
 				
 			"java.lang.Integer", "java.lang.Integer",
 				"com.liferay.portal.kernel.util.OrderByComparator"
 			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOTEGIID =
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAID =
 		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
 			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findBySagardotegiId",
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByJarraituaId",
 			new String[] { Long.class.getName() },
-			JarraipenModelImpl.SAGARDOTEGIID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_SAGARDOTEGIID = new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
+			JarraipenModelImpl.JARRAITUAID_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_JARRAITUAID = new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
 			JarraipenModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countBySagardotegiId",
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByJarraituaId",
 			new String[] { Long.class.getName() });
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_SAGARDOEGUNID =
-		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findBySagardoEgunId",
-			new String[] {
-				Long.class.getName(),
-				
-			"java.lang.Integer", "java.lang.Integer",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOEGUNID =
-		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findBySagardoEgunId",
-			new String[] { Long.class.getName() },
-			JarraipenModelImpl.SAGARDOEGUNID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_SAGARDOEGUNID = new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countBySagardoEgunId",
-			new String[] { Long.class.getName() });
-	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_JARRAITUAUSERID =
-		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByJarraituaUserId",
-			new String[] {
-				Long.class.getName(),
-				
-			"java.lang.Integer", "java.lang.Integer",
-				"com.liferay.portal.kernel.util.OrderByComparator"
-			});
-	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAUSERID =
-		new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByJarraituaUserId",
-			new String[] { Long.class.getName() },
-			JarraipenModelImpl.JARRAITUAUSERID_COLUMN_BITMASK);
-	public static final FinderPath FINDER_PATH_COUNT_BY_JARRAITUAUSERID = new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
-			JarraipenModelImpl.FINDER_CACHE_ENABLED, Long.class,
-			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
-			"countByJarraituaUserId", new String[] { Long.class.getName() });
 	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_ALL = new FinderPath(JarraipenModelImpl.ENTITY_CACHE_ENABLED,
 			JarraipenModelImpl.FINDER_CACHE_ENABLED, JarraipenImpl.class,
 			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findAll", new String[0]);
@@ -391,65 +351,23 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 			}
 
 			if ((jarraipenModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOTEGIID.getColumnBitmask()) != 0) {
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAID.getColumnBitmask()) != 0) {
 				Object[] args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getOriginalSagardotegiId())
+						Long.valueOf(jarraipenModelImpl.getOriginalJarraituaId())
 					};
 
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_SAGARDOTEGIID,
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_JARRAITUAID,
 					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOTEGIID,
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAID,
 					args);
 
 				args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getSagardotegiId())
+						Long.valueOf(jarraipenModelImpl.getJarraituaId())
 					};
 
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_SAGARDOTEGIID,
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_JARRAITUAID,
 					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOTEGIID,
-					args);
-			}
-
-			if ((jarraipenModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOEGUNID.getColumnBitmask()) != 0) {
-				Object[] args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getOriginalSagardoEgunId())
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_SAGARDOEGUNID,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOEGUNID,
-					args);
-
-				args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getSagardoEgunId())
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_SAGARDOEGUNID,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOEGUNID,
-					args);
-			}
-
-			if ((jarraipenModelImpl.getColumnBitmask() &
-					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAUSERID.getColumnBitmask()) != 0) {
-				Object[] args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getOriginalJarraituaUserId())
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_JARRAITUAUSERID,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAUSERID,
-					args);
-
-				args = new Object[] {
-						Long.valueOf(jarraipenModelImpl.getJarraituaUserId())
-					};
-
-				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_JARRAITUAUSERID,
-					args);
-				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAUSERID,
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAID,
 					args);
 			}
 		}
@@ -472,9 +390,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		jarraipenImpl.setJarraipenId(jarraipen.getJarraipenId());
 		jarraipenImpl.setJarraitzaileUserId(jarraipen.getJarraitzaileUserId());
-		jarraipenImpl.setSagardotegiId(jarraipen.getSagardotegiId());
-		jarraipenImpl.setSagardoEgunId(jarraipen.getSagardoEgunId());
-		jarraipenImpl.setJarraituaUserId(jarraipen.getJarraituaUserId());
+		jarraipenImpl.setJarraituaId(jarraipen.getJarraituaId());
 		jarraipenImpl.setJarraipenMota(jarraipen.getJarraipenMota());
 		jarraipenImpl.setCreateDate(jarraipen.getCreateDate());
 
@@ -969,67 +885,63 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns all the jarraipens where sagardotegiId = &#63;.
+	 * Returns all the jarraipens where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @return the matching jarraipens
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Jarraipen> findBySagardotegiId(long sagardotegiId)
+	public List<Jarraipen> findByJarraituaId(long jarraituaId)
 		throws SystemException {
-		return findBySagardotegiId(sagardotegiId, QueryUtil.ALL_POS,
+		return findByJarraituaId(jarraituaId, QueryUtil.ALL_POS,
 			QueryUtil.ALL_POS, null);
 	}
 
 	/**
-	 * Returns a range of all the jarraipens where sagardotegiId = &#63;.
+	 * Returns a range of all the jarraipens where jarraituaId = &#63;.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
 	 * </p>
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param start the lower bound of the range of jarraipens
 	 * @param end the upper bound of the range of jarraipens (not inclusive)
 	 * @return the range of matching jarraipens
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Jarraipen> findBySagardotegiId(long sagardotegiId, int start,
+	public List<Jarraipen> findByJarraituaId(long jarraituaId, int start,
 		int end) throws SystemException {
-		return findBySagardotegiId(sagardotegiId, start, end, null);
+		return findByJarraituaId(jarraituaId, start, end, null);
 	}
 
 	/**
-	 * Returns an ordered range of all the jarraipens where sagardotegiId = &#63;.
+	 * Returns an ordered range of all the jarraipens where jarraituaId = &#63;.
 	 *
 	 * <p>
 	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
 	 * </p>
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param start the lower bound of the range of jarraipens
 	 * @param end the upper bound of the range of jarraipens (not inclusive)
 	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
 	 * @return the ordered range of matching jarraipens
 	 * @throws SystemException if a system exception occurred
 	 */
-	public List<Jarraipen> findBySagardotegiId(long sagardotegiId, int start,
+	public List<Jarraipen> findByJarraituaId(long jarraituaId, int start,
 		int end, OrderByComparator orderByComparator) throws SystemException {
 		FinderPath finderPath = null;
 		Object[] finderArgs = null;
 
 		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
 				(orderByComparator == null)) {
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOTEGIID;
-			finderArgs = new Object[] { sagardotegiId };
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAID;
+			finderArgs = new Object[] { jarraituaId };
 		}
 		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_SAGARDOTEGIID;
-			finderArgs = new Object[] {
-					sagardotegiId,
-					
-					start, end, orderByComparator
-				};
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_JARRAITUAID;
+			finderArgs = new Object[] { jarraituaId, start, end, orderByComparator };
 		}
 
 		List<Jarraipen> list = (List<Jarraipen>)FinderCacheUtil.getResult(finderPath,
@@ -1037,7 +949,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		if ((list != null) && !list.isEmpty()) {
 			for (Jarraipen jarraipen : list) {
-				if ((sagardotegiId != jarraipen.getSagardotegiId())) {
+				if ((jarraituaId != jarraipen.getJarraituaId())) {
 					list = null;
 
 					break;
@@ -1058,7 +970,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 			query.append(_SQL_SELECT_JARRAIPEN_WHERE);
 
-			query.append(_FINDER_COLUMN_SAGARDOTEGIID_SAGARDOTEGIID_2);
+			query.append(_FINDER_COLUMN_JARRAITUAID_JARRAITUAID_2);
 
 			if (orderByComparator != null) {
 				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
@@ -1080,7 +992,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(sagardotegiId);
+				qPos.add(jarraituaId);
 
 				list = (List<Jarraipen>)QueryUtil.list(q, getDialect(), start,
 						end);
@@ -1106,18 +1018,18 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the first jarraipen in the ordered set where sagardotegiId = &#63;.
+	 * Returns the first jarraipen in the ordered set where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching jarraipen
 	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Jarraipen findBySagardotegiId_First(long sagardotegiId,
+	public Jarraipen findByJarraituaId_First(long jarraituaId,
 		OrderByComparator orderByComparator)
 		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchBySagardotegiId_First(sagardotegiId,
+		Jarraipen jarraipen = fetchByJarraituaId_First(jarraituaId,
 				orderByComparator);
 
 		if (jarraipen != null) {
@@ -1128,8 +1040,8 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-		msg.append("sagardotegiId=");
-		msg.append(sagardotegiId);
+		msg.append("jarraituaId=");
+		msg.append(jarraituaId);
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -1137,16 +1049,16 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the first jarraipen in the ordered set where sagardotegiId = &#63;.
+	 * Returns the first jarraipen in the ordered set where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Jarraipen fetchBySagardotegiId_First(long sagardotegiId,
+	public Jarraipen fetchByJarraituaId_First(long jarraituaId,
 		OrderByComparator orderByComparator) throws SystemException {
-		List<Jarraipen> list = findBySagardotegiId(sagardotegiId, 0, 1,
+		List<Jarraipen> list = findByJarraituaId(jarraituaId, 0, 1,
 				orderByComparator);
 
 		if (!list.isEmpty()) {
@@ -1157,18 +1069,18 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the last jarraipen in the ordered set where sagardotegiId = &#63;.
+	 * Returns the last jarraipen in the ordered set where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching jarraipen
 	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Jarraipen findBySagardotegiId_Last(long sagardotegiId,
+	public Jarraipen findByJarraituaId_Last(long jarraituaId,
 		OrderByComparator orderByComparator)
 		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchBySagardotegiId_Last(sagardotegiId,
+		Jarraipen jarraipen = fetchByJarraituaId_Last(jarraituaId,
 				orderByComparator);
 
 		if (jarraipen != null) {
@@ -1179,8 +1091,8 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
 
-		msg.append("sagardotegiId=");
-		msg.append(sagardotegiId);
+		msg.append("jarraituaId=");
+		msg.append(jarraituaId);
 
 		msg.append(StringPool.CLOSE_CURLY_BRACE);
 
@@ -1188,19 +1100,19 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the last jarraipen in the ordered set where sagardotegiId = &#63;.
+	 * Returns the last jarraipen in the ordered set where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Jarraipen fetchBySagardotegiId_Last(long sagardotegiId,
+	public Jarraipen fetchByJarraituaId_Last(long jarraituaId,
 		OrderByComparator orderByComparator) throws SystemException {
-		int count = countBySagardotegiId(sagardotegiId);
+		int count = countByJarraituaId(jarraituaId);
 
-		List<Jarraipen> list = findBySagardotegiId(sagardotegiId, count - 1,
-				count, orderByComparator);
+		List<Jarraipen> list = findByJarraituaId(jarraituaId, count - 1, count,
+				orderByComparator);
 
 		if (!list.isEmpty()) {
 			return list.get(0);
@@ -1210,17 +1122,17 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the jarraipens before and after the current jarraipen in the ordered set where sagardotegiId = &#63;.
+	 * Returns the jarraipens before and after the current jarraipen in the ordered set where jarraituaId = &#63;.
 	 *
 	 * @param jarraipenId the primary key of the current jarraipen
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
 	 * @return the previous, current, and next jarraipen
 	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
 	 * @throws SystemException if a system exception occurred
 	 */
-	public Jarraipen[] findBySagardotegiId_PrevAndNext(long jarraipenId,
-		long sagardotegiId, OrderByComparator orderByComparator)
+	public Jarraipen[] findByJarraituaId_PrevAndNext(long jarraipenId,
+		long jarraituaId, OrderByComparator orderByComparator)
 		throws NoSuchJarraipenException, SystemException {
 		Jarraipen jarraipen = findByPrimaryKey(jarraipenId);
 
@@ -1231,13 +1143,13 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 			Jarraipen[] array = new JarraipenImpl[3];
 
-			array[0] = getBySagardotegiId_PrevAndNext(session, jarraipen,
-					sagardotegiId, orderByComparator, true);
+			array[0] = getByJarraituaId_PrevAndNext(session, jarraipen,
+					jarraituaId, orderByComparator, true);
 
 			array[1] = jarraipen;
 
-			array[2] = getBySagardotegiId_PrevAndNext(session, jarraipen,
-					sagardotegiId, orderByComparator, false);
+			array[2] = getByJarraituaId_PrevAndNext(session, jarraipen,
+					jarraituaId, orderByComparator, false);
 
 			return array;
 		}
@@ -1249,8 +1161,8 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 		}
 	}
 
-	protected Jarraipen getBySagardotegiId_PrevAndNext(Session session,
-		Jarraipen jarraipen, long sagardotegiId,
+	protected Jarraipen getByJarraituaId_PrevAndNext(Session session,
+		Jarraipen jarraipen, long jarraituaId,
 		OrderByComparator orderByComparator, boolean previous) {
 		StringBundler query = null;
 
@@ -1264,7 +1176,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		query.append(_SQL_SELECT_JARRAIPEN_WHERE);
 
-		query.append(_FINDER_COLUMN_SAGARDOTEGIID_SAGARDOTEGIID_2);
+		query.append(_FINDER_COLUMN_JARRAITUAID_JARRAITUAID_2);
 
 		if (orderByComparator != null) {
 			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
@@ -1335,782 +1247,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 		QueryPos qPos = QueryPos.getInstance(q);
 
-		qPos.add(sagardotegiId);
-
-		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(jarraipen);
-
-			for (Object value : values) {
-				qPos.add(value);
-			}
-		}
-
-		List<Jarraipen> list = q.list();
-
-		if (list.size() == 2) {
-			return list.get(1);
-		}
-		else {
-			return null;
-		}
-	}
-
-	/**
-	 * Returns all the jarraipens where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @return the matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findBySagardoEgunId(long sagardoEgunId)
-		throws SystemException {
-		return findBySagardoEgunId(sagardoEgunId, QueryUtil.ALL_POS,
-			QueryUtil.ALL_POS, null);
-	}
-
-	/**
-	 * Returns a range of all the jarraipens where sagardoEgunId = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
-	 * </p>
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param start the lower bound of the range of jarraipens
-	 * @param end the upper bound of the range of jarraipens (not inclusive)
-	 * @return the range of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findBySagardoEgunId(long sagardoEgunId, int start,
-		int end) throws SystemException {
-		return findBySagardoEgunId(sagardoEgunId, start, end, null);
-	}
-
-	/**
-	 * Returns an ordered range of all the jarraipens where sagardoEgunId = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
-	 * </p>
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param start the lower bound of the range of jarraipens
-	 * @param end the upper bound of the range of jarraipens (not inclusive)
-	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
-	 * @return the ordered range of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findBySagardoEgunId(long sagardoEgunId, int start,
-		int end, OrderByComparator orderByComparator) throws SystemException {
-		FinderPath finderPath = null;
-		Object[] finderArgs = null;
-
-		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
-				(orderByComparator == null)) {
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_SAGARDOEGUNID;
-			finderArgs = new Object[] { sagardoEgunId };
-		}
-		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_SAGARDOEGUNID;
-			finderArgs = new Object[] {
-					sagardoEgunId,
-					
-					start, end, orderByComparator
-				};
-		}
-
-		List<Jarraipen> list = (List<Jarraipen>)FinderCacheUtil.getResult(finderPath,
-				finderArgs, this);
-
-		if ((list != null) && !list.isEmpty()) {
-			for (Jarraipen jarraipen : list) {
-				if ((sagardoEgunId != jarraipen.getSagardoEgunId())) {
-					list = null;
-
-					break;
-				}
-			}
-		}
-
-		if (list == null) {
-			StringBundler query = null;
-
-			if (orderByComparator != null) {
-				query = new StringBundler(3 +
-						(orderByComparator.getOrderByFields().length * 3));
-			}
-			else {
-				query = new StringBundler(3);
-			}
-
-			query.append(_SQL_SELECT_JARRAIPEN_WHERE);
-
-			query.append(_FINDER_COLUMN_SAGARDOEGUNID_SAGARDOEGUNID_2);
-
-			if (orderByComparator != null) {
-				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
-					orderByComparator);
-			}
-
-			else {
-				query.append(JarraipenModelImpl.ORDER_BY_JPQL);
-			}
-
-			String sql = query.toString();
-
-			Session session = null;
-
-			try {
-				session = openSession();
-
-				Query q = session.createQuery(sql);
-
-				QueryPos qPos = QueryPos.getInstance(q);
-
-				qPos.add(sagardoEgunId);
-
-				list = (List<Jarraipen>)QueryUtil.list(q, getDialect(), start,
-						end);
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (list == null) {
-					FinderCacheUtil.removeResult(finderPath, finderArgs);
-				}
-				else {
-					cacheResult(list);
-
-					FinderCacheUtil.putResult(finderPath, finderArgs, list);
-				}
-
-				closeSession(session);
-			}
-		}
-
-		return list;
-	}
-
-	/**
-	 * Returns the first jarraipen in the ordered set where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen findBySagardoEgunId_First(long sagardoEgunId,
-		OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchBySagardoEgunId_First(sagardoEgunId,
-				orderByComparator);
-
-		if (jarraipen != null) {
-			return jarraipen;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("sagardoEgunId=");
-		msg.append(sagardoEgunId);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchJarraipenException(msg.toString());
-	}
-
-	/**
-	 * Returns the first jarraipen in the ordered set where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen fetchBySagardoEgunId_First(long sagardoEgunId,
-		OrderByComparator orderByComparator) throws SystemException {
-		List<Jarraipen> list = findBySagardoEgunId(sagardoEgunId, 0, 1,
-				orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
-		}
-
-		return null;
-	}
-
-	/**
-	 * Returns the last jarraipen in the ordered set where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen findBySagardoEgunId_Last(long sagardoEgunId,
-		OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchBySagardoEgunId_Last(sagardoEgunId,
-				orderByComparator);
-
-		if (jarraipen != null) {
-			return jarraipen;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("sagardoEgunId=");
-		msg.append(sagardoEgunId);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchJarraipenException(msg.toString());
-	}
-
-	/**
-	 * Returns the last jarraipen in the ordered set where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen fetchBySagardoEgunId_Last(long sagardoEgunId,
-		OrderByComparator orderByComparator) throws SystemException {
-		int count = countBySagardoEgunId(sagardoEgunId);
-
-		List<Jarraipen> list = findBySagardoEgunId(sagardoEgunId, count - 1,
-				count, orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
-		}
-
-		return null;
-	}
-
-	/**
-	 * Returns the jarraipens before and after the current jarraipen in the ordered set where sagardoEgunId = &#63;.
-	 *
-	 * @param jarraipenId the primary key of the current jarraipen
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the previous, current, and next jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen[] findBySagardoEgunId_PrevAndNext(long jarraipenId,
-		long sagardoEgunId, OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = findByPrimaryKey(jarraipenId);
-
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			Jarraipen[] array = new JarraipenImpl[3];
-
-			array[0] = getBySagardoEgunId_PrevAndNext(session, jarraipen,
-					sagardoEgunId, orderByComparator, true);
-
-			array[1] = jarraipen;
-
-			array[2] = getBySagardoEgunId_PrevAndNext(session, jarraipen,
-					sagardoEgunId, orderByComparator, false);
-
-			return array;
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-	}
-
-	protected Jarraipen getBySagardoEgunId_PrevAndNext(Session session,
-		Jarraipen jarraipen, long sagardoEgunId,
-		OrderByComparator orderByComparator, boolean previous) {
-		StringBundler query = null;
-
-		if (orderByComparator != null) {
-			query = new StringBundler(6 +
-					(orderByComparator.getOrderByFields().length * 6));
-		}
-		else {
-			query = new StringBundler(3);
-		}
-
-		query.append(_SQL_SELECT_JARRAIPEN_WHERE);
-
-		query.append(_FINDER_COLUMN_SAGARDOEGUNID_SAGARDOEGUNID_2);
-
-		if (orderByComparator != null) {
-			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
-
-			if (orderByConditionFields.length > 0) {
-				query.append(WHERE_AND);
-			}
-
-			for (int i = 0; i < orderByConditionFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByConditionFields[i]);
-
-				if ((i + 1) < orderByConditionFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN_HAS_NEXT);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN);
-					}
-				}
-			}
-
-			query.append(ORDER_BY_CLAUSE);
-
-			String[] orderByFields = orderByComparator.getOrderByFields();
-
-			for (int i = 0; i < orderByFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByFields[i]);
-
-				if ((i + 1) < orderByFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC_HAS_NEXT);
-					}
-					else {
-						query.append(ORDER_BY_DESC_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC);
-					}
-					else {
-						query.append(ORDER_BY_DESC);
-					}
-				}
-			}
-		}
-
-		else {
-			query.append(JarraipenModelImpl.ORDER_BY_JPQL);
-		}
-
-		String sql = query.toString();
-
-		Query q = session.createQuery(sql);
-
-		q.setFirstResult(0);
-		q.setMaxResults(2);
-
-		QueryPos qPos = QueryPos.getInstance(q);
-
-		qPos.add(sagardoEgunId);
-
-		if (orderByComparator != null) {
-			Object[] values = orderByComparator.getOrderByConditionValues(jarraipen);
-
-			for (Object value : values) {
-				qPos.add(value);
-			}
-		}
-
-		List<Jarraipen> list = q.list();
-
-		if (list.size() == 2) {
-			return list.get(1);
-		}
-		else {
-			return null;
-		}
-	}
-
-	/**
-	 * Returns all the jarraipens where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @return the matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findByJarraituaUserId(long jarraituaUserId)
-		throws SystemException {
-		return findByJarraituaUserId(jarraituaUserId, QueryUtil.ALL_POS,
-			QueryUtil.ALL_POS, null);
-	}
-
-	/**
-	 * Returns a range of all the jarraipens where jarraituaUserId = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
-	 * </p>
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param start the lower bound of the range of jarraipens
-	 * @param end the upper bound of the range of jarraipens (not inclusive)
-	 * @return the range of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findByJarraituaUserId(long jarraituaUserId,
-		int start, int end) throws SystemException {
-		return findByJarraituaUserId(jarraituaUserId, start, end, null);
-	}
-
-	/**
-	 * Returns an ordered range of all the jarraipens where jarraituaUserId = &#63;.
-	 *
-	 * <p>
-	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
-	 * </p>
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param start the lower bound of the range of jarraipens
-	 * @param end the upper bound of the range of jarraipens (not inclusive)
-	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
-	 * @return the ordered range of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public List<Jarraipen> findByJarraituaUserId(long jarraituaUserId,
-		int start, int end, OrderByComparator orderByComparator)
-		throws SystemException {
-		FinderPath finderPath = null;
-		Object[] finderArgs = null;
-
-		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
-				(orderByComparator == null)) {
-			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_JARRAITUAUSERID;
-			finderArgs = new Object[] { jarraituaUserId };
-		}
-		else {
-			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_JARRAITUAUSERID;
-			finderArgs = new Object[] {
-					jarraituaUserId,
-					
-					start, end, orderByComparator
-				};
-		}
-
-		List<Jarraipen> list = (List<Jarraipen>)FinderCacheUtil.getResult(finderPath,
-				finderArgs, this);
-
-		if ((list != null) && !list.isEmpty()) {
-			for (Jarraipen jarraipen : list) {
-				if ((jarraituaUserId != jarraipen.getJarraituaUserId())) {
-					list = null;
-
-					break;
-				}
-			}
-		}
-
-		if (list == null) {
-			StringBundler query = null;
-
-			if (orderByComparator != null) {
-				query = new StringBundler(3 +
-						(orderByComparator.getOrderByFields().length * 3));
-			}
-			else {
-				query = new StringBundler(3);
-			}
-
-			query.append(_SQL_SELECT_JARRAIPEN_WHERE);
-
-			query.append(_FINDER_COLUMN_JARRAITUAUSERID_JARRAITUAUSERID_2);
-
-			if (orderByComparator != null) {
-				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
-					orderByComparator);
-			}
-
-			else {
-				query.append(JarraipenModelImpl.ORDER_BY_JPQL);
-			}
-
-			String sql = query.toString();
-
-			Session session = null;
-
-			try {
-				session = openSession();
-
-				Query q = session.createQuery(sql);
-
-				QueryPos qPos = QueryPos.getInstance(q);
-
-				qPos.add(jarraituaUserId);
-
-				list = (List<Jarraipen>)QueryUtil.list(q, getDialect(), start,
-						end);
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (list == null) {
-					FinderCacheUtil.removeResult(finderPath, finderArgs);
-				}
-				else {
-					cacheResult(list);
-
-					FinderCacheUtil.putResult(finderPath, finderArgs, list);
-				}
-
-				closeSession(session);
-			}
-		}
-
-		return list;
-	}
-
-	/**
-	 * Returns the first jarraipen in the ordered set where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen findByJarraituaUserId_First(long jarraituaUserId,
-		OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchByJarraituaUserId_First(jarraituaUserId,
-				orderByComparator);
-
-		if (jarraipen != null) {
-			return jarraipen;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("jarraituaUserId=");
-		msg.append(jarraituaUserId);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchJarraipenException(msg.toString());
-	}
-
-	/**
-	 * Returns the first jarraipen in the ordered set where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the first matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen fetchByJarraituaUserId_First(long jarraituaUserId,
-		OrderByComparator orderByComparator) throws SystemException {
-		List<Jarraipen> list = findByJarraituaUserId(jarraituaUserId, 0, 1,
-				orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
-		}
-
-		return null;
-	}
-
-	/**
-	 * Returns the last jarraipen in the ordered set where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen findByJarraituaUserId_Last(long jarraituaUserId,
-		OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = fetchByJarraituaUserId_Last(jarraituaUserId,
-				orderByComparator);
-
-		if (jarraipen != null) {
-			return jarraipen;
-		}
-
-		StringBundler msg = new StringBundler(4);
-
-		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
-
-		msg.append("jarraituaUserId=");
-		msg.append(jarraituaUserId);
-
-		msg.append(StringPool.CLOSE_CURLY_BRACE);
-
-		throw new NoSuchJarraipenException(msg.toString());
-	}
-
-	/**
-	 * Returns the last jarraipen in the ordered set where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the last matching jarraipen, or <code>null</code> if a matching jarraipen could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen fetchByJarraituaUserId_Last(long jarraituaUserId,
-		OrderByComparator orderByComparator) throws SystemException {
-		int count = countByJarraituaUserId(jarraituaUserId);
-
-		List<Jarraipen> list = findByJarraituaUserId(jarraituaUserId,
-				count - 1, count, orderByComparator);
-
-		if (!list.isEmpty()) {
-			return list.get(0);
-		}
-
-		return null;
-	}
-
-	/**
-	 * Returns the jarraipens before and after the current jarraipen in the ordered set where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraipenId the primary key of the current jarraipen
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
-	 * @return the previous, current, and next jarraipen
-	 * @throws net.sareweb.txotx.NoSuchJarraipenException if a jarraipen with the primary key could not be found
-	 * @throws SystemException if a system exception occurred
-	 */
-	public Jarraipen[] findByJarraituaUserId_PrevAndNext(long jarraipenId,
-		long jarraituaUserId, OrderByComparator orderByComparator)
-		throws NoSuchJarraipenException, SystemException {
-		Jarraipen jarraipen = findByPrimaryKey(jarraipenId);
-
-		Session session = null;
-
-		try {
-			session = openSession();
-
-			Jarraipen[] array = new JarraipenImpl[3];
-
-			array[0] = getByJarraituaUserId_PrevAndNext(session, jarraipen,
-					jarraituaUserId, orderByComparator, true);
-
-			array[1] = jarraipen;
-
-			array[2] = getByJarraituaUserId_PrevAndNext(session, jarraipen,
-					jarraituaUserId, orderByComparator, false);
-
-			return array;
-		}
-		catch (Exception e) {
-			throw processException(e);
-		}
-		finally {
-			closeSession(session);
-		}
-	}
-
-	protected Jarraipen getByJarraituaUserId_PrevAndNext(Session session,
-		Jarraipen jarraipen, long jarraituaUserId,
-		OrderByComparator orderByComparator, boolean previous) {
-		StringBundler query = null;
-
-		if (orderByComparator != null) {
-			query = new StringBundler(6 +
-					(orderByComparator.getOrderByFields().length * 6));
-		}
-		else {
-			query = new StringBundler(3);
-		}
-
-		query.append(_SQL_SELECT_JARRAIPEN_WHERE);
-
-		query.append(_FINDER_COLUMN_JARRAITUAUSERID_JARRAITUAUSERID_2);
-
-		if (orderByComparator != null) {
-			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
-
-			if (orderByConditionFields.length > 0) {
-				query.append(WHERE_AND);
-			}
-
-			for (int i = 0; i < orderByConditionFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByConditionFields[i]);
-
-				if ((i + 1) < orderByConditionFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN_HAS_NEXT);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(WHERE_GREATER_THAN);
-					}
-					else {
-						query.append(WHERE_LESSER_THAN);
-					}
-				}
-			}
-
-			query.append(ORDER_BY_CLAUSE);
-
-			String[] orderByFields = orderByComparator.getOrderByFields();
-
-			for (int i = 0; i < orderByFields.length; i++) {
-				query.append(_ORDER_BY_ENTITY_ALIAS);
-				query.append(orderByFields[i]);
-
-				if ((i + 1) < orderByFields.length) {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC_HAS_NEXT);
-					}
-					else {
-						query.append(ORDER_BY_DESC_HAS_NEXT);
-					}
-				}
-				else {
-					if (orderByComparator.isAscending() ^ previous) {
-						query.append(ORDER_BY_ASC);
-					}
-					else {
-						query.append(ORDER_BY_DESC);
-					}
-				}
-			}
-		}
-
-		else {
-			query.append(JarraipenModelImpl.ORDER_BY_JPQL);
-		}
-
-		String sql = query.toString();
-
-		Query q = session.createQuery(sql);
-
-		q.setFirstResult(0);
-		q.setMaxResults(2);
-
-		QueryPos qPos = QueryPos.getInstance(q);
-
-		qPos.add(jarraituaUserId);
+		qPos.add(jarraituaId);
 
 		if (orderByComparator != null) {
 			Object[] values = orderByComparator.getOrderByConditionValues(jarraipen);
@@ -2259,40 +1396,13 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Removes all the jarraipens where sagardotegiId = &#63; from the database.
+	 * Removes all the jarraipens where jarraituaId = &#63; from the database.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @throws SystemException if a system exception occurred
 	 */
-	public void removeBySagardotegiId(long sagardotegiId)
-		throws SystemException {
-		for (Jarraipen jarraipen : findBySagardotegiId(sagardotegiId)) {
-			remove(jarraipen);
-		}
-	}
-
-	/**
-	 * Removes all the jarraipens where sagardoEgunId = &#63; from the database.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @throws SystemException if a system exception occurred
-	 */
-	public void removeBySagardoEgunId(long sagardoEgunId)
-		throws SystemException {
-		for (Jarraipen jarraipen : findBySagardoEgunId(sagardoEgunId)) {
-			remove(jarraipen);
-		}
-	}
-
-	/**
-	 * Removes all the jarraipens where jarraituaUserId = &#63; from the database.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @throws SystemException if a system exception occurred
-	 */
-	public void removeByJarraituaUserId(long jarraituaUserId)
-		throws SystemException {
-		for (Jarraipen jarraipen : findByJarraituaUserId(jarraituaUserId)) {
+	public void removeByJarraituaId(long jarraituaId) throws SystemException {
+		for (Jarraipen jarraipen : findByJarraituaId(jarraituaId)) {
 			remove(jarraipen);
 		}
 	}
@@ -2363,17 +1473,16 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	}
 
 	/**
-	 * Returns the number of jarraipens where sagardotegiId = &#63;.
+	 * Returns the number of jarraipens where jarraituaId = &#63;.
 	 *
-	 * @param sagardotegiId the sagardotegi ID
+	 * @param jarraituaId the jarraitua ID
 	 * @return the number of matching jarraipens
 	 * @throws SystemException if a system exception occurred
 	 */
-	public int countBySagardotegiId(long sagardotegiId)
-		throws SystemException {
-		Object[] finderArgs = new Object[] { sagardotegiId };
+	public int countByJarraituaId(long jarraituaId) throws SystemException {
+		Object[] finderArgs = new Object[] { jarraituaId };
 
-		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_BY_SAGARDOTEGIID,
+		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_BY_JARRAITUAID,
 				finderArgs, this);
 
 		if (count == null) {
@@ -2381,7 +1490,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 			query.append(_SQL_COUNT_JARRAIPEN_WHERE);
 
-			query.append(_FINDER_COLUMN_SAGARDOTEGIID_SAGARDOTEGIID_2);
+			query.append(_FINDER_COLUMN_JARRAITUAID_JARRAITUAID_2);
 
 			String sql = query.toString();
 
@@ -2394,7 +1503,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 
 				QueryPos qPos = QueryPos.getInstance(q);
 
-				qPos.add(sagardotegiId);
+				qPos.add(jarraituaId);
 
 				count = (Long)q.uniqueResult();
 			}
@@ -2406,115 +1515,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 					count = Long.valueOf(0);
 				}
 
-				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_SAGARDOTEGIID,
-					finderArgs, count);
-
-				closeSession(session);
-			}
-		}
-
-		return count.intValue();
-	}
-
-	/**
-	 * Returns the number of jarraipens where sagardoEgunId = &#63;.
-	 *
-	 * @param sagardoEgunId the sagardo egun ID
-	 * @return the number of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public int countBySagardoEgunId(long sagardoEgunId)
-		throws SystemException {
-		Object[] finderArgs = new Object[] { sagardoEgunId };
-
-		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_BY_SAGARDOEGUNID,
-				finderArgs, this);
-
-		if (count == null) {
-			StringBundler query = new StringBundler(2);
-
-			query.append(_SQL_COUNT_JARRAIPEN_WHERE);
-
-			query.append(_FINDER_COLUMN_SAGARDOEGUNID_SAGARDOEGUNID_2);
-
-			String sql = query.toString();
-
-			Session session = null;
-
-			try {
-				session = openSession();
-
-				Query q = session.createQuery(sql);
-
-				QueryPos qPos = QueryPos.getInstance(q);
-
-				qPos.add(sagardoEgunId);
-
-				count = (Long)q.uniqueResult();
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (count == null) {
-					count = Long.valueOf(0);
-				}
-
-				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_SAGARDOEGUNID,
-					finderArgs, count);
-
-				closeSession(session);
-			}
-		}
-
-		return count.intValue();
-	}
-
-	/**
-	 * Returns the number of jarraipens where jarraituaUserId = &#63;.
-	 *
-	 * @param jarraituaUserId the jarraitua user ID
-	 * @return the number of matching jarraipens
-	 * @throws SystemException if a system exception occurred
-	 */
-	public int countByJarraituaUserId(long jarraituaUserId)
-		throws SystemException {
-		Object[] finderArgs = new Object[] { jarraituaUserId };
-
-		Long count = (Long)FinderCacheUtil.getResult(FINDER_PATH_COUNT_BY_JARRAITUAUSERID,
-				finderArgs, this);
-
-		if (count == null) {
-			StringBundler query = new StringBundler(2);
-
-			query.append(_SQL_COUNT_JARRAIPEN_WHERE);
-
-			query.append(_FINDER_COLUMN_JARRAITUAUSERID_JARRAITUAUSERID_2);
-
-			String sql = query.toString();
-
-			Session session = null;
-
-			try {
-				session = openSession();
-
-				Query q = session.createQuery(sql);
-
-				QueryPos qPos = QueryPos.getInstance(q);
-
-				qPos.add(jarraituaUserId);
-
-				count = (Long)q.uniqueResult();
-			}
-			catch (Exception e) {
-				throw processException(e);
-			}
-			finally {
-				if (count == null) {
-					count = Long.valueOf(0);
-				}
-
-				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_JARRAITUAUSERID,
+				FinderCacheUtil.putResult(FINDER_PATH_COUNT_BY_JARRAITUAID,
 					finderArgs, count);
 
 				closeSession(session);
@@ -2593,6 +1594,8 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 		FinderCacheUtil.removeCache(FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION);
 	}
 
+	@BeanReference(type = APKVersionPersistence.class)
+	protected APKVersionPersistence apkVersionPersistence;
 	@BeanReference(type = GertaeraPersistence.class)
 	protected GertaeraPersistence gertaeraPersistence;
 	@BeanReference(type = GoogleDevicePersistence.class)
@@ -2617,10 +1620,7 @@ public class JarraipenPersistenceImpl extends BasePersistenceImpl<Jarraipen>
 	private static final String _SQL_COUNT_JARRAIPEN_WHERE = "SELECT COUNT(jarraipen) FROM Jarraipen jarraipen WHERE ";
 	private static final String _FINDER_COLUMN_JARRAITZAILEUSERID_JARRAITZAILEUSERID_2 =
 		"jarraipen.jarraitzaileUserId = ?";
-	private static final String _FINDER_COLUMN_SAGARDOTEGIID_SAGARDOTEGIID_2 = "jarraipen.sagardotegiId = ?";
-	private static final String _FINDER_COLUMN_SAGARDOEGUNID_SAGARDOEGUNID_2 = "jarraipen.sagardoEgunId = ?";
-	private static final String _FINDER_COLUMN_JARRAITUAUSERID_JARRAITUAUSERID_2 =
-		"jarraipen.jarraituaUserId = ?";
+	private static final String _FINDER_COLUMN_JARRAITUAID_JARRAITUAID_2 = "jarraipen.jarraituaId = ?";
 	private static final String _ORDER_BY_ENTITY_ALIAS = "jarraipen.";
 	private static final String _NO_SUCH_ENTITY_WITH_PRIMARY_KEY = "No Jarraipen exists with the primary key ";
 	private static final String _NO_SUCH_ENTITY_WITH_KEY = "No Jarraipen exists with the key {";

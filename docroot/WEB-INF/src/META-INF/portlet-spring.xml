@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="net.sareweb.txotx.service.APKVersionLocalService" class="net.sareweb.txotx.service.impl.APKVersionLocalServiceImpl" />
+	<bean id="net.sareweb.txotx.service.APKVersionService" class="net.sareweb.txotx.service.impl.APKVersionServiceImpl" />
+	<bean id="net.sareweb.txotx.service.persistence.APKVersionPersistence" class="net.sareweb.txotx.service.persistence.APKVersionPersistenceImpl" parent="basePersistence" />
 	<bean id="net.sareweb.txotx.service.GertaeraLocalService" class="net.sareweb.txotx.service.impl.GertaeraLocalServiceImpl" />
 	<bean id="net.sareweb.txotx.service.GertaeraService" class="net.sareweb.txotx.service.impl.GertaeraServiceImpl" />
 	<bean id="net.sareweb.txotx.service.persistence.GertaeraPersistence" class="net.sareweb.txotx.service.persistence.GertaeraPersistenceImpl" parent="basePersistence" />

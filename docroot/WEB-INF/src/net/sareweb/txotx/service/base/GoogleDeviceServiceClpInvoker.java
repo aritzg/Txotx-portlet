@@ -23,68 +23,68 @@ import java.util.Arrays;
  */
 public class GoogleDeviceServiceClpInvoker {
 	public GoogleDeviceServiceClpInvoker() {
-		_methodName58 = "getBeanIdentifier";
+		_methodName64 = "getBeanIdentifier";
 
-		_methodParameterTypes58 = new String[] {  };
+		_methodParameterTypes64 = new String[] {  };
 
-		_methodName59 = "setBeanIdentifier";
-
-		_methodParameterTypes59 = new String[] { "java.lang.String" };
-
-		_methodName64 = "addGoogleDevice";
-
-		_methodParameterTypes64 = new String[] {
-				"java.lang.String", "java.lang.String"
-			};
-
-		_methodName65 = "unregisterGoogleDevice";
+		_methodName65 = "setBeanIdentifier";
 
 		_methodParameterTypes65 = new String[] { "java.lang.String" };
 
-		_methodName66 = "getGoogleDevicesByUserId";
+		_methodName70 = "addGoogleDevice";
 
-		_methodParameterTypes66 = new String[] { "long" };
+		_methodParameterTypes70 = new String[] {
+				"java.lang.String", "java.lang.String"
+			};
+
+		_methodName71 = "unregisterGoogleDevice";
+
+		_methodParameterTypes71 = new String[] { "java.lang.String" };
+
+		_methodName72 = "getGoogleDevicesByUserId";
+
+		_methodParameterTypes72 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName58.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-			return GoogleDeviceServiceUtil.getBeanIdentifier();
-		}
-
-		if (_methodName59.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes59, parameterTypes)) {
-			GoogleDeviceServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
-		}
-
 		if (_methodName64.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
-			return GoogleDeviceServiceUtil.addGoogleDevice((java.lang.String)arguments[0],
-				(java.lang.String)arguments[1]);
+			return GoogleDeviceServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName65.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
+			GoogleDeviceServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+		}
+
+		if (_methodName70.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+			return GoogleDeviceServiceUtil.addGoogleDevice((java.lang.String)arguments[0],
+				(java.lang.String)arguments[1]);
+		}
+
+		if (_methodName71.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes71, parameterTypes)) {
 			return GoogleDeviceServiceUtil.unregisterGoogleDevice((java.lang.String)arguments[0]);
 		}
 
-		if (_methodName66.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes66, parameterTypes)) {
+		if (_methodName72.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
 			return GoogleDeviceServiceUtil.getGoogleDevicesByUserId(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName58;
-	private String[] _methodParameterTypes58;
-	private String _methodName59;
-	private String[] _methodParameterTypes59;
 	private String _methodName64;
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
 	private String[] _methodParameterTypes65;
-	private String _methodName66;
-	private String[] _methodParameterTypes66;
+	private String _methodName70;
+	private String[] _methodParameterTypes70;
+	private String _methodName71;
+	private String[] _methodParameterTypes71;
+	private String _methodName72;
+	private String[] _methodParameterTypes72;
 }

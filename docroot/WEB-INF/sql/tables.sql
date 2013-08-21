@@ -1,3 +1,12 @@
+create table Txotx_APKVersion (
+	apkVersionId LONG not null primary key,
+	supportedMinVersion INTEGER,
+	supportedMinVersionName VARCHAR(75) null,
+	currentVersion INTEGER,
+	currentVersionName VARCHAR(75) null,
+	createDate DATE null
+);
+
 create table Txotx_Gertaera (
 	gertaeraId LONG not null primary key,
 	sagardotegiId LONG,
@@ -25,9 +34,7 @@ create table Txotx_GoogleDevice (
 create table Txotx_Jarraipen (
 	jarraipenId LONG not null primary key,
 	jarraitzaileUserId LONG,
-	sagardotegiId LONG,
-	sagardoEgunId LONG,
-	jarraituaUserId LONG,
+	jarraituaId LONG,
 	jarraipenMota VARCHAR(75) null,
 	createDate DATE null
 );

@@ -7,6 +7,21 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
+	<mapped-superclass class="net.sareweb.txotx.model.impl.APKVersionModelImpl">
+		<attributes>
+			<id name="apkVersionId" />
+			<basic name="supportedMinVersion" />
+			<basic name="supportedMinVersionName" />
+			<basic name="currentVersion" />
+			<basic name="currentVersionName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="net.sareweb.txotx.model.impl.GertaeraModelImpl">
 		<attributes>
 			<id name="gertaeraId" />
@@ -53,14 +68,11 @@
 		<attributes>
 			<id name="jarraipenId" />
 			<basic name="jarraitzaileUserId" />
-			<basic name="sagardotegiId" />
-			<basic name="sagardoEgunId" />
-			<basic name="jarraituaUserId" />
+			<basic name="jarraituaId" />
 			<basic name="jarraipenMota" />
 			<basic name="createDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<transient name="jarraituaUserUuid" />
 			<transient name="jarraitzaileUserUuid" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
@@ -164,6 +176,10 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<entity class="net.sareweb.txotx.model.impl.APKVersionImpl" name="APKVersion">
+		<table name="Txotx_APKVersion" />
+		<attributes />
+	</entity>
 	<entity class="net.sareweb.txotx.model.impl.GertaeraImpl" name="Gertaera">
 		<table name="Txotx_Gertaera" />
 		<attributes />

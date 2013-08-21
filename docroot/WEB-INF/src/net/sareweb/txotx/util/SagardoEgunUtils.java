@@ -17,7 +17,7 @@ public class SagardoEgunUtils {
 				sagardoEgun.setIruzkinKopurua(sagardoEgun.getIruzkinKopurua() + 1);
 			}
 			else if(gertaeraMora.equals(Constants.GERTAERA_MOTA_ARGAZKIA)){
-				sagardoEgun.setIrudia(irudia);
+				//sagardoEgun.setIrudia(irudia);
 				sagardoEgun.setIrudiKopurua(sagardoEgun.getIrudiKopurua() + 1);
 			}
 			else if(gertaeraMora.equals(Constants.GERTAERA_MOTA_BALORAZIOA)){

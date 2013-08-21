@@ -53,7 +53,8 @@ public class GooglePlusContentServlet extends HttpServlet {
 		+ sagardotegi.getIrudia();
 		
 		//Generar snippet		
-		out.print("<body itemscope itemtype=\"http://schema.org/Event\">"
+		out.print("<head> <script type=\"text/javascript\">window.location.href = \"http://txootx.org/web/guest/play\"</script></head>" +
+				"<body itemscope itemtype=\"http://schema.org/Event\">"
 					+"<h1 itemprop=\"name\">" + sagardotegi.getIzena() + "</h1>"
 					+"<img itemprop=\"image\" src=\"" + img + "\"/>"
 					+"<p itemprop=\"description\">" + sagardotegi.getHelbidea() + "</p>"
@@ -69,7 +70,8 @@ public class GooglePlusContentServlet extends HttpServlet {
 		+ sagardoEgun.getIrudia();
 		
 		//Generar snippet
-		out.print("<body itemscope itemtype=\"http://schema.org/Event\">"
+		out.print("<head> <script type=\"text/javascript\">window.location.href = \"http://txootx.org/web/guest/play\"</script></head>" +
+				"<body itemscope itemtype=\"http://schema.org/Event\">"
 					+"<h1 itemprop=\"name\">" + sagardoEgun.getIzena() + "</h1>"
 					+"<img itemprop=\"image\" src=\"" + img + "\"/>"
 					+"<p itemprop=\"description\">" + sagardoEgun.getIzena() + " - " + sagardoEgun.getEdizioa() + ". Edizioa</p>"

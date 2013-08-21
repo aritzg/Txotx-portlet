@@ -1,6 +1,13 @@
 Liferay.Service.register("Liferay.Service.Txotx", "net.sareweb.txotx.service", "Txotx-portlet");
 
 Liferay.Service.registerClass(
+	Liferay.Service.Txotx, "APKVersion",
+	{
+		getLastAPKVersion: true
+	}
+);
+
+Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Gertaera",
 	{
 		gehituTestuGertaera: true,
@@ -13,7 +20,11 @@ Liferay.Service.registerClass(
 		gehituBalorazioGertaeraSagardotegian: true,
 		gehituBalorazioGertaeraSagardoEgunean: true,
 		getGertaerakOlderThanDate: true,
+		getGertaerakSagardotegianOlderThanDate: true,
+		getGertaerakSagardoEguneanOlderThanDate: true,
 		getGertaerakNewerThanDate: true,
+		getGertaerakSagardotegianNewerThanDate: true,
+		getGertaerakSagardoEguneanNewerThanDate: true,
 		fake: true
 	}
 );
@@ -30,11 +41,14 @@ Liferay.Service.registerClass(
 Liferay.Service.registerClass(
 	Liferay.Service.Txotx, "Jarraipen",
 	{
+		gehituJarraipenaByEmail: true,
 		gehituJarraipena: true,
+		getJarraipenakByEmail: true,
 		getJarraipenak: true,
 		getErabiltzailearenJarraitzaileak: true,
 		getSagardotegiarenJarraitzaileak: true,
-		getSagardoEgunarenJarraitzaileak: true
+		getSagardoEgunarenJarraitzaileak: true,
+		deleteJarraipena: true
 	}
 );
 

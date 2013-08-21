@@ -69,9 +69,7 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 
 		attributes.put("jarraipenId", getJarraipenId());
 		attributes.put("jarraitzaileUserId", getJarraitzaileUserId());
-		attributes.put("sagardotegiId", getSagardotegiId());
-		attributes.put("sagardoEgunId", getSagardoEgunId());
-		attributes.put("jarraituaUserId", getJarraituaUserId());
+		attributes.put("jarraituaId", getJarraituaId());
 		attributes.put("jarraipenMota", getJarraipenMota());
 		attributes.put("createDate", getCreateDate());
 
@@ -92,22 +90,10 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 			setJarraitzaileUserId(jarraitzaileUserId);
 		}
 
-		Long sagardotegiId = (Long)attributes.get("sagardotegiId");
+		Long jarraituaId = (Long)attributes.get("jarraituaId");
 
-		if (sagardotegiId != null) {
-			setSagardotegiId(sagardotegiId);
-		}
-
-		Long sagardoEgunId = (Long)attributes.get("sagardoEgunId");
-
-		if (sagardoEgunId != null) {
-			setSagardoEgunId(sagardoEgunId);
-		}
-
-		Long jarraituaUserId = (Long)attributes.get("jarraituaUserId");
-
-		if (jarraituaUserId != null) {
-			setJarraituaUserId(jarraituaUserId);
+		if (jarraituaId != null) {
+			setJarraituaId(jarraituaId);
 		}
 
 		String jarraipenMota = (String)attributes.get("jarraipenMota");
@@ -148,37 +134,12 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 		_jarraitzaileUserUuid = jarraitzaileUserUuid;
 	}
 
-	public long getSagardotegiId() {
-		return _sagardotegiId;
+	public long getJarraituaId() {
+		return _jarraituaId;
 	}
 
-	public void setSagardotegiId(long sagardotegiId) {
-		_sagardotegiId = sagardotegiId;
-	}
-
-	public long getSagardoEgunId() {
-		return _sagardoEgunId;
-	}
-
-	public void setSagardoEgunId(long sagardoEgunId) {
-		_sagardoEgunId = sagardoEgunId;
-	}
-
-	public long getJarraituaUserId() {
-		return _jarraituaUserId;
-	}
-
-	public void setJarraituaUserId(long jarraituaUserId) {
-		_jarraituaUserId = jarraituaUserId;
-	}
-
-	public String getJarraituaUserUuid() throws SystemException {
-		return PortalUtil.getUserValue(getJarraituaUserId(), "uuid",
-			_jarraituaUserUuid);
-	}
-
-	public void setJarraituaUserUuid(String jarraituaUserUuid) {
-		_jarraituaUserUuid = jarraituaUserUuid;
+	public void setJarraituaId(long jarraituaId) {
+		_jarraituaId = jarraituaId;
 	}
 
 	public String getJarraipenMota() {
@@ -226,9 +187,7 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 
 		clone.setJarraipenId(getJarraipenId());
 		clone.setJarraitzaileUserId(getJarraitzaileUserId());
-		clone.setSagardotegiId(getSagardotegiId());
-		clone.setSagardoEgunId(getSagardoEgunId());
-		clone.setJarraituaUserId(getJarraituaUserId());
+		clone.setJarraituaId(getJarraituaId());
 		clone.setJarraipenMota(getJarraipenMota());
 		clone.setCreateDate(getCreateDate());
 
@@ -281,18 +240,14 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(15);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{jarraipenId=");
 		sb.append(getJarraipenId());
 		sb.append(", jarraitzaileUserId=");
 		sb.append(getJarraitzaileUserId());
-		sb.append(", sagardotegiId=");
-		sb.append(getSagardotegiId());
-		sb.append(", sagardoEgunId=");
-		sb.append(getSagardoEgunId());
-		sb.append(", jarraituaUserId=");
-		sb.append(getJarraituaUserId());
+		sb.append(", jarraituaId=");
+		sb.append(getJarraituaId());
 		sb.append(", jarraipenMota=");
 		sb.append(getJarraipenMota());
 		sb.append(", createDate=");
@@ -303,7 +258,7 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("net.sareweb.txotx.model.Jarraipen");
@@ -318,16 +273,8 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 		sb.append(getJarraitzaileUserId());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>sagardotegiId</column-name><column-value><![CDATA[");
-		sb.append(getSagardotegiId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>sagardoEgunId</column-name><column-value><![CDATA[");
-		sb.append(getSagardoEgunId());
-		sb.append("]]></column-value></column>");
-		sb.append(
-			"<column><column-name>jarraituaUserId</column-name><column-value><![CDATA[");
-		sb.append(getJarraituaUserId());
+			"<column><column-name>jarraituaId</column-name><column-value><![CDATA[");
+		sb.append(getJarraituaId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>jarraipenMota</column-name><column-value><![CDATA[");
@@ -346,10 +293,7 @@ public class JarraipenClp extends BaseModelImpl<Jarraipen> implements Jarraipen 
 	private long _jarraipenId;
 	private long _jarraitzaileUserId;
 	private String _jarraitzaileUserUuid;
-	private long _sagardotegiId;
-	private long _sagardoEgunId;
-	private long _jarraituaUserId;
-	private String _jarraituaUserUuid;
+	private long _jarraituaId;
 	private String _jarraipenMota;
 	private Date _createDate;
 	private BaseModel<?> _jarraipenRemoteModel;

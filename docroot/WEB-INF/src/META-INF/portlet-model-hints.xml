@@ -1,6 +1,14 @@
 <?xml version="1.0"?>
 
 <model-hints>
+	<model name="net.sareweb.txotx.model.APKVersion">
+		<field name="apkVersionId" type="long" />
+		<field name="supportedMinVersion" type="int" />
+		<field name="supportedMinVersionName" type="String" />
+		<field name="currentVersion" type="int" />
+		<field name="currentVersionName" type="String" />
+		<field name="createDate" type="Date" />
+	</model>
 	<model name="net.sareweb.txotx.model.Gertaera">
 		<field name="gertaeraId" type="long" />
 		<field name="sagardotegiId" type="long" />
@@ -30,9 +38,7 @@
 	<model name="net.sareweb.txotx.model.Jarraipen">
 		<field name="jarraipenId" type="long" />
 		<field name="jarraitzaileUserId" type="long" />
-		<field name="sagardotegiId" type="long" />
-		<field name="sagardoEgunId" type="long" />
-		<field name="jarraituaUserId" type="long" />
+		<field name="jarraituaId" type="long" />
 		<field name="jarraipenMota" type="String" />
 		<field name="createDate" type="Date" />
 	</model>
