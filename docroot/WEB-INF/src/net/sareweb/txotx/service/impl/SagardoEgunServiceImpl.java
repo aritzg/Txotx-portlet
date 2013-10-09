@@ -47,6 +47,6 @@ public class SagardoEgunServiceImpl extends SagardoEgunServiceBaseImpl {
 	}
 	
 	public List<SagardoEgun> getSagardoEgunak() throws SystemException{
-		return sagardoEgunPersistence.findAll(-1, -1, new SagardoEgunBBComparator());
+		return sagardoEgunPersistence.findAll(-1, -1);
 	}
 }

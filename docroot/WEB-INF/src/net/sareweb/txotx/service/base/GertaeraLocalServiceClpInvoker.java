@@ -108,13 +108,9 @@ public class GertaeraLocalServiceClpInvoker {
 
 		_methodParameterTypes81 = new String[] { "java.lang.String" };
 
-		_methodName86 = "getSagardotegiarenBalorazioBB";
+		_methodName86 = "getBalorazioBB";
 
 		_methodParameterTypes86 = new String[] { "long" };
-
-		_methodName87 = "getSagardoEgunarenBalorazioBB";
-
-		_methodParameterTypes87 = new String[] { "long" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -218,12 +214,7 @@ public class GertaeraLocalServiceClpInvoker {
 
 		if (_methodName86.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes86, parameterTypes)) {
-			return GertaeraLocalServiceUtil.getSagardotegiarenBalorazioBB(((Long)arguments[0]).longValue());
-		}
-
-		if (_methodName87.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes87, parameterTypes)) {
-			return GertaeraLocalServiceUtil.getSagardoEgunarenBalorazioBB(((Long)arguments[0]).longValue());
+			return GertaeraLocalServiceUtil.getBalorazioBB(((Long)arguments[0]).longValue());
 		}
 
 		throw new UnsupportedOperationException();
@@ -267,6 +258,4 @@ public class GertaeraLocalServiceClpInvoker {
 	private String[] _methodParameterTypes81;
 	private String _methodName86;
 	private String[] _methodParameterTypes86;
-	private String _methodName87;
-	private String[] _methodParameterTypes87;
 }

@@ -48,9 +48,9 @@ public class GertaeraLocalServiceImpl extends GertaeraLocalServiceBaseImpl {
 	 * Never reference this interface directly. Always use {@link net.sareweb.txotx.service.GertaeraLocalServiceUtil} to access the gertaera local service.
 	 */
 	
-	public double getSagardotegiarenBalorazioBB(long sagardotegiId) throws SystemException{
+	public double getBalorazioBB(long lekuId) throws SystemException{
 		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
-		Criterion sagardotegiCr = PropertyFactoryUtil.forName("sagardotegiId").eq(sagardotegiId);
+		Criterion sagardotegiCr = PropertyFactoryUtil.forName("sagardotegiId").eq(lekuId);
 		dq.add(sagardotegiCr);
 		
 		Criterion gertaeraMotaCr = PropertyFactoryUtil.forName("gertaeraMota").eq("GERTAERA_MOTA_BALORAZIOA");
@@ -64,21 +64,5 @@ public class GertaeraLocalServiceImpl extends GertaeraLocalServiceBaseImpl {
 			return 0;
 		}
 	}
-	
-	public double getSagardoEgunarenBalorazioBB(long sagardoEgunId) throws SystemException{
-		DynamicQuery dq = DynamicQueryFactoryUtil.forClass(Gertaera.class);
-		Criterion sagardoEgunCr = PropertyFactoryUtil.forName("sagardoEgunId").eq(sagardoEgunId);
-		dq.add(sagardoEgunCr);
-		
-		Criterion gertaeraMotaCr = PropertyFactoryUtil.forName("gertaeraMota").eq("GERTAERA_MOTA_BALORAZIOA");
-		dq.add(gertaeraMotaCr);
-		
-		dq.setProjection(ProjectionFactoryUtil.avg("balorazioa"));
-		List<Double> results = GertaeraLocalServiceUtil.dynamicQuery(dq);
-		if(results!=null){
-			return results.get(0);
-		}else{
-			return 0;
-		}
-	}
+
 }

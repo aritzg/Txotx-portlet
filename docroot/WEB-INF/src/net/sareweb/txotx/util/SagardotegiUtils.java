@@ -23,7 +23,7 @@ public class SagardotegiUtils {
 			else if(gertaeraMora.equals(Constants.GERTAERA_MOTA_BALORAZIOA)){
 				sagardotegi.setBalorazioKopurua(sagardotegi.getBalorazioKopurua() + 1);
 				double bbb = GertaeraLocalServiceUtil
-						.getSagardotegiarenBalorazioBB(sagardotegiId);
+						.getBalorazioBB(sagardotegiId);
 				sagardotegi.setBalorazioenBB(bbb);
 			}
 			SagardotegiLocalServiceUtil.updateSagardotegi(sagardotegi);

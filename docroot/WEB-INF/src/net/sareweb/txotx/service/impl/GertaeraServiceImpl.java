@@ -273,7 +273,7 @@ public class GertaeraServiceImpl extends GertaeraServiceBaseImpl {
 			Sagardotegi sagardotegi = SagardotegiServiceUtil
 					.getSagardotegia(sagardotegiId);
 			double bbb = GertaeraLocalServiceUtil
-					.getSagardotegiarenBalorazioBB(sagardotegiId);
+					.getBalorazioBB(sagardotegiId);
 			sagardotegi
 					.setBalorazioKopurua(sagardotegi.getBalorazioKopurua() + 1);
 			sagardotegi.setBalorazioenBB(bbb);

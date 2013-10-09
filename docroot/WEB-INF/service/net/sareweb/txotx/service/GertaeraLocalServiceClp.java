@@ -108,13 +108,9 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 
 		_methodParameterTypes17 = new String[] { "java.lang.String" };
 
-		_methodName19 = "getSagardotegiarenBalorazioBB";
+		_methodName19 = "getBalorazioBB";
 
 		_methodParameterTypes19 = new String[] { "long" };
-
-		_methodName20 = "getSagardoEgunarenBalorazioBB";
-
-		_methodParameterTypes20 = new String[] { "long" };
 	}
 
 	public net.sareweb.txotx.model.Gertaera addGertaera(
@@ -639,40 +635,13 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 		throw new UnsupportedOperationException();
 	}
 
-	public double getSagardotegiarenBalorazioBB(long sagardotegiId)
+	public double getBalorazioBB(long lekuId)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
 		try {
 			returnObj = _invokableLocalService.invokeMethod(_methodName19,
-					_methodParameterTypes19, new Object[] { sagardotegiId });
-		}
-		catch (Throwable t) {
-			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return ((Double)returnObj).doubleValue();
-	}
-
-	public double getSagardoEgunarenBalorazioBB(long sagardoEgunId)
-		throws com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName20,
-					_methodParameterTypes20, new Object[] { sagardoEgunId });
+					_methodParameterTypes19, new Object[] { lekuId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
@@ -732,6 +701,4 @@ public class GertaeraLocalServiceClp implements GertaeraLocalService {
 	private String[] _methodParameterTypes17;
 	private String _methodName19;
 	private String[] _methodParameterTypes19;
-	private String _methodName20;
-	private String[] _methodParameterTypes20;
 }
