@@ -88,7 +88,7 @@ public class SagardoEgunModelImpl extends BaseModelImpl<SagardoEgun>
 			{ "modifiedDate", Types.TIMESTAMP },
 			{ "userId", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_SagardoEgun (sagardoEgunId LONG not null primary key,izena VARCHAR(75) null,edizioa LONG,herria VARCHAR(75) null,lekua VARCHAR(75) null,emaila VARCHAR(75) null,twitter VARCHAR(75) null,weborria VARCHAR(75) null,hasieraDate DATE null,lat DOUBLE,lng DOUBLE,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null,userId LONG)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_SagardoEgun (sagardoEgunId LONG not null primary key,izena VARCHAR(75) null,edizioa LONG,herria VARCHAR(75) null,lekua VARCHAR(75) null,emaila VARCHAR(75) null,twitter VARCHAR(75) null,weborria VARCHAR(1000) null,hasieraDate DATE null,lat DOUBLE,lng DOUBLE,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null,userId LONG)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_SagardoEgun";
 	public static final String ORDER_BY_JPQL = " ORDER BY sagardoEgun.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_SagardoEgun.createDate DESC";

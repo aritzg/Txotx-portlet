@@ -85,7 +85,7 @@ public class SagardotegiModelImpl extends BaseModelImpl<Sagardotegi>
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,twitter VARCHAR(75) null,weborria VARCHAR(75) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_Sagardotegi (sagardotegiId LONG not null primary key,izena VARCHAR(75) null,herria VARCHAR(75) null,helbidea VARCHAR(75) null,telefonoa VARCHAR(75) null,emaila VARCHAR(75) null,twitter VARCHAR(75) null,weborria VARCHAR(1000) null,lat DOUBLE,lng DOUBLE,edukiera LONG,irudiKarpetaId LONG,irudia VARCHAR(75) null,irudiKopurua LONG,iruzkinKopurua LONG,balorazioKopurua LONG,balorazioenBB DOUBLE,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_Sagardotegi";
 	public static final String ORDER_BY_JPQL = " ORDER BY sagardotegi.createDate DESC";
 	public static final String ORDER_BY_SQL = " ORDER BY Txotx_Sagardotegi.createDate DESC";

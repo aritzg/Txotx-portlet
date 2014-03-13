@@ -73,7 +73,7 @@ public class GoogleDeviceModelImpl extends BaseModelImpl<GoogleDevice>
 			{ "createDate", Types.TIMESTAMP },
 			{ "modifiedDate", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table Txotx_GoogleDevice (googleDeviceId LONG not null primary key,userId LONG,emailAddress VARCHAR(75) null,registrationId VARCHAR(500) null,createDate DATE null,modifiedDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table Txotx_GoogleDevice (googleDeviceId LONG not null primary key,userId LONG,emailAddress VARCHAR(75) null,registrationId VARCHAR(1000) null,createDate DATE null,modifiedDate DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table Txotx_GoogleDevice";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";

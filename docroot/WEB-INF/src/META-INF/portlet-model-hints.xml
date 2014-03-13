@@ -30,7 +30,7 @@
 		<field name="userId" type="long" />
 		<field name="emailAddress" type="String" />
 		<field name="registrationId" type="String">
-			<hint name="max-length">500</hint>
+			<hint name="max-length">1000</hint>
 		</field>
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
@@ -63,7 +63,9 @@
 		<field name="lekua" type="String" />
 		<field name="emaila" type="String" />
 		<field name="twitter" type="String" />
-		<field name="weborria" type="String" />
+		<field name="weborria" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
 		<field name="hasieraDate" type="Date" />
 		<field name="lat" type="double" />
 		<field name="lng" type="double" />
@@ -85,7 +87,9 @@
 		<field name="telefonoa" type="String" />
 		<field name="emaila" type="String" />
 		<field name="twitter" type="String" />
-		<field name="weborria" type="String" />
+		<field name="weborria" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
 		<field name="lat" type="double" />
 		<field name="lng" type="double" />
 		<field name="edukiera" type="long" />

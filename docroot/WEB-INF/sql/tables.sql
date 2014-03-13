@@ -26,7 +26,7 @@ create table Txotx_GoogleDevice (
 	googleDeviceId LONG not null primary key,
 	userId LONG,
 	emailAddress VARCHAR(75) null,
-	registrationId VARCHAR(500) null,
+	registrationId VARCHAR(1000) null,
 	createDate DATE null,
 	modifiedDate DATE null
 );
@@ -59,7 +59,7 @@ create table Txotx_SagardoEgun (
 	lekua VARCHAR(75) null,
 	emaila VARCHAR(75) null,
 	twitter VARCHAR(75) null,
-	weborria VARCHAR(75) null,
+	weborria VARCHAR(1000) null,
 	hasieraDate DATE null,
 	lat DOUBLE,
 	lng DOUBLE,
@@ -82,7 +82,7 @@ create table Txotx_Sagardotegi (
 	telefonoa VARCHAR(75) null,
 	emaila VARCHAR(75) null,
 	twitter VARCHAR(75) null,
-	weborria VARCHAR(75) null,
+	weborria VARCHAR(1000) null,
 	lat DOUBLE,
 	lng DOUBLE,
 	edukiera LONG,
